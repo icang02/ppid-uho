@@ -12,5 +12,13 @@ Route::get('/tes', function () {
 });
 
 Route::get('/', function () {
-    return view('home');
+    return view('home.home');
+});
+
+Route::get('/berita', function () {
+    return view('home.berita');
+});
+
+Route::get('/detail_berita', function () {
+    return view('home.detail_berita');
 });

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('home.layouts.main')
 
 @section('content')
   <!-- ***** Main Banner Area Start ***** -->
@@ -86,14 +86,14 @@
   <!-- ***** Main Banner Area End ***** -->
 
   <section class="service-details">
-    <div class="container">
+    <div class="container ">
       <div class="row">
-        {{-- <div class="col-lg-6 offset-lg-3">
+        <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
-            <h6>Investment in Details</h6>
-            <h4>Upgrade your knowledge</h4>
+            <h6>Details</h6>
+            <h4>Jenis - Jenis Informasi</h4>
           </div>
-        </div> --}}
+        </div>
         <div class="col-lg-10 offset-lg-1">
           <div class="naccs">
             <div class="tabs">
@@ -237,7 +237,7 @@
     </div>
   </section>
 
-  <section class="about-us" id="about">
+  {{-- <section class="about-us" id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
@@ -438,7 +438,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
+
+
+
+{{-- 
 
   <section class="testimonials" id="testimonials">
     <div class="container">
@@ -486,7 +490,58 @@
         </div>
       </div>
     </div>
+  </section> --}}
+
+  @include('home.components.konten');
+
+  <section class="simple-cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <h4>Business <em>Solutions</em> and <strong>Crypto</strong> Investments</h4>
+        </div>
+        <div class="col-lg-7">
+          <div class="buttons">
+            <div class="green-button">
+              <a href="#">Discover More</a>
+            </div>
+            <div class="orange-button">
+              <a href="#">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+
+
+  
+@include('home.components.berita_utama');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <section class="partners">
     <div class="container">

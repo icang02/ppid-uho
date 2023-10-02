@@ -10,7 +10,7 @@
           <!-- ***** Logo End ***** -->
           <!-- ***** Menu Start ***** -->
           <ul class="nav">
-            <li class="scroll-to-section"><a href="#top" class="active">Beranda</a></li>
+            <li class="scroll-to-section"><a href="/" class="active">Beranda</a></li>
             <li class="has-sub">
               <a href="javascript:void(0)">Tentang</a>
               <ul class="sub-menu">
@@ -30,9 +30,9 @@
             <li class="has-sub">
               <a href="javascript:void(0)">Formulir Permohonan</a>
               <ul class="sub-menu">
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="our-services.html">Our Services</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="about-us.html">Formulir Permohonan</a></li>
+                <li><a href="our-services.html">Formulir Keberatan Atas Layanan Informasi Publik</a></li>
+                <li><a href="contact-us.html">Formulir Penyelesaian Sengketa Informasi</a></li>
               </ul>
             </li>
             <li><a href="contact-us.html">Search...</a></li>

@@ -33,11 +33,11 @@ https://templatemo.com/tm-574-mexant
 
 <body>
 
-  @include('components.header')
+  @include('home.components.header')
 
   @yield('content')
 
-  @include('components.footer')
+  @include('home.components.footer')
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
