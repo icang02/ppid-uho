@@ -126,7 +126,7 @@
                   <ul class="nacc">
                     <li class="active">
                       <div>
-                        <div class="left-image">
+                        <div class="left-image jenis-informasi">
                           <img src="assets/images/service-details-01.jpg" alt="">
                         </div>
                         <div class="right-content">
@@ -138,7 +138,7 @@
                       </div>
                     <li>
                       <div>
-                        <div class="left-image">
+                        <div class="left-image jenis-informasi">
                           <img src="assets/images/service-details-03.jpg" alt="">
                         </div>
                         <div class="right-content">
@@ -153,7 +153,7 @@
                     </li>
                     <li>
                       <div>
-                        <div class="left-image">
+                        <div class="left-image jenis-informasi">
                           <img src="assets/images/service-details-02.jpg" alt="">
                         </div>
                         <div class="right-content">
@@ -514,7 +514,17 @@
   <section class="simple-cta">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-12">
+          <h4>"Has atas informasi yang terbuka menjadi pembukan jalan bagi terjaminnya
+            pelaksanaan
+            hak-hak asasi lainnya,
+            seperti hak atas pendidikan, hak untuk hidup sejahtera, hak untuk hiduup aman, dan hak warga negara lainnya."
+            <div class="mt-3">
+              <small>Kominfo RI</small>
+            </div>
+          </h4>
+        </div>
+        {{-- <div class="col-lg-5">
           <h4>Business <em>Solutions</em> and <strong>Crypto</strong> Investments</h4>
         </div>
         <div class="col-lg-7">
@@ -526,7 +536,7 @@
               <a href="#">Contact Us</a>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </section>

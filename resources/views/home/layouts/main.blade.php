@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-  <title>{{ 'PPID UHO' }}</title>
+  <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+
+  <title>{{ 'PPID Universitas Halu Oleo' }}</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -25,6 +27,11 @@
 
   {{-- My Style --}}
   <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/search.css') }}">
+
+  {{-- jquery cdn --}}
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>

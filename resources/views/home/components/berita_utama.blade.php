@@ -158,12 +158,10 @@
               </div>
             </div>
 
-
-
           </div>
 
           <div class="col-12 mt-3 text-center">
-            <a class="btn btn-danger py-3 px-4 bg-biru" href="/berita">Lihat Lainnya</a>
+            <a class="btn py-3 px-4 bg-biru text-white" href="/berita">Lihat Lainnya</a>
           </div>
         </div>
       </div>

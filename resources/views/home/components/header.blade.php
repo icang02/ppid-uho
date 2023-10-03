@@ -1,4 +1,4 @@
-<header class="header-area header-sticky bg-biru">
+<header class="header-area header-sticky">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -39,7 +39,8 @@
                 <li><a href="contact-us.html">Formulir Penyelesaian Sengketa Informasi</a></li>
               </ul>
             </li>
-            <li><a class="bg-kuning" href="contact-us.html">Search...</a></li>
+            <li><a href="javascript:void(0)" class="bg-kuning tombol-search" href="contact-us.html">
+                <i class="fa-solid fa-magnifying-glass"></i></a></li>
           </ul>
           <a class='menu-trigger'>
             <span>Menu</span>
@@ -50,3 +51,63 @@
     </div>
   </div>
 </header>
+
+{{-- search input --}}
+<div class="close-btn">
+  <span class="fas fa-times"></span>
+</div>
+<div class="wrapper">
+  {{-- <div class="search-btn">
+    <span class="fas fa-search"></span>
+  </div> --}}
+  <div class="search-data">
+    <form action="#" method="get">
+      @csrf
+      <input type="text" id="myInput" autocomplete="off">
+    </form>
+    <label>Masukan kata kunci..</label>
+    <div class="line"></div>
+    <span class="fas fa-search"></span>
+  </div>
+</div>
+
+{{-- script input search --}}
+<script>
+  $(document).ready(function() {
+    $("#myInput").on("input", function() {
+      var inputValue = $(this).val();
+      if (inputValue.trim() !== "") {
+        $('.search-data label').text("");
+      } else {
+        $('.search-data label').text("Masukan kata kunci..");
+      }
+    });
+
+    $('.tombol-search').click(function() {
+      $(".swiper-container").css("overflow", "hidden");
+
+      $('.wrapper').addClass('active');
+      $('.search-data').fadeIn(500);
+      $('.close-btn').fadeIn(500);
+      $('.search-data .line').addClass('active');
+
+      setTimeout(function() {
+        $('input').focus();
+        $('.search-data label').fadeIn(500);
+        $('.search-data span').fadeIn(500);
+      }, 800);
+    });
+
+    $('.close-btn').click(function() {
+      $('.wrapper').removeClass('active');
+      $('.search-btn').fadeIn(800);
+      $('.search-data').fadeOut(500);
+      $('.close-btn').fadeOut(500);
+      $('.search-data .line').removeClass('active');
+
+      $('input').val("");
+      $('.search-data label').fadeOut(500);
+      $('.search-data span').fadeOut(500);
+    });
+  });
+</script>
