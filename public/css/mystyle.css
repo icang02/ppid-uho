@@ -1,0 +1,84 @@
+:root {
+  --kuning: #F4B700;
+  --biru: #0E3B63;
+}
+
+.bg-kuning {
+  background-color: var(--kuning) !important;
+}
+.txt-kuning {
+  color: var(--kuning) !important;
+  /* color: var(--kuning) !important; */
+}
+
+.bg-biru {
+  background-color: var(--biru) !important; 
+}
+
+.txt-biru {
+  color: var(--biru) !important;
+}
+
+.active {
+  color: var(--kuning) !important;
+}
+
+.main-nav ul li a:hover {
+  color: var(--kuning) !important;
+}
+
+/* nav .nav li.has-sub ul.sub-menu li a {
+  color: #F4B700 !important;
+} */
+
+nav .nav li:last-child a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+nav .nav li:last-child a:hover {
+  color: #fff !important;
+}
+
+.header-text h2 em {
+  color: var(--kuning) !important;
+}
+
+.green-button a {
+  background: var(--kuning) !important;
+}
+
+.sub-menu.tentang {
+  width: 196% !important;
+}
+.sub-menu.informasi-publik {
+  width: 155% !important;
+}
+.sub-menu.formulir-permohonan {
+  width: 186% !important;
+}
+
+.left-image {
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  /* home cover */
+  .header-text h2 {
+    font-size: 1.75rem !important;
+    line-height: 45px !important;
+  }
+
+  .sub-menu.tentang {
+    width: 100% !important;
+  }
+  .sub-menu.informasi-publik {
+    width: 100% !important;
+  }
+  .sub-menu.formulir-permohonan {
+    width: 100% !important;
+  }
+
+  .left-image {
+    display: none;
+  }
+}

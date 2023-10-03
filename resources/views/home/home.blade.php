@@ -1,11 +1,28 @@
 @extends('home.layouts.main')
 
 @section('content')
+  <script>
+    window.addEventListener('scroll', function(event) {
+      const scrollY = window.scrollY; // Posisi vertikal scroll
+      const logo = document.querySelector('.logo');
+      const logoImg = document.querySelector('.logo-img');
+
+      if (scrollY >= 100) {
+        logo.style.lineHeight = '75px';
+        logoImg.style.width = '170px'
+      } else {
+        logo.style.lineHeight = '110px';
+        logoImg.style.width = '200px'
+      }
+    });
+  </script>
+
   <!-- ***** Main Banner Area Start ***** -->
   <div class="swiper-container" id="top">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <div class="slide-inner" style="background-image:url(assets/images/slide-01.jpg)">
+        <div class="slide-inner"
+          style="background-image:url({{ asset('img/home-img.png') }}); background-position: center; background-size: cover;">
           <div class="container">
             <div class="row">
               <div class="col-lg-8">
@@ -16,7 +33,7 @@
                     pelaksanaan keterbukaan informasi di Universitas Halu Oleo.</p>
                   <div class="buttons">
                     <div class="green-button">
-                      <a href="#">Selengkapnya</a>
+                      <a href="#jenisInformasi">Selengkapnya</a>
                     </div>
                     {{-- <div class="orange-button">
                       <a href="#">Contact Us</a>
@@ -85,12 +102,12 @@
 
   <!-- ***** Main Banner Area End ***** -->
 
-  <section class="service-details">
+  <section class="service-details" id="jenisInformasi">
     <div class="container ">
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
-            <h6>Details</h6>
+            <h6 class="txt-kuning">PPID UHO</h6>
             <h4>Jenis - Jenis Informasi</h4>
           </div>
         </div>
@@ -209,9 +226,9 @@
 
   <section class="simple-cta">
     <div class="container">
-      <div class="row">
+      <div class="row g-4">
         <div class="col-lg-12 text-center mb-5">
-          <h4>Tata Cara <em>Permohonan</em></h4>
+          <h4>Tata Cara <em class="txt-kuning">Permohonan</em></h4>
         </div>
         <div class="col-lg-3">
           <img src="{{ asset('img/123.png') }}">
@@ -442,7 +459,7 @@
 
 
 
-{{-- 
+  {{-- 
 
   <section class="testimonials" id="testimonials">
     <div class="container">
@@ -516,8 +533,8 @@
 
 
 
-  
-@include('home.components.berita_utama');
+
+  @include('home.components.berita_utama');
 
 
 

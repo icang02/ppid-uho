@@ -22,13 +22,9 @@
   <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-  <!--
 
-TemplateMo 574 Mexant
-
-https://templatemo.com/tm-574-mexant
-
--->
+  {{-- My Style --}}
+  <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
 </head>
 
 <body>

@@ -2,11 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <p>Copyright © 2022 Mexant Co., Ltd. All Rights Reserved.
+        <p>Copyright © {{ date('Y') }} Lembaga Pejabat Pengelola Informasi dan Dokumentasi (LPPID). All Rights
+          Reserved.
 
-          <br>Designed by <a title="CSS Templates" rel="sponsored" href="https://templatemo.com"
-            target="_blank">TemplateMo</a> Distributed By <a title="CSS Templates" rel="sponsored"
-            href="https://themewagons.com" target="_blank">ThemeWagon</a>
+          <br>Designed by <a title="CSS Templates" class="txt-kuning" rel="sponsored" href="#" target="_blank">Web
+            Developer</a> Programmer by <a class="txt-kuning" title="CSS Templates" rel="sponsored" href="#"
+            target="_blank">Int</a>
         </p>
       </div>
     </div>
