@@ -28,6 +28,7 @@
   {{-- My Style --}}
   <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
   <link rel="stylesheet" href="{{ asset('css/search.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/image-full.css') }}">
 
   {{-- jquery cdn --}}
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -35,6 +36,39 @@
 </head>
 
 <body>
+  @if (request()->is('/'))
+    <script>
+      window.addEventListener('scroll', function(event) {
+        const scrollY = window.scrollY; // Posisi vertikal scroll
+        const logo = document.querySelector('.logo');
+        const logoImg = document.querySelector('.logo-img');
+
+        if (scrollY >= 100) {
+          logo.style.lineHeight = '75px';
+          logoImg.style.width = '170px'
+        } else {
+          logo.style.lineHeight = '110px';
+          logoImg.style.width = '200px'
+        }
+      });
+    </script>
+  @else
+    <script>
+      window.addEventListener('scroll', function(event) {
+        const scrollY = window.scrollY; // Posisi vertikal scroll
+        const logo = document.querySelector('.logo');
+        const logoImg = document.querySelector('.logo-img');
+
+        if (scrollY >= 5.5) {
+          logo.style.lineHeight = '75px';
+          logoImg.style.width = '170px'
+        } else {
+          logo.style.lineHeight = '110px';
+          logoImg.style.width = '200px'
+        }
+      });
+    </script>
+  @endif
 
   @include('home.components.header')
 

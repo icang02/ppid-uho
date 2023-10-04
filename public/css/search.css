@@ -16,7 +16,7 @@
     rgba(14, 59, 99, 0.83),
     rgba(14, 59, 99, 0.83)
   );
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .wrapper.active {

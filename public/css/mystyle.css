@@ -12,7 +12,6 @@
 }
 .txt-kuning {
   color: var(--kuning) !important;
-  /* color: var(--kuning) !important; */
 }
 
 .bg-biru {
@@ -71,9 +70,14 @@ nav .nav li:last-child a:hover {
 
 .simple-cta .container .row .col-lg-12 h4 {
   text-align: center !important;
-  font-size: 1.2rem !important;
+  font-size: var(--h1-size) !important;
   font-weight: normal;
   line-height: 40px;
+}
+
+/* qoutes */
+#qoutes .container .row .col-lg-12 h4 {
+  font-size: 1.2rem !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -116,8 +120,9 @@ nav .nav li:last-child a:hover {
     height: 260px;
   }
 
-  .simple-cta .container .row .col-lg-12 h4 {
-    font-size: 1rem !important;
+  /* qoutes kominfo */
+  #qoutes .container .row .col-lg-12 h4 {
+    font-size: 0.9rem !important;
     line-height: 35px;
   }
 }

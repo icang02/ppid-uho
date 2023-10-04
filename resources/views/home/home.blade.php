@@ -1,22 +1,6 @@
 @extends('home.layouts.main')
 
 @section('content')
-  <script>
-    window.addEventListener('scroll', function(event) {
-      const scrollY = window.scrollY; // Posisi vertikal scroll
-      const logo = document.querySelector('.logo');
-      const logoImg = document.querySelector('.logo-img');
-
-      if (scrollY >= 100) {
-        logo.style.lineHeight = '75px';
-        logoImg.style.width = '170px'
-      } else {
-        logo.style.lineHeight = '110px';
-        logoImg.style.width = '200px'
-      }
-    });
-  </script>
-
   <!-- ***** Main Banner Area Start ***** -->
   <div class="swiper-container" id="top">
     <div class="swiper-wrapper">
@@ -224,34 +208,52 @@
     </div>
   </section> --}}
 
-  <section class="simple-cta">
+  <section class="simple-cta" id="permohonan">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-12 text-center mb-5">
           <h4>Tata Cara <em class="txt-kuning">Permohonan</em></h4>
         </div>
         <div class="col-lg-3">
-          <img src="{{ asset('img/123.png') }}">
-          {{-- <div class="buttons">
-              <div class="green-button">
-                <a href="#">Discover More</a>
-              </div>
-              <div class="orange-button">
-                <a href="#">Contact Us</a>
-              </div>
-            </div> --}}
+          <div class="image">
+            <img src="{{ asset('img/123.png') }}">
+          </div>
         </div>
         <div class="col-lg-3">
-          <img src="{{ asset('img/123.png') }}">
+          <div class="image">
+            <img src="{{ asset('img/123.png') }}">
+          </div>
         </div>
         <div class="col-lg-3">
-          <img src="{{ asset('img/123.png') }}">
+          <div class="image">
+            <img src="{{ asset('img/123.png') }}">
+          </div>
         </div>
         <div class="col-lg-3">
-          <img src="{{ asset('img/123.png') }}">
+          <div class="image">
+            <img src="{{ asset('img/123.png') }}">
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="popup-img">
+      <span>&times;</span>
+      <img src="{{ asset('img/123.png') }}">
+    </div>
+
+    <script>
+      document.querySelectorAll('.image img').forEach(image => {
+        image.onclick = () => {
+          document.querySelector('.popup-img').style.display = 'block';
+          document.querySelector('.popup-img img').src = image.getAttribute('src');
+        }
+      });
+
+      document.querySelector('.popup-img span').onclick = () => {
+        document.querySelector('.popup-img').style.display = 'none';
+      }
+    </script>
   </section>
 
   {{-- <section class="about-us" id="about">
@@ -511,7 +513,7 @@
 
   @include('home.components.konten');
 
-  <section class="simple-cta">
+  <section class="simple-cta" id="qoutes">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">

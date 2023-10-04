@@ -1,21 +1,5 @@
 @extends('home.layouts.main')
 @section('content')
-  <script>
-    window.addEventListener('scroll', function(event) {
-      const scrollY = window.scrollY; // Posisi vertikal scroll
-      const logo = document.querySelector('.logo');
-      const logoImg = document.querySelector('.logo-img');
-
-      if (scrollY >= 5.5) {
-        logo.style.lineHeight = '75px';
-        logoImg.style.width = '170px'
-      } else {
-        logo.style.lineHeight = '110px';
-        logoImg.style.width = '200px'
-      }
-    });
-  </script>
-
   <div class="page-heading">
     <div class="container">
       <div class="row">
