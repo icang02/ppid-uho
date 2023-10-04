@@ -30,3 +30,10 @@ Route::get('/informasi-publik', function () {
 Route::get('/formulir', function () {
     return view('home.formulir');
 });
+
+Route::get('/profil', function () {
+    return view('home.profil');
+});
+Route::get('/visi-misi', function () {
+    return view('home.visi-misi');
+});

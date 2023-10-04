@@ -38,10 +38,6 @@
   color: var(--kuning) !important;
 }
 
-/* nav .nav li.has-sub ul.sub-menu li a {
-  color: #F4B700 !important;
-} */
-
 nav .nav li:last-child a {
   color: rgba(255, 255, 255, 0.9) !important;
 }
@@ -88,7 +84,14 @@ nav .nav li:last-child a:hover {
   font-size: 1.2rem !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1400px) {
+  .header-text h2 {
+    font-size: 2rem !important;
+    line-height: 45px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
   /* home cover */
   .header-text h2 {
     font-size: var(--h1-size) !important;

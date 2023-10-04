@@ -23,7 +23,7 @@
                   <li class="active">
                     <div>
                       <div class="left-image jenis-informasi">
-                        <img src="assets/images/service-details-01.jpg" alt="">
+                        <img src="{{ asset('img/informasi berkala.png') }}" class="border border-2" style="width: 35%">
                       </div>
                       <div class="right-content">
                         <h4>Informasi Berkala</h4>
@@ -35,7 +35,8 @@
                   <li>
                     <div>
                       <div class="left-image jenis-informasi">
-                        <img src="assets/images/service-details-03.jpg" alt="">
+                        <img src="{{ asset('img/informasi sedia tiap saat.png') }}"class="border border-2"
+                          style="width: 35%">
                       </div>
                       <div class="right-content">
                         <h4>Informasi Tersedia Setiap Saat</h4>
@@ -49,8 +50,9 @@
                   </li>
                   <li>
                     <div>
-                      <div class="left-image jenis-informasi">
-                        <img src="assets/images/service-details-02.jpg" alt="">
+                      <div class="left-image jenis-informasi ">
+                        <img src="{{ asset('img/informasi serta merta.png') }}" class="border border-2"
+                          style="width: 35%">
                       </div>
                       <div class="right-content">
                         <h4>Informasi Serta Merta</h4>

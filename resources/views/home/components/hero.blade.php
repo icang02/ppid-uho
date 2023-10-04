@@ -1,3 +1,11 @@
+{{-- <style>
+  @media (max-width: 1024px) {
+    .header-text h2 {
+      font-size: 1rem !important;
+    }
+  }
+</style> --}}
+
 <div class="swiper-container" id="top">
   <div class="swiper-wrapper">
     <div class="swiper-slide">

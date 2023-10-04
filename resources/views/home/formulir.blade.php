@@ -64,7 +64,7 @@
           <div class="col-lg-12 align-self-center">
             @php
               $arrMekanisme = [
-                  'Pemohon datang ke meja layanan informasi, PPID UGM (Bagian Humas dan Protokol UGM) atau mengunjungi laman informasi publik.',
+                  'Pemohon datang ke meja layanan informasi, PPID UHO (Bagian Humas dan Protokol UHO) atau mengunjungi laman informasi publik.',
                   'Pemohon mengisi formulir permohonan informasi publik secara langsung atau daring dengan melampirkan KTP/akta pendirian badan publik.',
                   'Petugas layanan mencatat di buku registrasi dan memberitahukan nomor pendaftaran kepada pemohon.',
                   'Jika permohonan disetujui lanjut ke langkah selanjutnya. Jika tidak disetujui PPID memberikan alasan tertulis dan memberikan informasi pengajuan keberatan.',
@@ -138,15 +138,15 @@
                   <tr>
                     <td>1.&nbsp;</td>
                     <td>Pengaduan, saran, dan masukan dapat disampaikan secara tertulis melalui surat yang ditujukan
-                      kepada: Pejabat Pengelola Informasi dan Dokumentasi (PPID) UGM Bagian Humas dan Protokol UGM, Gedung
-                      Pusat UGM, Lantai 1 Sayap Selatan Bulaksumur, Yogyakarta.</td>
+                      kepada: Pejabat Pengelola Informasi dan Dokumentasi (PPID) UHO Bagian Humas dan Protokol UHO, Gedung
+                      Pusat UHO.</td>
                   </tr>
                   <tr>
                     <td>2.&nbsp;</td>
                     <td>Menyampaikan pengaduan, saran, dan masukan langsung melalui:
-                      <br>Telepon: +62 274 6491936
-                      <br>Email: ppid@ugm.ac.id
-                      <br>Laman: aspirasi.ugm.ac.id
+                      <br>Telepon: -
+                      <br>Email: -
+                      <br>Laman: ppid.uho.ac.id
                     </td>
                   </tr>
                 </table>

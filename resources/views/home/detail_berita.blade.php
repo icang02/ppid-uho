@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h2>Detail Berita</h2>
+            <h2>Detail Berita & Informasi</h2>
             <div class="div-dec"></div>
           </div>
         </div>
@@ -24,7 +24,7 @@
             @include('home.components.breadcrumb')
 
             <div class="row mt-5">
-              <div class="col-lg-6">
+              <div class="col-lg-6 order-2 order-md-1">
                 <div class="left-content">
                   <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error modi a mollitia, qui assumenda
                     porro.</h4>
@@ -42,7 +42,7 @@
                     sed dolor condimentum tellus commodo volutpat non malesuada turpis.</p>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 order-1 order-md-2">
                 <div class="right-image">
                   <img src="assets/images/service-image-02.jpg" alt="">
                 </div>

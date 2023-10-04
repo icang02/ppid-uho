@@ -22,7 +22,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="left-image">
-          <img src="assets/images/about-left-image.jpg" alt="">
+          <img src="{{ asset('img/formulir-home.jpg') }}" alt="">
         </div>
       </div>
       <div class="col-lg-6 align-self-center">
@@ -39,7 +39,7 @@
                 <div class="lh-lg text-light d-flex flex-column gap-2">
                   <a href="{{ url('informasi-publik') }}">
                     <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2">
-                      <span>Formulir Permohonan</span>
+                      <span>Formulir Permohonan Informasi Publik</span>
                       <span>&rarr;</span>
                     </div>
                   </a>

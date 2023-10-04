@@ -6,22 +6,22 @@
       </div>
       <div class="col-lg-3">
         <div class="image">
-          <img src="{{ asset('img/123.png') }}">
+          <img src="{{ asset('img/1.png') }}">
         </div>
       </div>
       <div class="col-lg-3">
         <div class="image">
-          <img src="{{ asset('img/123.png') }}">
+          <img src="{{ asset('img/2.png') }}">
         </div>
       </div>
       <div class="col-lg-3">
         <div class="image">
-          <img src="{{ asset('img/123.png') }}">
+          <img src="{{ asset('img/3.png') }}">
         </div>
       </div>
       <div class="col-lg-3">
         <div class="image">
-          <img src="{{ asset('img/123.png') }}">
+          <img src="{{ asset('img/4.png') }}">
         </div>
       </div>
     </div>

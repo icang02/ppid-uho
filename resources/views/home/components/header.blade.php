@@ -16,11 +16,8 @@
             <li class="has-sub">
               <a href="javascript:void(0)">Tentang</a>
               <ul class="sub-menu tentang">
-                <li><a href="about-us.html">Profil</a></li>
-                <li><a href="our-services.html">Visi dan Misi</a></li>
-                <li><a href="contact-us.html">Tugas dan Fungsi</a></li>
-                <li><a href="contact-us.html">Struktur Organisasi</a></li>
-                <li><a href="contact-us.html">Regulasi dan Rancangan Regulasi</a></li>
+                <li><a href="{{ url('profil') }}">Profil</a></li>
+                <li><a href="{{ url('visi-misi') }}">Visi & Misi</a></li>
               </ul>
             </li>
             <li class="has-sub">
@@ -34,7 +31,7 @@
             <li class="has-sub">
               <a href="javascript:void(0)">Formulir Permohonan</a>
               <ul class="sub-menu formulir-permohonan">
-                <li><a href="{{ url('formulir') }}">Formulir Permohonan</a></li>
+                <li><a href="{{ url('formulir') }}">Formulir Permohonan Informasi Publik</a></li>
                 <li><a href="{{ url('formulir') }}">Formulir Keberatan Atas Layanan Informasi Publik</a></li>
                 <li><a href="{{ url('formulir') }}">Formulir Penyelesaian Sengketa Informasi</a></li>
               </ul>

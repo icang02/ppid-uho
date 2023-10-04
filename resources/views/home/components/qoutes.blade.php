@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h4>"Has atas informasi yang terbuka menjadi pembukan jalan bagi terjaminnya
+        <h4>"Hak atas informasi yang terbuka menjadi pembukan jalan bagi terjaminnya
           pelaksanaan
           hak-hak asasi lainnya,
           seperti hak atas pendidikan, hak untuk hidup sejahtera, hak untuk hiduup aman, dan hak warga negara lainnya."

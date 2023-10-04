@@ -29,6 +29,15 @@
                       <div class="left-image">
                         <img src="assets/images/service-details-01.jpg" alt="">
                       </div>
+
+                      <style>
+                        @media (max-width: 768px) {
+                          .right-content {
+                            padding: 28px !important;
+                          }
+                        }
+                      </style>
+
                       <div class="right-content">
                         <h4>Lorem ipsum dolor, sit amet consectetur adipisicing.</h4>
                         <p class="text-muted mt-3" style="font-size: 0.85rem">
