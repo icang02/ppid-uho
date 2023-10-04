@@ -13,66 +13,6 @@
     </div>
   </div>
 
-  <!-- ***** Main Banner Area End ***** -->
-  {{-- 
-<section class="top-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="left-image">
-          <img src="assets/images/about-left-image.jpg" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6 align-self-center">
-        <div class="accordions is-first-expanded">
-          <article class="accordion">
-            <div class="accordion-head">
-                <span>Mexant Financial Planning</span>
-                <span class="icon">
-                    <i class="icon fa fa-chevron-right"></i>
-                </span>
-            </div>
-            <div class="accordion-body">
-                <div class="content">
-                    <p>You will see a bunch of free CSS templates when you search on Google. TemplateMo website is probably the best one because it is 100% free. 
-                    <br><br>We do not ask you anything in return. You are free to use our templates for any purpose.</p>
-                </div>
-            </div>
-        </article>
-        <article class="accordion">
-          <div class="accordion-head">
-              <span>Mexant Crypto Investing</span>
-              <span class="icon">
-                  <i class="icon fa fa-chevron-right"></i>
-              </span>
-          </div>
-          <div class="accordion-body">
-              <div class="content">
-                  <p>Mexant HTML5 Template is available to download 100% free of charge. This CSS layout is based on Boostrap 5 framework. 
-                  <br><br>Anyone can edit and use this layout for all professional websites. Thank you for visiting TemplateMo website.</p>
-              </div>
-          </div>
-        </article>
-        <article class="accordion">
-          <div class="accordion-head">
-              <span>Cryptocurrency Investments</span>
-              <span class="icon">
-                  <i class="icon fa fa-chevron-right"></i>
-              </span>
-          </div>
-          <div class="accordion-body">
-              <div class="content">
-                  <p>Ut dictum vehicula massa, ac pharetra leo tincidunt eu. Phasellus in tristique magna, ac gravida leo.<br><br>
-                  Integer sed lorem sapien. Ut viverra mauris sed lobortis commodo. Mauris scelerisque venenatis justo, sed interdum sem.</p>
-              </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>  
- --}}
-
   <section class="service-details mt-5">
     <div class="container ">
       <div class="col">

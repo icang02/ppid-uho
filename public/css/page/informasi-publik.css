@@ -1,0 +1,36 @@
+.top-section .container:first-child {
+  position: relative;
+}
+
+.top-section .container:first-child hr {
+  position: absolute;
+  left: -100%;
+  top: 20px;
+  width: 4000px;
+}
+
+.top-section .accordion-head {
+  padding: 10px 0 !important;
+}
+
+.top-section .accordion-head span {
+  font-size: 1rem;
+}
+
+.top-section.list-informasi {
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .title h4 {
+    line-height: 30px;
+  }
+
+  .top-section.list-informasi {
+    margin-top: 0px;
+  }
+
+  .top-section.list-informasi .accordions {
+    padding: 50px 20px;
+  }
+}

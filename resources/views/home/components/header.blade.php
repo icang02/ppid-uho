@@ -26,9 +26,9 @@
             <li class="has-sub">
               <a href="javascript:void(0)">Informasi Publik</a>
               <ul class="sub-menu informasi-publik">
-                <li><a href="about-us.html">Informasi Berkala</a></li>
-                <li><a href="our-services.html">Informasi Tersedia Setiap Saat</a></li>
-                <li><a href="contact-us.html">Informasi Serta Merta</a></li>
+                <li><a href="{{ url('informasi-publik') }}">Informasi Berkala</a></li>
+                <li><a href="{{ url('informasi-publik') }}">Informasi Tersedia Setiap Saat</a></li>
+                <li><a href="{{ url('informasi-publik') }}">Informasi Serta Merta</a></li>
               </ul>
             </li>
             <li class="has-sub">

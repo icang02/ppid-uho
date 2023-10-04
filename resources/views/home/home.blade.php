@@ -11,9 +11,10 @@
             <div class="row">
               <div class="col-lg-8">
                 <div class="header-text">
-                  <h2><em>Selamat</em> Datang di E-PPID<br>Universitas <em>Halu Oleo</em></h2>
+                  <h2><em>Selamat</em> Datang di PPID<br>Universitas <em>Halu Oleo</em></h2>
                   <div class="div-dec"></div>
-                  <p>E-PPID merupakan sarana layanan online bagi permohonan informasi publik dan sebagai salah satu wujud
+                  <p>PPID merupakan sarana layanan online bagi permohonan informasi publik dan sebagai salah satu
+                    wujud
                     pelaksanaan keterbukaan informasi di Universitas Halu Oleo.</p>
                   <div class="buttons">
                     <div class="green-button">
@@ -117,7 +118,7 @@
                           <h4>Informasi Berkala</h4>
                           <p>Informasi Berkala merupakan informasi yang diperbarui kemudian disediakan dan diumumkan
                             kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali.</p>
-                          <span><a href="#">Selengkapnya..</a></span>
+                          <span><a href="{{ url('informasi-publik') }}">Selengkapnya..</a></span>
                         </div>
                       </div>
                     <li>
@@ -158,55 +159,6 @@
     </div>
   </section>
 
-  {{-- <section class="services" id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="service-item">
-            <i class="fas fa-archive"></i>
-            <h4>Informasi Berkala</h4>
-            <p>Informasi berkala merupakan informasi yang diperbarui kemudian disediakan dan diumumkan kepada publik
-              secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="service-item">
-            <i class="fas fa-cloud"></i>
-            <h4>HTML5 Web Pages</h4>
-            <p>Templates are based on Bootstrap 5 CSS framework. You can easily adapt or modify based on your needs.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="service-item">
-            <i class="fas fa-charging-station"></i>
-            <h4>Responsive Designs</h4>
-            <p>All of our CSS templates are 100% free to use for commercial or business websites.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="service-item">
-            <i class="fas fa-suitcase"></i>
-            <h4>Mobile and Tablet ready!</h4>
-            <p>Our HTML CSS templates are well-tested on mobile, tablet, and desktop compatibility.</p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="service-item">
-            <i class="fas fa-archway"></i>
-            <h4>Fast Customer Support</h4>
-            <p>Do not be hesitated to contact us if you have any question or concern about our templates.</p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="service-item">
-            <i class="fas fa-puzzle-piece"></i>
-            <h4>Fully Customizable</h4>
-            <p>If you have any idea or suggestion about new templates, feel free to let us know.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> --}}
 
   <section class="simple-cta" id="permohonan">
     <div class="container">

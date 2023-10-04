@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h2>Detail Berita</h2>
+            <h2>Detail Berita & Informasi</h2>
             <div class="div-dec"></div>
           </div>
         </div>

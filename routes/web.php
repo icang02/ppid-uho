@@ -22,3 +22,7 @@ Route::get('/berita', function () {
 Route::get('/detail_berita', function () {
     return view('home.detail_berita');
 });
+
+Route::get('/informasi-publik', function () {
+    return view('home.informasi-publik');
+});
