@@ -16,21 +16,12 @@
   </div>
 
   <section class="service-details mt-5">
-    <div class="container ">
-      <div class="row"></div>
-    </div>
-
     <section class="top-section mt-0">
       <div class="container">
-        {{-- header --}}
-        <div class="mb-5">
-          <a href="{{ url('/') }}" class="text-dark">Beranda</a> > <span class="txt-kuning">Permohonan
-            Informasi
-            Publik</span>
-          <hr>
-        </div>
+        {{-- breadcrumb --}}
+        @include('home.components.breadcrumb')
 
-        <div class="row title">
+        <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">
             <h4 class="mb-3 txt-biru fw-bold">Informasi Publik Yang Wajib Disediakan dan Diumumkan Secara Berkala</h4>
             <p>Setiap Badan Publik wajib mengumumkan informasi publik secara berkala. Informasi berkala merupakan

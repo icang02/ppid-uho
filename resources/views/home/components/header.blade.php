@@ -34,9 +34,9 @@
             <li class="has-sub">
               <a href="javascript:void(0)">Formulir Permohonan</a>
               <ul class="sub-menu formulir-permohonan">
-                <li><a href="about-us.html">Formulir Permohonan</a></li>
-                <li><a href="our-services.html">Formulir Keberatan Atas Layanan Informasi Publik</a></li>
-                <li><a href="contact-us.html">Formulir Penyelesaian Sengketa Informasi</a></li>
+                <li><a href="{{ url('formulir') }}">Formulir Permohonan</a></li>
+                <li><a href="{{ url('formulir') }}">Formulir Keberatan Atas Layanan Informasi Publik</a></li>
+                <li><a href="{{ url('formulir') }}">Formulir Penyelesaian Sengketa Informasi</a></li>
               </ul>
             </li>
             <li><a href="javascript:void(0)" class="bg-kuning tombol-search" href="contact-us.html">

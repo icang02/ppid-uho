@@ -15,6 +15,9 @@
 
   <section class="service-details mt-5">
     <div class="container ">
+      {{-- breadcrumb --}}
+      @include('home.components.breadcrumb')
+
       <div class="col">
         <div class="naccs">
           <div class="tabs">

@@ -26,3 +26,7 @@ Route::get('/detail_berita', function () {
 Route::get('/informasi-publik', function () {
     return view('home.informasi-publik');
 });
+
+Route::get('/formulir', function () {
+    return view('home.formulir');
+});

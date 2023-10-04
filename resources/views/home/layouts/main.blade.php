@@ -63,8 +63,8 @@
           logo.style.lineHeight = '75px';
           logoImg.style.width = '170px'
         } else {
-          logo.style.lineHeight = '110px';
-          logoImg.style.width = '200px'
+          // logo.style.lineHeight = '110px';
+          // logoImg.style.width = '200px'
         }
       });
     </script>
