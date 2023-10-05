@@ -21,21 +21,39 @@
       <div class="container">
         {{-- breadcrumb --}}
         @include('home.components.breadcrumb')
+        <style>
+          .text-p {
+            font-size: 15px !important;
+            line-height: 25px;
+          }
+
+          table {
+            vertical-align: top !important;
+            line-height: 25px;
+            font-size: 15px
+          }
+
+          @media (max-width: 768px) {
+            .text-p {
+              font-size: 12px !important;
+              line-height: 20px;
+            }
+
+            table {
+              line-height: 20px;
+              font-size: 12px
+            }
+          }
+        </style>
 
         <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">
             <h4 class="mb-3 txt-biru fw-bold">Visi PPID</h4>
-            <p>
+            <p class="text-p">
               Menjadi penyedia layanan informasi publik yang profesional, transparan dan akuntabel sesuai dengan ketentuan
               peraturan perundang-undangan
             </p>
           </div>
-
-          <style>
-            table {
-              vertical-align: top !important;
-            }
-          </style>
 
           <div class="col-lg-12 align-self-center mt-5">
             <h4 class="mb-3 txt-biru fw-bold">Misi PPID</h4>

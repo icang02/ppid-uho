@@ -14,6 +14,17 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8">
+              <style>
+                .header-text {
+                  margin-left: 0px !important;
+                }
+
+                @media (max-width: 768px) {
+                  .header-text {
+                    margin-left: 25px !important;
+                  }
+                }
+              </style>
               <div class="header-text">
                 <h2><em>Selamat</em> Datang di PPID<br>Universitas <em>Halu Oleo</em></h2>
                 <div class="div-dec"></div>

@@ -8,6 +8,32 @@
         </div>
       </div>
 
+      <style>
+        .text-h {
+          font-size: 18px !important;
+          line-height: 23px !important;
+        }
+
+        .text-p,
+        .text-p p {
+          font-size: 15px !important;
+          line-height: 23px !important;
+        }
+
+        @media (max-width: 768px) {
+          .text-h {
+            font-size: 18px !important;
+            line-height: 25px !important;
+          }
+
+          .text-p,
+          .text-p p {
+            font-size: 12px !important;
+            line-height: 20px !important;
+          }
+        }
+      </style>
+
       <div class="col-lg-12">
         <div class="container-fluid px-0 px-lg-5">
           <div class="row gx-4 justify-content-center">
@@ -21,18 +47,18 @@
                     <img src="{{ asset('img/123.png') }}" class="card-img-top" alt="Image"
                       style="object-fit: cover; height: 240px">
                     <div class="card-body">
-                      <h5 class="card-title">{{ $item->judul }}</h5>
-                      <div class="text-muted" style="font-size: 0.85rem">
+                      <h5 class="card-title text-h">{{ $item->judul }}</h5>
+                      <div class="text-muted text-p">
                         <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $item->tanggal }}
                         <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat
                       </div>
-                      <p class="card-text mt-3">
+                      <div class="card-text mt-3 text-p">
                         {!! str_limit($item->isi, $limit = 150, $end = '...') !!}
-                      </p>
+                      </div>
                     </div>
                     <div class="card-body">
-                      <a href="{{ url("berita/$item->slug") }}" class="btn btn-warning card-link px-3 py-2"
-                        style="border-radius: 6px; font-size: 0.8rem;">Selengkapnya</a>
+                      <a href="{{ url("berita/$item->slug") }}"
+                        class="btn btn-warning card-link px-md-3 py-md-2 px-2 py-1 text-p">Selengkapnya</a>
                     </div>
                   </div>
                 </div>

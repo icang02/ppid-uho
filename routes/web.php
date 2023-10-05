@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\FormulirController;
+use App\Http\Controllers\InformasiPublikController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -20,13 +21,13 @@ Route::get('/', [LandingController::class, 'index']);
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
 
-Route::get('/informasi-publik', function () {
-    return view('home.informasi-publik');
-});
+Route::get('/informasi-publik/informasi-berkala', [InformasiPublikController::class, 'indexInformasiBerkala']);
+Route::get('/informasi-publik/infomasi-tersedia-setiap-saat', [InformasiPublikController::class, 'indexInformasiBerkala']);
+Route::get('/informasi-publik/informasi-serta-merta', [InformasiPublikController::class, 'indexInformasiBerkala']);
 
-Route::get('/formulir/permohonan-informasi-publik', [FormulirController::class, 'indexPermohonan']);
-Route::get('/formulir/keberatan-atas-layanan-informasi-publik', [FormulirController::class, 'indexKeberatan']);
-Route::get('/formulir/penyelesaian-sengketa-informsi', [FormulirController::class, 'indexSengketa']);
+Route::get('/formulir/permohonan-informasi-publik', [FormulirController::class, 'indexFormulir']);
+Route::get('/formulir/keberatan-atas-layanan-informasi-publik', [FormulirController::class, 'indexFormulir']);
+Route::get('/formulir/penyelesaian-sengketa-informsi', [FormulirController::class, 'indexFormulir']);
 
 Route::get('/tentang/profil', function () {
     return view('home.profil');

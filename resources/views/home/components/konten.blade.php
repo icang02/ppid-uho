@@ -25,31 +25,30 @@
           <img src="{{ asset($formulir->gambar) }}" alt="">
         </div>
       </div>
-      <div class="col-lg-6 align-self-center">
-        <div class="accordions is-first-expanded">
+      <div class="col-lg-6 align-self-center p-0">
+        <div class="accordions mt-0 is-first-expanded">
           <article class="accordion">
             <div class="accordion-head txt-kuning fw-bold" style="font-size: 1.75rem;">
-              <span>{{ $formulir->judul }}</span>
+              <span class="text-h">{{ $formulir->judul }}</span>
             </div>
             <div class="accordion-body">
               <div class="content">
-                <p>{{ $formulir->isi }}
-                </p>
+                <p class="text-p">{{ $formulir->isi }}</p>
                 <div class="lh-lg text-light d-flex flex-column gap-2">
                   <a href="{{ url('formulir') }}">
-                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2">
+                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2 text-p">
                       <span>Formulir Permohonan Informasi Publik</span>
                       <span>&rarr;</span>
                     </div>
                   </a>
                   <a href="{{ url('formulir') }}">
-                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2">
+                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2 text-p">
                       <span>Formulir Keberatan Atas Layanan Informasi Publik</span>
                       <span>&rarr;</span>
                     </div>
                   </a>
                   <a href="{{ url('formulir') }}">
-                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2">
+                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2 text-p">
                       <span>Formulir Penyelesaian Sengketa Informasi</span>
                       <span>&rarr;</span>
                     </div>

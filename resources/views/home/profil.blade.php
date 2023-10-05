@@ -22,10 +22,24 @@
         {{-- breadcrumb --}}
         @include('home.components.breadcrumb')
 
+        <style>
+          .text-p {
+            font-size: 15px !important;
+            line-height: 25px;
+          }
+
+          @media (max-width: 768px) {
+            .text-p {
+              font-size: 12px !important;
+              line-height: 20px;
+            }
+          }
+        </style>
+
         <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">
             <h4 class="mb-3 txt-biru fw-bold">Profil Pejabat Pengelola Informasi dan Dokumentasi (PPID)</h4>
-            <p>
+            <p class="text-p">
               PPID adalah kepanjangan dari Pejabat Pengelola Informasi dan Dokumentasi, yang berfungsi sebagai pengelola
               dan penyampai dokumen yang dimiliki oleh Badan Publik sesuai dengan amanat UU 14/2008 tentang Keterbukaan
               Informasi Publik. Dengan keberadaan PPID maka masyarakat yang akan menyampaikan permohonan informasi lebih

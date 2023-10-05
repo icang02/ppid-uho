@@ -1,22 +1,16 @@
 <style>
-  .breadcrumb {
-    position: relative;
-  }
-
   .breadcrumb hr {
-    position: absolute;
-    left: -100%;
-    top: 20px;
-    width: 4000px;
+    width: 100% !important;
+    margin-top: 10px !important;
   }
 
   .breadcrumb {
-    font-size: 0.8rem;
+    font-size: 15px !important;
   }
 
   @media (max-width: 768px) {
     .breadcrumb {
-      font-size: 0.7rem;
+      font-size: 12px !important;
     }
   }
 </style>

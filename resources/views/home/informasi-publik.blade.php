@@ -1,5 +1,31 @@
 @extends('home.layouts.main')
 @section('content')
+  <style>
+    .accordions {
+      padding: 30px 45px !important;
+    }
+
+    .text-p {
+      font-size: 15px !important;
+      line-height: 25px;
+    }
+
+    .btn-minimize {
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .accordions {
+        padding: 15px 20px !important;
+      }
+
+      .text-p {
+        font-size: 12px !important;
+        line-height: 20px;
+      }
+    }
+  </style>
+
   <link rel="stylesheet" href="{{ asset('css/page/informasi-publik.css') }}">
 
   <div class="page-heading">
@@ -24,7 +50,8 @@
         <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">
             <h4 class="mb-3 txt-biru fw-bold">Informasi Publik Yang Wajib Disediakan dan Diumumkan Secara Berkala</h4>
-            <p>Setiap Badan Publik wajib mengumumkan informasi publik secara berkala. Informasi berkala merupakan
+            <p class="text-p">Setiap Badan Publik wajib mengumumkan informasi publik secara berkala. Informasi berkala
+              merupakan
               informasi yang diperbaharui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala
               sekurang-kurangnya setiap 6 bulan sekali. Informasi berkala mengenai kegiatan dan kinerja Badan Publik
               terkait; informasi mengenai laporan keuangan; dan atau informasi lain yang diatur dalam peraturan
@@ -42,14 +69,15 @@
             <div class="accordions is-first-expanded ms-0">
               <article class="accordion">
                 <div class="accordion-head">
-                  <span>Informasi Tentang Profil Universitas Halu Oleo</span>
+                  <span class="text-p">Informasi Tentang Profil Universitas Halu Oleo</span>
                   <span class="icon">
                     <i class="icon fa fa-chevron-right btn-minimize"></i>
                   </span>
                 </div>
                 <div class="accordion-body">
                   <div class="content">
-                    <p>You will see a bunch of free CSS templates when you search on Google. TemplateMo website is
+                    <p class="text-p">You will see a bunch of free CSS templates when you search on Google. TemplateMo
+                      website is
                       probably the best one because it is 100% free.
                     </p>
                   </div>
@@ -57,14 +85,15 @@
               </article>
               <article class="accordion">
                 <div class="accordion-head">
-                  <span>Ringkasan Laporan Keuangan</span>
+                  <span class="text-p">Ringkasan Laporan Keuangan</span>
                   <span class="icon">
                     <i class="icon fa fa-chevron-right btn-minimize"></i>
                   </span>
                 </div>
                 <div class="accordion-body">
                   <div class="content">
-                    <p>Mexant HTML5 Template is available to download 100% free of charge. This CSS layout is based on
+                    <p class="text-p">Mexant HTML5 Template is available to download 100% free of charge. This CSS layout
+                      is based on
                       Boostrap 5 framework.
                     </p>
                   </div>
@@ -72,14 +101,15 @@
               </article>
               <article class="accordion">
                 <div class="accordion-head">
-                  <span>Informasi Mengenai Kepegawaian</span>
+                  <span class="text-p">Informasi Mengenai Kepegawaian</span>
                   <span class="icon">
                     <i class="icon fa fa-chevron-right btn-minimize"></i>
                   </span>
                 </div>
                 <div class="accordion-body">
                   <div class="content">
-                    <p>Ut dictum vehicula massa, ac pharetra leo tincidunt eu. Phasellus in tristique magna, ac gravida
+                    <p class="text-p">Ut dictum vehicula massa, ac pharetra leo tincidunt eu. Phasellus in tristique
+                      magna, ac gravida
                       leo.<br>
                       Integer sed lorem sapien. Ut viverra mauris sed lobortis commodo. Mauris scelerisque venenatis
                       justo, sed interdum sem.</p>

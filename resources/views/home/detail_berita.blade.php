@@ -24,14 +24,14 @@
             @include('home.components.breadcrumb')
             <style>
               .left-content .text-muted {
-                font-size: 0.8rem;
+                font-size: 15px;
                 margin-top: -30px !important;
                 margin-bottom: 30px;
               }
 
               @media (max-width: 768px) {
                 .left-content .text-muted {
-                  font-size: 0.7rem;
+                  font-size: 12px;
                   margin-top: -30px !important;
                   margin-bottom: 30px;
                 }
@@ -39,8 +39,8 @@
                 .text-body p,
                 .text-body ul,
                 .text-body ol {
-                  font-size: 0.8rem;
-                  line-height: 24px;
+                  font-size: 12px;
+                  line-height: 20px;
                 }
               }
             </style>

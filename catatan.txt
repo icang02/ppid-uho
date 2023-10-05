@@ -1,0 +1,11 @@
+text-p :
+- 12px mobile
+- 15px desktop
+
+text-h :
+- 18px mobile
+- 18px desktop
+
+line-height :
+- 20px mobile
+- 23px desktop

@@ -1,8 +1,24 @@
+<style>
+  .text-p {
+    font-size: 15px !important;
+  }
+
+  .text-h {
+    font-size: 18px !important;
+  }
+
+  @media (max-width: 768px) {
+    .text-p {
+      font-size: 12px !important;
+    }
+  }
+</style>
+
 <section class="service-details" id="jenisInformasi">
   <div class="container ">
     <div class="row">
       <div class="col-lg-6 offset-lg-3">
-        <div class="section-heading">
+        <div class="section-heading mb-4 mb-md-5">
           <h6 class="txt-kuning">PPID UHO</h6>
           <h4>Jenis - Jenis Informasi</h4>
         </div>
@@ -14,7 +30,9 @@
               <div class="col-lg-12">
                 <div class="menu">
                   @foreach ($jenisInformasi as $i => $item)
-                    <div class="{{ $i == 0 ? 'active' : '' }} gradient-border"><span>{{ $item->judul }}</span></div>
+                    <div class="{{ $i == 0 ? 'active' : '' }} gradient-border text-p">
+                      {{ $item->judul }}
+                    </div>
                   @endforeach
                 </div>
               </div>
@@ -27,9 +45,9 @@
                           <img src="{{ asset($item->gambar) }}" class="border border-2" style="width: 35%">
                         </div>
                         <div class="right-content">
-                          <h4>{{ $item->judul }}</h4>
-                          <p>{{ $item->isi }}</p>
-                          <span><a href="{{ url($item->link) }}">Selengkapnya..</a></span>
+                          <h4 class="text-h">{{ $item->judul }}</h4>
+                          <p class="text-p">{{ $item->isi }}</p>
+                          <span class="text-p"><a href="{{ url($item->link) }}">Selengkapnya..</a></span>
                         </div>
                       </div>
                     </li>

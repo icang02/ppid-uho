@@ -8,32 +8,18 @@ use Illuminate\Http\Request;
 
 class FormulirController extends Controller
 {
-    public function indexPermohonan()
+    public function indexFormulir()
     {
-        $formulir = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
-        $jenisFormulir = JenisFormulir::where('jenis_formulir', 'permohonan')->get()->first();
-
-        return view('home.formulir', [
-            'formulir' => $formulir,
-            'jenisFormulir' => $jenisFormulir,
-        ]);
-    }
-
-    public function indexKeberatan()
-    {
-        $formulir = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
-        $jenisFormulir = JenisFormulir::where('jenis_formulir', 'keberatan')->get()->first();
-
-        return view('home.formulir', [
-            'formulir' => $formulir,
-            'jenisFormulir' => $jenisFormulir,
-        ]);
-    }
-
-    public function indexSengketa()
-    {
-        $formulir = Formulir::where('jenis_formulir', 'sengketa')->get()->first();
-        $jenisFormulir = JenisFormulir::where('jenis_formulir', 'sengketa')->get()->first();
+        if (request()->is('formulir/permohonan-informasi-publik')) {
+            $formulir = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
+            $jenisFormulir = JenisFormulir::where('jenis_formulir', 'permohonan')->get()->first();
+        } elseif (request()->is('formulir/keberatan-atas-layanan-informasi-publik')) {
+            $formulir = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
+            $jenisFormulir = JenisFormulir::where('jenis_formulir', 'keberatan')->get()->first();
+        } elseif (request()->is('formulir/penyelesaian-sengketa-informsi')) {
+            $formulir = Formulir::where('jenis_formulir', 'sengketa')->get()->first();
+            $jenisFormulir = JenisFormulir::where('jenis_formulir', 'sengketa')->get()->first();
+        }
 
         return view('home.formulir', [
             'formulir' => $formulir,

@@ -17,21 +17,6 @@
 
   <section class="service-details mt-5">
 
-    <section class="top-section mt-0">
-      <div class="container">
-        {{-- breadcrumb --}}
-        @include('home.components.breadcrumb')
-
-        <div class="row title mt-5">
-          <div class="col-lg-12 align-self-center">
-            <h4 class="mb-3 txt-biru fw-bold">{{ $formulir->judul }}</h4>
-            <p>{{ $formulir->deskripsi }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <style>
       .accordion {
         margin-bottom: 30px;
@@ -43,14 +28,47 @@
 
       table {
         vertical-align: top !important;
+        font-size: 15px;
+      }
+
+      .text-p {
+        font-size: 15px;
       }
 
       @media (max-width: 768px) {
         .title {
           margin-bottom: 30px;
         }
+
+        table {
+          font-size: 12px;
+          line-height: 20px;
+        }
+
+        .text-p {
+          font-size: 12px;
+          line-height: 20px;
+        }
+
+        .btn-formulir {
+          font-size: 12px !important;
+        }
       }
     </style>
+
+    <section class="top-section mt-0">
+      <div class="container">
+        {{-- breadcrumb --}}
+        @include('home.components.breadcrumb')
+
+        <div class="row title mt-5">
+          <div class="col-lg-12 align-self-center">
+            <h4 class="mb-3 txt-biru fw-bold">{{ $formulir->judul }}</h4>
+            <p class="text-p">{{ $formulir->deskripsi }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="top-section list-informasi">
       <div class="container">
@@ -89,48 +107,20 @@
             <article class="accordion mt-3">
               <b>{{ $jenisFormulir->jangka_waktu }}</b>
               <div class="content">
-                <p>{{ $jenisFormulir->isi_jangka_waktu }}</p>
+                <p class="text-p">{{ $jenisFormulir->isi_jangka_waktu }}</p>
               </div>
             </article>
 
             <article class="accordion mt-3">
               <b>{{ $jenisFormulir->biaya }}</b>
               <div class="content">
-                <p>{{ $jenisFormulir->isi_biaya }}</p>
+                <p class="text-p">{{ $jenisFormulir->isi_biaya }}</p>
               </div>
             </article>
 
-            {{-- <article class="accordion mt-3">
-              <b>Produk Layanan</b>
-              <div class="content">
-                <p>Informasi Publik.</p>
-              </div>
-            </article> --}}
-
-            {{-- <article class="accordion mt-3">
-              <b>Pengaduan, Saran dan Masukan</b>
-              <div class="content">
-                <table>
-                  <tr>
-                    <td>1.&nbsp;</td>
-                    <td>Pengaduan, saran, dan masukan dapat disampaikan secara tertulis melalui surat yang ditujukan
-                      kepada: Pejabat Pengelola Informasi dan Dokumentasi (PPID) UHO Bagian Humas dan Protokol UHO, Gedung
-                      Pusat UHO.</td>
-                  </tr>
-                  <tr>
-                    <td>2.&nbsp;</td>
-                    <td>Menyampaikan pengaduan, saran, dan masukan langsung melalui:
-                      <br>Telepon: -
-                      <br>Email: -
-                      <br>Laman: ppid.uho.ac.id
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </article> --}}
-
             <div class="col-12 mt-5">
-              <a class="btn py-3 px-4 bg-biru text-white" href="{{ url($formulir->link) }}" target="_blank">
+              <a class="btn py-2 px-3 py-md-3 px-md-4 bg-biru text-white btn-formulir" href="{{ url($formulir->link) }}"
+                target="_blank">
                 @if (request()->is('formulir/permohonan-informasi-publik'))
                   BUAT PERMOHONAN
                 @elseif (request()->is('formulir/keberatan-atas-layanan-informasi-publik'))

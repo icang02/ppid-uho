@@ -25,10 +25,11 @@
               <a href="javascript:void(0)" class="{{ !request()->is('informasi-publik*') ?: 'active' }}">Informasi
                 Publik</a>
               <ul class="sub-menu informasi-publik">
-                <li><a href="{{ url('informasi-publik') }}">Informasi Berkala</a></li>
-                <li><a href="{{ url('informasi-publik') }}">Informasi Tersedia Setiap Saat</a>
+                <li><a href="{{ url('informasi-publik/informasi-berkala') }}">Informasi Berkala</a></li>
+                <li><a href="{{ url('informasi-publik/informasi-tersedia-setiap-saat') }}">Informasi Tersedia Setiap
+                    Saat</a>
                 </li>
-                <li><a href="{{ url('informasi-publik') }}">Informasi Serta Merta</a></li>
+                <li><a href="{{ url('informasi-publik/informasi-serta-merta') }}">Informasi Serta Merta</a></li>
               </ul>
             </li>
             <li class="has-sub">

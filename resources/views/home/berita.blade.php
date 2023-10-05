@@ -18,21 +18,63 @@
       {{-- breadcrumb --}}
       @include('home.components.breadcrumb')
 
+      <style>
+        .berita .left-image {
+          object-fit: cover;
+          width: 420px;
+          height: 100%:
+        }
+
+        .berita .right-content p {
+          margin: -15px 0 -150px 0;
+        }
+
+        .berita .right-content .text-muted {
+          margin-top: -17px !important;
+          font-size: 15px;
+        }
+
+        .berita .right-content p,
+        .berita .right-content span {
+          font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+          .berita .left-image {
+            width: 100%;
+          }
+
+          .berita .right-content {
+            padding: 20px 25px !important;
+          }
+
+          .berita .right-content .text-muted {
+            font-size: 12px !important;
+          }
+
+          .berita .right-content p,
+          .berita .right-content span {
+            font-size: 12px !important;
+            line-height: 20px
+          }
+        }
+      </style>
+
       @forelse ($berita as $item)
         <div class="col">
           <div class="naccs">
             <div class="tabs">
               <div class="row">
                 <div class="col">
-                  <ul class="nacc">
+                  <ul class="nacc berita">
                     <li class="active">
                       <div>
                         <div class="left-image">
-                          <img src="{{ asset($item->gambar) }}" style="object-fit: cover; width: 420px; height: 100%:">
+                          <img src="{{ asset($item->gambar) }}">
                         </div>
                         <div class="right-content">
                           <h4 class="lh-base">{{ $item->judul }}</h4>
-                          <div class="text-muted" style="font-size: 0.85rem; margin-top: -15px">
+                          <div class="text-muted">
                             <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $item->tanggal }}
                             <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat
                           </div>
