@@ -4,7 +4,7 @@
       <div class="col-12">
         <nav class="main-nav">
           <!-- ***** Logo Start ***** -->
-          <a href="index.html" class="logo" style="line-height: 110px;">
+          <a href="{{ url('/') }}" class="logo" style="line-height: 110px;">
             {{-- <img src="assets/images/logo.png" alt=""> --}}
             <img src="{{ asset('img/ppid.png') }}" class="logo-img" alt="ppid-uho" style="width: 200px;">
           </a>
@@ -68,9 +68,8 @@
     <span class="fas fa-search"></span>
   </div> --}}
   <div class="search-data">
-    <form action="#" method="get">
-      @csrf
-      <input type="text" id="myInput" autocomplete="off">
+    <form action="{{ url('berita') }}" method="get">
+      <input type="text" id="myInput" name="search" autocomplete="off">
     </form>
     <label>Masukan kata kunci..</label>
     <div class="line"></div>

@@ -5,7 +5,10 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h2>Detail Berita & Informasi</h2>
+            <h2>
+              {{-- {{ $berita->kategori == 'berita' ? 'Detail Berita & Informasi' : 'Detail Informasi Serta Merta' }} --}}
+              {{ $berita->kategori }}
+            </h2>
             <div class="div-dec"></div>
           </div>
         </div>

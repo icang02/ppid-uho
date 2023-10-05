@@ -9,8 +9,14 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        $berita = Berita::paginate(6);
-        // dd($berita);
+        if (request()->has('search')) {
+            $berita = Berita::where('judul', 'like', '%' . request()->search . '%')->paginate(6);
+        } else {
+            request()->is('berita*') ?
+                $berita = Berita::where('kategori', 'berita')->paginate(6) :
+                $berita = Berita::where('kategori', 'informasi serta merta')->paginate(6);
+        }
+
 
         return view('home.berita', [
             'berita' => $berita
@@ -26,5 +32,10 @@ class BeritaController extends Controller
         return view('home.detail_berita', [
             'berita' => $berita
         ]);
+    }
+
+    public function searchBerita(Request $request)
+    {
+        dd($request->search);
     }
 }

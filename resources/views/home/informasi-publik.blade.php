@@ -49,13 +49,8 @@
 
         <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">
-            <h4 class="mb-3 txt-biru fw-bold">Informasi Publik Yang Wajib Disediakan dan Diumumkan Secara Berkala</h4>
-            <p class="text-p">Setiap Badan Publik wajib mengumumkan informasi publik secara berkala. Informasi berkala
-              merupakan
-              informasi yang diperbaharui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala
-              sekurang-kurangnya setiap 6 bulan sekali. Informasi berkala mengenai kegiatan dan kinerja Badan Publik
-              terkait; informasi mengenai laporan keuangan; dan atau informasi lain yang diatur dalam peraturan
-              perundang-undangan. Adapun informasi berkala yang ada di Universitas Halu Oleo sebagai berikut :</p>
+            <h4 class="mb-3 txt-biru fw-bold">{{ $informasiPublik->judul }}</h4>
+            <p class="text-p">{{ $informasiPublik->deskripsi }}</p>
           </div>
         </div>
       </div>
@@ -67,55 +62,26 @@
         <div class="row">
           <div class="col-lg-12 align-self-center">
             <div class="accordions is-first-expanded ms-0">
-              <article class="accordion">
-                <div class="accordion-head">
-                  <span class="text-p">Informasi Tentang Profil Universitas Halu Oleo</span>
-                  <span class="icon">
-                    <i class="icon fa fa-chevron-right btn-minimize"></i>
-                  </span>
-                </div>
-                <div class="accordion-body">
-                  <div class="content">
-                    <p class="text-p">You will see a bunch of free CSS templates when you search on Google. TemplateMo
-                      website is
-                      probably the best one because it is 100% free.
-                    </p>
+
+              @forelse ($listInformasiPublik as $item)
+                <article class="accordion">
+                  <div class="accordion-head">
+                    <span class="text-p">{{ $item->judul }}</span>
+                    <span class="icon">
+                      <i class="icon fa fa-chevron-right btn-minimize"></i>
+                    </span>
                   </div>
-                </div>
-              </article>
-              <article class="accordion">
-                <div class="accordion-head">
-                  <span class="text-p">Ringkasan Laporan Keuangan</span>
-                  <span class="icon">
-                    <i class="icon fa fa-chevron-right btn-minimize"></i>
-                  </span>
-                </div>
-                <div class="accordion-body">
-                  <div class="content">
-                    <p class="text-p">Mexant HTML5 Template is available to download 100% free of charge. This CSS layout
-                      is based on
-                      Boostrap 5 framework.
-                    </p>
+                  <div class="accordion-body">
+                    <div class="content">
+                      <p class="text-p">
+                        {!! $item->isi !!}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </article>
-              <article class="accordion">
-                <div class="accordion-head">
-                  <span class="text-p">Informasi Mengenai Kepegawaian</span>
-                  <span class="icon">
-                    <i class="icon fa fa-chevron-right btn-minimize"></i>
-                  </span>
-                </div>
-                <div class="accordion-body">
-                  <div class="content">
-                    <p class="text-p">Ut dictum vehicula massa, ac pharetra leo tincidunt eu. Phasellus in tristique
-                      magna, ac gravida
-                      leo.<br>
-                      Integer sed lorem sapien. Ut viverra mauris sed lobortis commodo. Mauris scelerisque venenatis
-                      justo, sed interdum sem.</p>
-                  </div>
-                </div>
-              </article>
+                </article>
+              @empty
+                Kosong
+              @endforelse
             </div>
           </div>
         </div>

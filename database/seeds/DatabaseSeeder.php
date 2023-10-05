@@ -2,8 +2,10 @@
 
 use App\Berita;
 use App\Formulir;
+use App\InformasiPublik;
 use App\JenisFormulir;
 use App\Landing;
+use App\ListInformasiPublik;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -84,6 +86,15 @@ class DatabaseSeeder extends Seeder
                 'gambar' => 'img/berita.jpg',
             ]);
         }
+        Berita::create([
+            'kategori' => 'informasi serta merta',
+            'judul' => 'Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik',
+            'slug' => Str::slug('Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik'),
+            'tanggal' => '2020-01-03',
+            'penulis' => 'PPID',
+            'isi' => '<p>Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
+            'gambar' => 'img/berita.jpg',
+        ]);
 
         Formulir::create([
             'judul' => 'Permohonan Informasi Publik',
@@ -147,7 +158,41 @@ class DatabaseSeeder extends Seeder
 
             'Biaya' => 'Biaya Tarif',
             'isi_biaya' => 'Biaya administrasi pelayanan gratis, kecuali biaya pengganti penggandaan apabila informasi diberikan dalam versi cetak (apabila diperlukan versi cetak).'
+        ]);
 
+        InformasiPublik::create([
+            'judul' => 'Informasi Publik Yang Wajib Disediakan dan Diumumkan Secara Berkala',
+            'deskripsi' => 'Setiap Badan Publik wajib mengumumkan informasi publik secara berkala. Informasi berkala merupakan informasi yang diperbaharui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali. Informasi berkala mengenai kegiatan dan kinerja Badan Publik terkait; informasi mengenai laporan keuangan; dan atau informasi lain yang diatur dalam peraturan perundang-undangan. Adapun informasi berkala yang ada di Universitas Halu Oleo sebagai berikut :',
+        ]);
+        InformasiPublik::create([
+            'judul' => 'Informasi Tersedia Setiap Saat',
+            'deskripsi' => 'Penjelasan singkat mengenai informasi publik yang tersedia setiap saat.',
+        ]);
+        InformasiPublik::create([
+            'judul' => 'Informasi Serta Merta',
+            'deskripsi' => 'Penjelasan singkat mengenai informasi publik yang tersedia setiap saat.',
+        ]);
+
+        ListInformasiPublik::create([
+            'informasi_publik_id' => 1,
+            'judul' => 'Informasi Tentang Profil Universitas Halu Oleo',
+            'isi' => '<p>Untuk mengentahui informasi lebih lanjut silahkan mengunjungi website resmi Universitas Halu Oleo melalui link berikut : <a href="https://uho.ac.id">uho.ac.id</a>.</p>'
+        ]);
+        ListInformasiPublik::create([
+            'informasi_publik_id' => 1,
+            'judul' => 'Informasi Tentang Profil Pimpinan Universitas Halu Oleo',
+            'isi' => '<p>Profil pimpinan Universitas Halu Oleo : <a href="https://uho.ac.id/profil">Profil UHO</a></p>'
+        ]);
+        ListInformasiPublik::create([
+            'informasi_publik_id' => 1,
+            'judul' => 'Daftar Fakultas di Universitas Halu Oleo',
+            'isi' => '<p>Daftar Fakultas Universitas Halu Oleo dapat dilihat pada tautan berikut : <a href="https://uho.ac.id/fakultas">Info Fakultas UHO</a></p>'
+        ]);
+
+        ListInformasiPublik::create([
+            'informasi_publik_id' => 2,
+            'judul' => 'Informasi Tentang Peraturan, Keputusan dan/atau Kebijakan Universitas Halu Oleo',
+            'isi' => '<p>Tersedia di unit kerja terkait, jika ingin memperoleh informasi terkait peraturan dan keputusan dapat mengisi formulirr informasi publik.</p>'
         ]);
     }
 }

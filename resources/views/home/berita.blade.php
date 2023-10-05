@@ -5,7 +5,9 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h2>Berita & Informasi</h2>
+            <h2>
+              {{ request()->is('berita*') ? 'Berita & Informasi' : 'Informasi Serta Merta' }}
+            </h2>
             <div class="div-dec"></div>
           </div>
         </div>
@@ -60,6 +62,13 @@
         }
       </style>
 
+
+      @if ($berita->count() != 0 && request()->has('search'))
+        <div class="text-muted text-center text-p">
+          <br> Hasil pencarian dengan kata kunci : <i class="fw-bold">{{ request()->search }}</i>
+        </div>
+      @endif
+
       @forelse ($berita as $item)
         <div class="col">
           <div class="naccs">
@@ -95,7 +104,14 @@
               <div class="row">
                 <div class="col">
                   <ul class="nacc">
-                    <div class="text-muted text-center">Belum ada berita terbaru.</div>
+                    @if (request()->has('search'))
+                      <div class="text-muted text-center text-p">Kata kunci :
+                        <i class="fw-bold text-p">{{ request()->search }}</i>
+                        <br> Tidak ada hasil pencarian.
+                      </div>
+                    @else
+                      <div class="text-muted text-center">Belum ada berita terbaru.</div>
+                    @endif
                   </ul>
                 </div>
               </div>

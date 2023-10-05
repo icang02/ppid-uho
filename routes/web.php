@@ -20,10 +20,12 @@ Route::get('/', [LandingController::class, 'index']);
 
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
+Route::get('/search-berita', [BeritaController::class, 'searchBerita']);
+
 
 Route::get('/informasi-publik/informasi-berkala', [InformasiPublikController::class, 'indexInformasiBerkala']);
-Route::get('/informasi-publik/infomasi-tersedia-setiap-saat', [InformasiPublikController::class, 'indexInformasiBerkala']);
-Route::get('/informasi-publik/informasi-serta-merta', [InformasiPublikController::class, 'indexInformasiBerkala']);
+Route::get('/informasi-publik/informasi-tersedia-setiap-saat', [InformasiPublikController::class, 'indexInformasiBerkala']);
+Route::get('/informasi-publik/informasi-serta-merta', [BeritaController::class, 'index']);
 
 Route::get('/formulir/permohonan-informasi-publik', [FormulirController::class, 'indexFormulir']);
 Route::get('/formulir/keberatan-atas-layanan-informasi-publik', [FormulirController::class, 'indexFormulir']);
