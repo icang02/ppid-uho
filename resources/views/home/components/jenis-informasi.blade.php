@@ -13,55 +13,27 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="menu">
-                  <div class="active gradient-border"><span>Informasi Berkala</span></div>
-                  <div class="gradient-border"><span>Informasi Tersedia Setiap Saat</span></div>
-                  <div class="gradient-border"><span>Informasi Serta Merta</span></div>
+                  @foreach ($jenisInformasi as $i => $item)
+                    <div class="{{ $i == 0 ? 'active' : '' }} gradient-border"><span>{{ $item->judul }}</span></div>
+                  @endforeach
                 </div>
               </div>
               <div class="col-lg-12">
                 <ul class="nacc">
-                  <li class="active">
-                    <div>
-                      <div class="left-image jenis-informasi">
-                        <img src="{{ asset('img/informasi berkala.png') }}" class="border border-2" style="width: 35%">
+                  @foreach ($jenisInformasi as $i => $item)
+                    <li class="{{ $i == 0 ? 'active' : '' }}">
+                      <div>
+                        <div class="left-image jenis-informasi" style="z-index: -999">
+                          <img src="{{ asset($item->gambar) }}" class="border border-2" style="width: 35%">
+                        </div>
+                        <div class="right-content">
+                          <h4>{{ $item->judul }}</h4>
+                          <p>{{ $item->isi }}</p>
+                          <span><a href="{{ url($item->link) }}">Selengkapnya..</a></span>
+                        </div>
                       </div>
-                      <div class="right-content">
-                        <h4>Informasi Berkala</h4>
-                        <p>Informasi Berkala merupakan informasi yang diperbarui kemudian disediakan dan diumumkan
-                          kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali.</p>
-                        <span><a href="{{ url('informasi-publik') }}">Selengkapnya..</a></span>
-                      </div>
-                    </div>
-                  <li>
-                    <div>
-                      <div class="left-image jenis-informasi">
-                        <img src="{{ asset('img/informasi sedia tiap saat.png') }}"class="border border-2"
-                          style="width: 35%">
-                      </div>
-                      <div class="right-content">
-                        <h4>Informasi Tersedia Setiap Saat</h4>
-                        <p>Informasi Tersedia Setiap Saat adalah informasi yang siap tersedia untuk bisa langsung
-                          diberikan kepada Pemohon Informasi Publik ketika terdapat permohonan mengajukan permohonan
-                          atas Informasi Publik tersebut.</p>
-                        <span><a href="#">Selengkapnya..</a></span>
-                      </div>
-                    </div>
-                  </li>
-                  </li>
-                  <li>
-                    <div>
-                      <div class="left-image jenis-informasi ">
-                        <img src="{{ asset('img/informasi serta merta.png') }}" class="border border-2"
-                          style="width: 35%">
-                      </div>
-                      <div class="right-content">
-                        <h4>Informasi Serta Merta</h4>
-                        <p>Informasi Serta Merta adalah informasi berkaitan dengan hajat hidup orang banyak dan
-                          ketertiban umum, serta wajib diumumkan secara serta merta tanpa penundaan.</p>
-                        <span><a href="#">Selengkapnya..</a></span>
-                      </div>
-                    </div>
-                  </li>
+                    </li>
+                  @endforeach
                 </ul>
               </div>
             </div>

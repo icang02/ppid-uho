@@ -12,29 +12,38 @@
           <!-- ***** Logo End ***** -->
           <!-- ***** Menu Start ***** -->
           <ul class="nav">
-            <li class="scroll-to-section"><a href="/" class="active">Beranda</a></li>
+            <li class="scroll-to-section"><a href="/" class="{{ !request()->is('/') ?: 'active' }}">Beranda</a>
+            </li>
             <li class="has-sub">
-              <a href="javascript:void(0)">Tentang</a>
+              <a href="javascript:void(0)" class="{{ !request()->is('tentang*') ?: 'active' }}">Tentang</a>
               <ul class="sub-menu tentang">
-                <li><a href="{{ url('profil') }}">Profil</a></li>
-                <li><a href="{{ url('visi-misi') }}">Visi & Misi</a></li>
+                <li><a href="{{ url('tentang/profil') }}">Profil</a></li>
+                <li><a href="{{ url('tentang/visi-misi') }}">Visi & Misi</a></li>
               </ul>
             </li>
             <li class="has-sub">
-              <a href="javascript:void(0)">Informasi Publik</a>
+              <a href="javascript:void(0)" class="{{ !request()->is('informasi-publik*') ?: 'active' }}">Informasi
+                Publik</a>
               <ul class="sub-menu informasi-publik">
                 <li><a href="{{ url('informasi-publik') }}">Informasi Berkala</a></li>
-                <li><a href="{{ url('informasi-publik') }}">Informasi Tersedia Setiap Saat</a></li>
+                <li><a href="{{ url('informasi-publik') }}">Informasi Tersedia Setiap Saat</a>
+                </li>
                 <li><a href="{{ url('informasi-publik') }}">Informasi Serta Merta</a></li>
               </ul>
             </li>
             <li class="has-sub">
-              <a href="javascript:void(0)">Formulir Permohonan</a>
+              <a href="javascript:void(0)" class="{{ !request()->is('formulir*') ?: 'active' }}">Formulir</a>
               <ul class="sub-menu formulir-permohonan">
-                <li><a href="{{ url('formulir') }}">Formulir Permohonan Informasi Publik</a></li>
-                <li><a href="{{ url('formulir') }}">Formulir Keberatan Atas Layanan Informasi Publik</a></li>
-                <li><a href="{{ url('formulir') }}">Formulir Penyelesaian Sengketa Informasi</a></li>
+                <li><a href="{{ url('formulir/permohonan-informasi-publik') }}">Permohonan Informasi Publik</a></li>
+                <li><a href="{{ url('formulir/keberatan-atas-layanan-informasi-publik') }}">Keberatan Atas Layanan
+                    Informasi
+                    Publik</a></li>
+                <li><a href="{{ url('formulir/penyelesaian-sengketa-informsi') }}">Penyelesaian Sengketa Informasi</a>
+                </li>
               </ul>
+            </li>
+            <li class="scroll-to-section">
+              <a href="{{ url('regulasi') }}" class="{{ !request()->is('regulasi') ?: 'active' }}">Regulasi</a>
             </li>
             <li><a href="javascript:void(0)" class="bg-kuning tombol-search" href="contact-us.html">
                 <i class="fa-solid fa-magnifying-glass"></i></a></li>

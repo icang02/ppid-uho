@@ -55,13 +55,13 @@ nav .nav li:last-child a:hover {
 }
 
 .sub-menu.tentang {
-  width: 196% !important;
+  width: 196px !important;
 }
 .sub-menu.informasi-publik {
-  width: 155% !important;
+  width: 255px !important;
 }
 .sub-menu.formulir-permohonan {
-  width: 186% !important;
+  width: 325px !important;
 }
 
 .left-image img {

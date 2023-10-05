@@ -9,6 +9,16 @@
     top: 20px;
     width: 4000px;
   }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumb {
+      font-size: 0.7rem;
+    }
+  }
 </style>
 
 <div class="breadcrumb">

@@ -1,29 +1,19 @@
-<section class="simple-cta" id="permohonan">
+<section class="simple-cta" id="permohonan" style="padding: 70px 0px 80px 0px;">
   <div class="container">
-    <div class="row g-4">
+    <div class="row justify-content-center g-4">
       <div class="col-lg-12 text-center mb-5">
-        <h4>Tata Cara <em class="txt-kuning">Permohonan</em></h4>
+        <h4 class="fw-bold">Tata Cara <em class="txt-kuning">Permohonan</em></h4>
       </div>
-      <div class="col-lg-3">
-        <div class="image">
-          <img src="{{ asset('img/1.png') }}">
+
+      @foreach ($tataCara as $item)
+        <div class="col-lg-3 text-center">
+          <div class="image">
+            <img src="{{ asset($item->gambar) }}">
+          </div>
+          <small class="text-white d-block mt-4 fw-bold">{{ $item->judul }}</small>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="image">
-          <img src="{{ asset('img/2.png') }}">
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="image">
-          <img src="{{ asset('img/3.png') }}">
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="image">
-          <img src="{{ asset('img/4.png') }}">
-        </div>
-      </div>
+      @endforeach
+
     </div>
   </div>
 

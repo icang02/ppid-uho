@@ -24,7 +24,7 @@
 
         <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">
-            <h4 class="mb-3 txt-biru fw-bold">Profil Pejabat Pengelola Informasi dan Dokumentai (PPID)</h4>
+            <h4 class="mb-3 txt-biru fw-bold">Profil Pejabat Pengelola Informasi dan Dokumentasi (PPID)</h4>
             <p>
               PPID adalah kepanjangan dari Pejabat Pengelola Informasi dan Dokumentasi, yang berfungsi sebagai pengelola
               dan penyampai dokumen yang dimiliki oleh Badan Publik sesuai dengan amanat UU 14/2008 tentang Keterbukaan

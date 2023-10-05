@@ -24,14 +24,8 @@
 
         <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">
-            <h4 class="mb-3 txt-biru fw-bold">Permohonan Informasi Publik</h4>
-            <p>Formulir permohonan informasi publik adalah
-              dokumen yang digunakan oleh individu untuk meminta informasi publik dari lembaga pendidikan
-              tinggi atau universitas. Formulir ini memungkinkan pihak yang berkepentingan untuk mengajukan permohonan
-              secara resmi
-              untuk mendapatkan akses ke informasi yang dimiliki oleh institusi. Formulir permohonan informasi publik pada
-              PPID kampus penting untuk memastikan transparansi dan akses terhadap informasi yang dimiliki oleh institusi
-              pendidikan tinggi, sesuai dengan peraturan dan undang-undang yang berlaku.</p>
+            <h4 class="mb-3 txt-biru fw-bold">{{ $formulir->judul }}</h4>
+            <p>{{ $formulir->deskripsi }}</p>
           </div>
         </div>
       </div>
@@ -62,40 +56,26 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 align-self-center">
-            @php
-              $arrMekanisme = [
-                  'Pemohon datang ke meja layanan informasi, PPID UHO (Bagian Humas dan Protokol UHO) atau mengunjungi laman informasi publik.',
-                  'Pemohon mengisi formulir permohonan informasi publik secara langsung atau daring dengan melampirkan KTP/akta pendirian badan publik.',
-                  'Petugas layanan mencatat di buku registrasi dan memberitahukan nomor pendaftaran kepada pemohon.',
-                  'Jika permohonan disetujui lanjut ke langkah selanjutnya. Jika tidak disetujui PPID memberikan alasan tertulis dan memberikan informasi pengajuan keberatan.',
-                  'Jika permohonan disetujui, PPID mengajukan permohonan informasi kepada unit terkait. Hasilnya, unit kerja memberikan data kepada PPID.',
-                  'PPID memberikan informasi tertulis kepada pemohon informasi.',
-                  'Apabila pemohon telah puas terhadap respon dari PPID maka proses selesai.',
-                  'Apabila pemohon tidak puas terhadap respon maka dapat mengajukan keberatan di atasan PPID maka proses selesai, sedangkan apabila tidak puas terhadap respon atasan PPID maka proses berlanjut di komisi informasi.',
-              ];
-            @endphp
 
             <article class="accordion">
-              <b>Persyaratan Pelayanan</b>
+              <b>{{ $jenisFormulir->persyaratan }}</b>
               <div class="content">
                 <table>
-                  <tr>
-                    <td>1.&nbsp;</td>
-                    <td>Masyrakat</td>
-                  </tr>
-                  <tr>
-                    <td>2.&nbsp;</td>
-                    <td>Fotokopi KTP Pemohon atau fotokopi pendirian akte lembaga publik/ormas bagi pemohon atas nama</td>
-                  </tr>
+                  @foreach (explode('/|', $jenisFormulir->isi_persyaratan) as $item)
+                    <tr>
+                      <td>{{ $loop->iteration }}.&nbsp;</td>
+                      <td>{{ $item }}</td>
+                    </tr>
+                  @endforeach
                 </table>
               </div>
             </article>
 
             <article class="accordion mt-3">
-              <b>Sistem Mekanisme dan Prosedur</b>
+              <b>{{ $jenisFormulir->mekanisme }}</b>
               <div class="content">
                 <table>
-                  @foreach ($arrMekanisme as $item)
+                  @foreach (explode('/|', $jenisFormulir->isi_mekanisme) as $item)
                     <tr>
                       <td>{{ $loop->iteration }}.&nbsp;</td>
                       <td>{{ $item }}</td>
@@ -107,31 +87,27 @@
 
 
             <article class="accordion mt-3">
-              <b>Jangka Waktu Penyelesaian</b>
+              <b>{{ $jenisFormulir->jangka_waktu }}</b>
               <div class="content">
-                <p>Waktu penyelesaian dilaksanakan paling lambat 10 (sepuluh) hari kerja sejak diterimanya permintaan,
-                  Pejabat Pengelola Informasi dan Dokumentasi (PPID) akan menyampaikan pemberitahuan yang berisikan
-                  informasi yang diminta berada di bawah penguasaannya atau tidak, PPID dapat memperpanjang waktu paling
-                  lambat 7 (tujuh) hari kerja.</p>
+                <p>{{ $jenisFormulir->isi_jangka_waktu }}</p>
               </div>
             </article>
 
             <article class="accordion mt-3">
-              <b>Biaya Tarif</b>
+              <b>{{ $jenisFormulir->biaya }}</b>
               <div class="content">
-                <p>Biaya administrasi pelayanan gratis, kecuali biaya pengganti penggandaan apabila informasi diberikan
-                  dalam versi cetak (apabila diperlukan versi cetak).Informasi Publik.</p>
+                <p>{{ $jenisFormulir->isi_biaya }}</p>
               </div>
             </article>
 
-            <article class="accordion mt-3">
+            {{-- <article class="accordion mt-3">
               <b>Produk Layanan</b>
               <div class="content">
                 <p>Informasi Publik.</p>
               </div>
-            </article>
+            </article> --}}
 
-            <article class="accordion mt-3">
+            {{-- <article class="accordion mt-3">
               <b>Pengaduan, Saran dan Masukan</b>
               <div class="content">
                 <table>
@@ -151,10 +127,18 @@
                   </tr>
                 </table>
               </div>
-            </article>
+            </article> --}}
 
             <div class="col-12 mt-5">
-              <a class="btn py-3 px-4 bg-biru text-white" href="#">BUAT PERMOHONAN</a>
+              <a class="btn py-3 px-4 bg-biru text-white" href="{{ url($formulir->link) }}" target="_blank">
+                @if (request()->is('formulir/permohonan-informasi-publik'))
+                  BUAT PERMOHONAN
+                @elseif (request()->is('formulir/keberatan-atas-layanan-informasi-publik'))
+                  Ajukan Keberatan
+                @elseif (request()->is('formulir/penyelesaian-sengketa-informsi'))
+                  Link Formulir
+                @endif
+              </a>
             </div>
 
             <script>
@@ -164,18 +148,6 @@
         </div>
       </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <section class="partners">

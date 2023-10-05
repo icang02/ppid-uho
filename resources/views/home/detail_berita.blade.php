@@ -22,29 +22,47 @@
           <div class="service-item">
 
             @include('home.components.breadcrumb')
+            <style>
+              .left-content .text-muted {
+                font-size: 0.8rem;
+                margin-top: -30px !important;
+                margin-bottom: 30px;
+              }
+
+              @media (max-width: 768px) {
+                .left-content .text-muted {
+                  font-size: 0.7rem;
+                  margin-top: -30px !important;
+                  margin-bottom: 30px;
+                }
+
+                .text-body p,
+                .text-body ul,
+                .text-body ol {
+                  font-size: 0.8rem;
+                  line-height: 24px;
+                }
+              }
+            </style>
 
             <div class="row mt-5">
               <div class="col-lg-6 order-2 order-md-1">
                 <div class="left-content">
-                  <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error modi a mollitia, qui assumenda
-                    porro.</h4>
-                  <p class="text-muted" style="font-size: 0.85rem">
-                    <i class="fa-sharp fa-solid fa-calendar-days me-1"></i>
-                    04 March 2023
-                    <i class="fa-solid fa-eye ms-3"></i> <b>100x
-                      dilihat</b>
-                  </p>
-                  <p>If you need more HTML templates, you can try visiting TooCSS blog and Tooplate websites. You can get
-                    many good templates on those websites.<br><br>Nulla non placerat neque, a gravida elit. Vestibulum
-                    ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi sed dolor
-                    condimentum tellus commodo volutpat non malesuada turpis.<br><br>Nulla non placerat neque, a gravida
-                    elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi
-                    sed dolor condimentum tellus commodo volutpat non malesuada turpis.</p>
+                  <h4 class="lh-base">{{ $berita->judul }}</h4>
+                  <div class="text-muted">
+                    <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $berita->tanggal }}
+                    <i class="fa-solid fa-eye ms-3"></i> {{ $berita->view }}x dilihat
+                    <i class="fa-solid fa-book-open-reader ms-3 me-1"></i> Oleh : {{ $berita->penulis }}
+                  </div>
+
+                  <div class="text-body">
+                    {!! $berita->isi !!}
+                  </div>
                 </div>
               </div>
               <div class="col-lg-6 order-1 order-md-2">
                 <div class="right-image">
-                  <img src="assets/images/service-image-02.jpg" alt="">
+                  <img src="{{ asset($berita->gambar) }}" class="mb-3 md-md-0">
                 </div>
               </div>
             </div>

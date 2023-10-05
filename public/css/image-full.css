@@ -1,7 +1,6 @@
 /* gambar permohonan */
 #permohonan .container .row .col-lg-3 .image {
   width: 100%;
-  height: 100%;
   overflow: hidden;
   border: 6px solid #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -10,9 +9,9 @@
 
 #permohonan .container .row .col-lg-3 .image img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   transition: 0.2s ease-out;
+  cursor: pointer;
 }
 
 #permohonan .container .row .col-lg-3 .image:hover img {
