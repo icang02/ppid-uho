@@ -47,7 +47,18 @@
                         <div class="right-content">
                           <h4 class="text-h">{{ $item->judul }}</h4>
                           <p class="text-p">{{ $item->isi }}</p>
-                          <span class="text-p"><a href="{{ url($item->link) }}">Selengkapnya..</a></span>
+
+                          @php
+                            $link = '';
+                            if ($item->id == 1) {
+                                $link = route('info_berkala');
+                            } elseif ($item->id == 2) {
+                                $link = route('info_setiap_saat');
+                            } else {
+                                $link = route('info_serta_merta');
+                            }
+                          @endphp
+                          <span class="text-p"><a href="{{ url($link) }}">Selengkapnya..</a></span>
                         </div>
                       </div>
                     </li>

@@ -20,6 +20,23 @@
           line-height: 23px !important;
         }
 
+        .pembungkus {
+          max-width: 100%;
+          overflow: hidden;
+          position: relative;
+          padding-bottom: 62.5%;
+        }
+
+        .responsive-element {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-size: cover;
+        }
+
         @media (max-width: 768px) {
           .text-h {
             font-size: 18px !important;
@@ -30,6 +47,10 @@
           .text-p p {
             font-size: 12px !important;
             line-height: 20px !important;
+          }
+
+          .pembungkus {
+            padding-bottom: 56.25%;
           }
         }
       </style>
@@ -44,8 +65,10 @@
               @foreach ($berita as $item)
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <div class="card" style="width: 100%;">
-                    <img src="{{ asset('img/123.png') }}" class="card-img-top" alt="Image"
-                      style="object-fit: cover; height: 240px">
+                    <div class="pembungkus">
+                      <div class="responsive-element" style="background-image: url({{ asset('img/123.png') }})">
+                      </div>
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title text-h">{{ $item->judul }}</h5>
                       <div class="text-muted text-p">

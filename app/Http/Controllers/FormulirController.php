@@ -13,10 +13,10 @@ class FormulirController extends Controller
         if (request()->is('formulir/permohonan-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
             $jenisFormulir = JenisFormulir::where('jenis_formulir', 'permohonan')->get()->first();
-        } elseif (request()->is('formulir/keberatan-atas-layanan-informasi-publik')) {
+        } elseif (request()->is('formulir/keberatan-layanan-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
             $jenisFormulir = JenisFormulir::where('jenis_formulir', 'keberatan')->get()->first();
-        } elseif (request()->is('formulir/penyelesaian-sengketa-informsi')) {
+        } elseif (request()->is('formulir/penyelesaian-sengketa-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'sengketa')->get()->first();
             $jenisFormulir = JenisFormulir::where('jenis_formulir', 'sengketa')->get()->first();
         }

@@ -25,21 +25,22 @@
               <a href="javascript:void(0)" class="{{ !request()->is('informasi-publik*') ?: 'active' }}">Informasi
                 Publik</a>
               <ul class="sub-menu informasi-publik">
-                <li><a href="{{ url('informasi-publik/informasi-berkala') }}">Informasi Berkala</a></li>
-                <li><a href="{{ url('informasi-publik/informasi-tersedia-setiap-saat') }}">Informasi Tersedia Setiap
+                <li><a href="{{ route('info_berkala') }}">Informasi Berkala</a></li>
+                <li><a href="{{ route('info_setiap_saat') }}">Informasi Tersedia Setiap
                     Saat</a>
                 </li>
-                <li><a href="{{ url('informasi-publik/informasi-serta-merta') }}">Informasi Serta Merta</a></li>
+                <li><a href="{{ route('info_serta_merta') }}">Informasi Serta Merta</a></li>
               </ul>
             </li>
             <li class="has-sub">
               <a href="javascript:void(0)" class="{{ !request()->is('formulir*') ?: 'active' }}">Formulir</a>
               <ul class="sub-menu formulir-permohonan">
                 <li><a href="{{ url('formulir/permohonan-informasi-publik') }}">Permohonan Informasi Publik</a></li>
-                <li><a href="{{ url('formulir/keberatan-atas-layanan-informasi-publik') }}">Keberatan Atas Layanan
+                <li><a href="{{ url('formulir/keberatan-layanan-informasi-publik') }}">Keberatan Layanan
+                    Informasi Publik</a></li>
+                <li><a href="{{ url('formulir/penyelesaian-sengketa-informasi-publik') }}">Penyelesaian Sengketa
                     Informasi
-                    Publik</a></li>
-                <li><a href="{{ url('formulir/penyelesaian-sengketa-informsi') }}">Penyelesaian Sengketa Informasi</a>
+                    Publik</a>
                 </li>
               </ul>
             </li>
@@ -64,9 +65,6 @@
   <span class="fas fa-times"></span>
 </div>
 <div class="wrapper">
-  {{-- <div class="search-btn">
-    <span class="fas fa-search"></span>
-  </div> --}}
   <div class="search-data">
     <form action="{{ url('berita') }}" method="get">
       <input type="text" id="myInput" name="search" autocomplete="off">

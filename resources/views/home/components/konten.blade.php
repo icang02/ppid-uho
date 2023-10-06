@@ -35,19 +35,19 @@
               <div class="content">
                 <p class="text-p">{{ $formulir->isi }}</p>
                 <div class="lh-lg text-light d-flex flex-column gap-2">
-                  <a href="{{ url('formulir') }}">
+                  <a href="{{ route('form_permohonan') }}">
                     <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2 text-p">
                       <span>Formulir Permohonan Informasi Publik</span>
                       <span>&rarr;</span>
                     </div>
                   </a>
-                  <a href="{{ url('formulir') }}">
+                  <a href="{{ route('form_keberatan') }}">
                     <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2 text-p">
                       <span>Formulir Keberatan Atas Layanan Informasi Publik</span>
                       <span>&rarr;</span>
                     </div>
                   </a>
-                  <a href="{{ url('formulir') }}">
+                  <a href="{{ route('form_sengketa') }}">
                     <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-2 text-p">
                       <span>Formulir Penyelesaian Sengketa Informasi</span>
                       <span>&rarr;</span>

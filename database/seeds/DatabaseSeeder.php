@@ -166,11 +166,11 @@ class DatabaseSeeder extends Seeder
         ]);
         InformasiPublik::create([
             'judul' => 'Informasi Tersedia Setiap Saat',
-            'deskripsi' => 'Penjelasan singkat mengenai informasi publik yang tersedia setiap saat.',
+            'deskripsi' => 'Informasi Tersedia Setiap Saat adalah informasi yang siap tersedia untuk bisa langsung diberikan kepada Pemohon Informasi Publik ketika terdapat permohonan mengajukan permohonan atas Informasi Publik tersebut.',
         ]);
         InformasiPublik::create([
             'judul' => 'Informasi Serta Merta',
-            'deskripsi' => 'Penjelasan singkat mengenai informasi publik yang tersedia setiap saat.',
+            'deskripsi' => 'Informasi Serta Merta adalah informasi berkaitan dengan hajat hidup orang banyak dan ketertiban umum, serta wajib diumumkan secara serta merta tanpa penundaan.',
         ]);
 
         ListInformasiPublik::create([

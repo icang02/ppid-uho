@@ -6,8 +6,7 @@
         <div class="col-lg-12">
           <div class="header-text">
             <h2>
-              {{-- {{ $berita->kategori == 'berita' ? 'Detail Berita & Informasi' : 'Detail Informasi Serta Merta' }} --}}
-              {{ $berita->kategori }}
+              {{ $berita->kategori == 'berita' ? 'Detail Berita & Informasi' : 'Detail Informasi Serta Merta' }}
             </h2>
             <div class="div-dec"></div>
           </div>
@@ -32,6 +31,23 @@
                 margin-bottom: 30px;
               }
 
+              .pembungkus {
+                max-width: 100%;
+                overflow: hidden;
+                position: relative;
+                padding-bottom: 62.5%;
+              }
+
+              .responsive-element {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-size: cover;
+              }
+
               @media (max-width: 768px) {
                 .left-content .text-muted {
                   font-size: 12px;
@@ -44,6 +60,11 @@
                 .text-body ol {
                   font-size: 12px;
                   line-height: 20px;
+                }
+
+                .pembungkus {
+                  padding-bottom: 56.25%;
+                  margin-bottom: 10px;
                 }
               }
             </style>
@@ -65,7 +86,11 @@
               </div>
               <div class="col-lg-6 order-1 order-md-2">
                 <div class="right-image">
-                  <img src="{{ asset($berita->gambar) }}" class="mb-3 md-md-0">
+                  <div class="pembungkus">
+                    <div class="responsive-element" style="background-image: url({{ asset($berita->gambar) }})">
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
