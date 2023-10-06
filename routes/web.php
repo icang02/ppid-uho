@@ -57,7 +57,6 @@ Route::get('/dashboard', function () {
 });
 
 
-
 //routeee tentangggggggg
 Route::get('/dashboard/tentang/profile', function () {
     return view('admin.tentang/profil');

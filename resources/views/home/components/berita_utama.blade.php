@@ -47,7 +47,8 @@
           </div>
 
           <div class="col-12 mt-3 text-center">
-            <a class="btn py-3 px-4 bg-biru text-white" href="{{ url('berita') }}">Lihat Lainnya</a>
+            <a class="btn py-2 px-3 py-md-3 px-md-4 bg-biru text-white btn-lainnya" href="{{ url('berita') }}">Lihat
+              Lainnya</a>
           </div>
         </div>
       </div>

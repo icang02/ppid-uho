@@ -1,7 +1,7 @@
 <section class="simple-cta" id="permohonan">
   <div class="container">
-    <div class="row justify-content-center g-4">
-      <div class="col-lg-12 text-center mb-5">
+    <div class="row justify-content-center g-5 g-md-4 px-3 px-md-0">
+      <div class="col-lg-12 text-center mb-2 mb-md-5">
         <h4 class="fw-bold">Tata Cara <em class="txt-kuning">Permohonan</em></h4>
       </div>
 

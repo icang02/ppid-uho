@@ -34,7 +34,7 @@
     <section class="top-section list-informasi">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 align-self-center">
+          <div class="col-lg-12 tes align-self-center mb-3">
 
             <article class="accordion">
               <b>{{ $jenisFormulir->persyaratan }}</b>
@@ -68,7 +68,7 @@
             <article class="accordion mt-3">
               <b>{{ $jenisFormulir->jangka_waktu }}</b>
               <div class="content">
-                <p class="text-p">{{ $jenisFormulir->isi_jangka_waktu }}</p>
+                <p>{{ $jenisFormulir->isi_jangka_waktu }}</p>
               </div>
             </article>
 
@@ -106,32 +106,32 @@
         <div class="row">
           <div class="col-lg-2 col-sm-4 col-6">
             <div class="item">
-              <img src="assets/images/client-01.png" alt="">
+              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
             </div>
           </div>
           <div class="col-lg-2 col-sm-4 col-6">
             <div class="item">
-              <img src="assets/images/client-01.png" alt="">
+              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
             </div>
           </div>
           <div class="col-lg-2 col-sm-4 col-6">
             <div class="item">
-              <img src="assets/images/client-01.png" alt="">
+              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
             </div>
           </div>
           <div class="col-lg-2 col-sm-4 col-6">
             <div class="item">
-              <img src="assets/images/client-01.png" alt="">
+              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
             </div>
           </div>
           <div class="col-lg-2 col-sm-4 col-6">
             <div class="item">
-              <img src="assets/images/client-01.png" alt="">
+              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
             </div>
           </div>
           <div class="col-lg-2 col-sm-4 col-6">
             <div class="item">
-              <img src="assets/images/client-01.png" alt="">
+              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
             </div>
           </div>
         </div>

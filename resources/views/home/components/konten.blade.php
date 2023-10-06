@@ -8,7 +8,7 @@
       </div>
       <div class="col-lg-6 align-self-center p-0">
         <div class="accordions mt-0 is-first-expanded">
-          <article class="accordion">
+          <article class="accordion pb-4">
             <div class="accordion-head txt-kuning fw-bold" style="font-size: 1.75rem;">
               <span>{{ $formulir->judul }}</span>
             </div>
@@ -17,19 +17,19 @@
                 <p>{{ $formulir->isi }}</p>
                 <div class="d-flex flex-column gap-2">
                   <a href="{{ route('form_permohonan') }}">
-                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-3 text-p">
+                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-3">
                       <span>Formulir Permohonan Informasi Publik</span>
                       <span>&rarr;</span>
                     </div>
                   </a>
                   <a href="{{ route('form_keberatan') }}">
-                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-3 text-p">
+                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-3">
                       <span>Formulir Keberatan Atas Layanan Informasi Publik</span>
                       <span>&rarr;</span>
                     </div>
                   </a>
                   <a href="{{ route('form_sengketa') }}">
-                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-3 text-p">
+                    <div class="sub-formulir d-flex justify-content-between bg-biru px-4 py-3">
                       <span>Formulir Penyelesaian Sengketa Informasi</span>
                       <span>&rarr;</span>
                     </div>

@@ -1,12 +1,22 @@
 :root {
-  /* TYPOGRAPHY */
-  --text-h1: 20px;
-  --text-h2: 28px;
-  --text-p: 13px;
-  --text-lg: 15px;
+  /* VALET COLOR */
+  --kuning: #f4b700;
+  --biru: #0e3b63;
 
-  --lh-lg: 23px;
-  --lh-p: 20px;
+  /* TYPOGRAPHY */
+  --text-h1: 30px !important;
+  --text-h2: 23px !important;
+  --text-h3: 20px !important;
+  --text-h4: 17px !important;
+  --text-h5: 15px !important;
+  --text-h6: 13px !important;
+
+  --text-p: 13px !important;
+  --text-lg: 15px !important;
+
+  --lh-p: 20px !important;
+  --lh-lg: 23px !important;
+  --lh-xl: 30px !important;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -30,60 +40,192 @@
   }
 }
 
-@media (max-width: 768px) {
-  /* .header-text {
-    margin-left: 25px !important;
-  } */
-
+@media (max-width: 576px) {
   /* BREADCUMB SECTION CONTENT */
-  /* .breadcrumb {
-    font-size: 12px !important;
-  } */
-}
-
-@media only screen and (max-width: 576px) {
-  /* home cover */
-  /* .header-text h2 {
-    font-size: var(--h1-size) !important;
-    line-height: 45px !important;
-  } */
-
-  /* .right-content h4 {
-    font-size: var(--h2-size) !important;
-    text-align: center;
+  .breadcrumb {
+    font-size: var(--text-p) !important;
   }
 
-  .section-heading h4 {
-    font-size: var(--h1-size) !important;
+  /* TITLE DI SETIAP HALAMAN */
+  .page-heading h2 {
+    font-size: 20px !important;
   }
 
-  .simple-cta .container .row .col-lg-12 h4,
-  .simple-cta .container .row .col-lg-5 h4 {
-    font-size: var(--h1-size) !important;
-  }
-
-  .sub-menu.tentang {
-    width: 100% !important;
-  }
-  .sub-menu.informasi-publik {
-    width: 100% !important;
-  }
+  /* NAVBAR CONTENT SECTION */
+  .sub-menu.tentang,
+  .sub-menu.informasi-publik,
   .sub-menu.formulir-permohonan {
     width: 100% !important;
   }
 
-  .jenis-informasi {
-    display: none !important;
+  /* HERO CONTENT SECTION */
+  /* HERO CONTENT SECTION */
+  #top .header-text h2 {
+    font-size: 25px !important;
+    line-height: 40px !important;
+    margin: 0 !important;
+    margin-top: 50px !important;
+    transform: translateX(-10px);
+  }
+  #top .header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #top .header-text .div-dec {
+    transform: translateX(104px);
+  }
+  .green-button a {
+    background: var(--kuning) !important;
+    padding: 10px 20px !important;
+    font-size: var(--text-p) !important;
+    transform: translateX(72px);
   }
 
-  .left-image img {
-    object-fit: cover;
-    height: 260px;
-  } */
+  /* JENIS INFORMAI CONTENT SECTION */
+  #jenisInformasi .section-heading {
+    margin-top: 20px !important;
+  }
+  #jenisInformasi .section-heading h4 {
+    font-size: var(--text-h2) !important;
+  }
+  #jenisInformasi .naccs .gradient-border {
+    font-size: var(--text-h6) !important;
+  }
+  #jenisInformasi .naccs .gradient-border:nth-child(2) {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+  }
+  #jenisInformasi .left-image {
+    display: none !important;
+  }
+  #jenisInformasi .nacc li {
+    width: 100% !important;
+    text-align: center;
+  }
+  #jenisInformasi .right-content {
+    width: 100% !important;
+    transform: translate(-376px);
+  }
+  #jenisInformasi .right-content h4 {
+    font-size: var(--text-h6) !important;
+  }
+  #jenisInformasi .naccs .right-content p {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p);
+  }
+  #jenisInformasi .naccs .right-content span {
+    font-size: var(--text-p) !important;
+  }
+  #jenisInformasi .naccs .right-content a {
+    font-size: var(--text-p) !important;
+  }
 
-  /* qoutes kominfo */
-  /* #qoutes .container .row .col-lg-12 h4 {
-    font-size: 0.9rem !important;
-    line-height: 35px;
-  } */
+  /* PERMOHONAN SECTION CONTENT */
+  #permohonan h4 {
+    font-size: var(--text-h2) !important;
+  }
+  #permohonan .col-lg-3 small {
+    font-size: var(--text-h6) !important;
+  }
+
+  /* FORMULIR HOME SECTION CONTENT */
+  #formulir .accordion-head span {
+    font-size: var(--text-h3) !important;
+  }
+  #formulir .accordion-body p {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p);
+  }
+
+  /* QOUTES SECTION CONTENT */
+  #qoutes .col-lg-12 {
+    font-size: var(--text-h6) !important;
+    line-height: var(--lh-xl);
+  }
+  #qoutes .col-lg-12 small {
+    font-size: 0.9em !important;
+  }
+
+  /* BERITA UTAMA SECTION CONTENT */
+  #beritaUtama .section-heading h4 {
+    font-size: var(--text-h2) !important;
+  }
+  #beritaUtama .content-berita .card-title a {
+    font-size: var(--text-h5) !important;
+    line-height: var(--lh-p);
+  }
+  #beritaUtama .content-berita .card-text .text-p {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p);
+  }
+  .btn-lainnya {
+    font-size: var(--text-p) !important;
+  }
+
+  /* HALAMAN TENTANG PROFIL VISI MISI DLL */
+  #tentang h4 {
+    font-size: var(--text-h3);
+  }
+  #tentang p,
+  .title-list-informasi .content p {
+    font-size: var(--text-p);
+    line-height: var(--lh-p);
+  }
+
+  /* HALAMAN INFORMASI PUBLIK */
+  .title-list-informasi .content h4 {
+    font-size: var(--text-h3) !important;
+  }
+  .accordions {
+    padding: 10px 20px !important;
+  }
+  .list-informasi {
+    margin-top: 0px;
+  }
+  .list-informasi .accordion-head span:first-child {
+    font-size: var(--text-h6) !important;
+  }
+  .list-informasi .accordion-body p {
+    font-size: var(--text-p) !important;
+  }
+  .accordion-head {
+    padding: 8px 0 !important;
+  }
+  .accordion-head .icon {
+    font-size: var(--text-p) !important;
+  }
+  .accordion-body .content .text-p {
+    padding-bottom: 22px !important;
+    line-height: var(--lh-p) !important;
+  }
+
+  /* HALAMAN FORMULIR */
+  .list-informasi .accordion {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p) !important;
+  }
+  .list-informasi .accordion b {
+    display: block;
+    margin-bottom: 6px !important;
+  }
+  .list-informasi .accordion .content p {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p) !important;
+  }
+  .list-informasi .tes {
+    margin-top: 25px !important;
+  }
+  .btn-formulir {
+    font-size: var(--text-p) !important;
+  }
+
+  #footer .col-lg-12 p {
+    font-size: var(--text-p) !important;
+  }
+
+  .menu-trigger {
+    /* top: 38px !important; */
+    width: 19px !important;
+  }
 }

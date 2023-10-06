@@ -26,7 +26,7 @@
                     <li class="{{ $i == 0 ? 'active' : '' }}">
                       <div>
                         <div class="left-image jenis-informasi" style="z-index: -999">
-                          <img src="{{ asset($item->gambar) }}" class="border border-2" style="width: 35%">
+                          <img src="{{ asset($item->gambar) }}" class="border border-2">
                         </div>
                         <div class="right-content">
                           <h4>{{ $item->judul }}</h4>

@@ -1,5 +1,5 @@
 <footer>
-  <div class="container">
+  <div class="container" id="footer">
     <div class="row">
       <div class="col-lg-12">
         <p>Copyright © {{ date('Y') }} Lembaga Pejabat Pengelola Informasi dan Dokumentasi (LPPID). All Rights

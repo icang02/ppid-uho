@@ -19,6 +19,8 @@
               <ul class="sub-menu tentang">
                 <li><a href="{{ url('tentang/profil') }}">Profil</a></li>
                 <li><a href="{{ url('tentang/visi-misi') }}">Visi & Misi</a></li>
+                <li><a href="{{ url('tentang/visi-misi') }}">Tugas & Fungsi</a></li>
+                <li><a href="{{ url('tentang/visi-misi') }}">Struktur PPID</a></li>
               </ul>
             </li>
             <li class="has-sub">

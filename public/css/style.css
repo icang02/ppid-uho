@@ -52,7 +52,7 @@
 
 /* NAVBAR CONTENT SECTION */
 .sub-menu.tentang {
-  width: 196px !important;
+  width: 155px !important;
 }
 .sub-menu.informasi-publik {
   width: 257px !important;
@@ -106,6 +106,9 @@
 #jenisInformasi .naccs .right-content a {
   font-size: var(--text-lg) !important;
 }
+#jenisInformasi .left-image img {
+  width: 35% !important;
+}
 
 /* PERMOHONAN SECTION CONTENT */
 #permohonan h4 {
@@ -115,11 +118,10 @@
   font-size: var(--text-h5) !important;
 }
 
-/* FORMULIR SECTION CONTENT */
+/* FORMULIR HOME SECTION CONTENT */
 #formulir .accordion-head span {
   font-size: var(--text-h2) !important;
 }
-
 #formulir .accordion-body p {
   font-size: var(--text-lg) !important;
   line-height: var(--lh-lg);
@@ -190,7 +192,8 @@
 }
 #beritaUtama .content-berita .card-text .text-p {
   font-size: var(--text-lg) !important;
-  line-height: var(--lh-lp);
+  line-height: var(--lh-p);
+  margin-top: 7px !important;
 }
 
 /* HALAMAN TENTANG PROFIL VISI MISI DLL */
@@ -288,4 +291,8 @@
 #detailBerita .left-content .text-muted {
   font-size: var(--text-p) !important;
   margin-bottom: 20px !important;
+}
+
+#footer .col-lg-12 p {
+  font-size: var(--text-lg) !important;
 }
