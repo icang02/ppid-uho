@@ -75,6 +75,15 @@ class DatabaseSeeder extends Seeder
             'isi' => '"Hak atas informasi yang terbuka menjadi pembukan jalan bagi terjaminnya pelaksanaan hak-hak asasi lainnya, seperti hak atas pendidikan, hak untuk hidup sejahtera, hak untuk hidup aman, dan hak warga negara lainnya."',
         ]);
 
+        Berita::create([
+            'kategori' => 'berita',
+            'judul' => 'Daftar Bakal Calon Dewan Perwakilan Mahasiswa FAKULTAS (DPMF) Berdasarkan Kelengkapan Berkas',
+            'slug' => Str::slug('Daftar Bakal Calon Dewan Perwakilan Mahasiswa FAKULTAS (DPMF) Berdasarkan Kelengkapan Berkas'),
+            'tanggal' => '2023-01-03',
+            'penulis' => 'PPID',
+            'isi' => '<p class="text-p">Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
+            'gambar' => 'img/berita.jpg',
+        ]);
         for ($i = 0; $i < 20; $i++) {
             Berita::create([
                 'kategori' => 'berita',
@@ -82,7 +91,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => Str::slug('Lorem ipsum dolor sit amet consectetur adipisicing elit'),
                 'tanggal' => '2020-01-03',
                 'penulis' => 'PPID',
-                'isi' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p>',
+                'isi' => '<p class="text-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p> <p class="text-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p>',
                 'gambar' => 'img/berita.jpg',
             ]);
         }
@@ -92,7 +101,7 @@ class DatabaseSeeder extends Seeder
             'slug' => Str::slug('Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik'),
             'tanggal' => '2020-01-03',
             'penulis' => 'PPID',
-            'isi' => '<p>Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
+            'isi' => '<p class="text-p">Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
             'gambar' => 'img/berita.jpg',
         ]);
 
@@ -176,23 +185,23 @@ class DatabaseSeeder extends Seeder
         ListInformasiPublik::create([
             'informasi_publik_id' => 1,
             'judul' => 'Informasi Tentang Profil Universitas Halu Oleo',
-            'isi' => '<p>Untuk mengentahui informasi lebih lanjut silahkan mengunjungi website resmi Universitas Halu Oleo melalui link berikut : <a href="https://uho.ac.id">uho.ac.id</a>.</p>'
+            'isi' => '<p class="text-p">Untuk mengetahui informasi lebih lanjut silahkan mengunjungi website resmi Universitas Halu Oleo melalui link berikut : <a href="https://uho.ac.id">uho.ac.id</a>.</p>'
         ]);
         ListInformasiPublik::create([
             'informasi_publik_id' => 1,
             'judul' => 'Informasi Tentang Profil Pimpinan Universitas Halu Oleo',
-            'isi' => '<p>Profil pimpinan Universitas Halu Oleo : <a href="https://uho.ac.id/profil">Profil UHO</a></p>'
+            'isi' => '<p class="text-p">Profil pimpinan Universitas Halu Oleo : <a href="https://uho.ac.id/profil">Profil UHO</a></p>'
         ]);
         ListInformasiPublik::create([
             'informasi_publik_id' => 1,
             'judul' => 'Daftar Fakultas di Universitas Halu Oleo',
-            'isi' => '<p>Daftar Fakultas Universitas Halu Oleo dapat dilihat pada tautan berikut : <a href="https://uho.ac.id/fakultas">Info Fakultas UHO</a></p>'
+            'isi' => '<p class="text-p">Daftar Fakultas Universitas Halu Oleo dapat dilihat pada tautan berikut : <a href="https://uho.ac.id/fakultas">Info Fakultas UHO</a></p>'
         ]);
 
         ListInformasiPublik::create([
             'informasi_publik_id' => 2,
             'judul' => 'Informasi Tentang Peraturan, Keputusan dan/atau Kebijakan Universitas Halu Oleo',
-            'isi' => '<p>Tersedia di unit kerja terkait, jika ingin memperoleh informasi terkait peraturan dan keputusan dapat mengisi formulirr informasi publik.</p>'
+            'isi' => '<p class="text-p">Tersedia di unit kerja terkait, jika ingin memperoleh informasi terkait peraturan dan keputusan dapat mengisi formulirr informasi publik.</p>'
         ]);
     }
 }

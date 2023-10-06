@@ -32,9 +32,14 @@ class BeritaController extends Controller
     public function detail($slug)
     {
         $berita = Berita::where('slug', $slug)->get()->first();
-        $breadcumb = '<a href="/berita" class="text-dark">Berita & Informasi</a>&nbsp;>&nbsp;<span class="txt-kuning">Detail<span>';
-        if ($berita)
+
+        if ($berita) {
             $berita->increment('view');
+
+            $berita->kategori == 'berita' ?
+                $breadcumb = '<a href="/berita" class="text-dark">Berita & Informasi</a>&nbsp;>&nbsp;<span class="txt-kuning">Detail<span>' :
+                $breadcumb = '<a href="/informasi-publik/informasi-serta-merta" class="text-dark">Informasi Serta Merta</a>&nbsp;>&nbsp;<span class="txt-kuning">Detail<span>';
+        }
 
         return view('home.detail_berita', [
             'berita' => $berita,

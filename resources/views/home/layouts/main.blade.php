@@ -26,7 +26,8 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
 
   {{-- My Style --}}
-  <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/mobile.css') }}">
   <link rel="stylesheet" href="{{ asset('css/search.css') }}">
   <link rel="stylesheet" href="{{ asset('css/image-full.css') }}">
 

@@ -16,55 +16,12 @@
   </div>
 
   <section class="service-details mt-5">
-    <div class="container ">
+    <div class="container semua-berita">
       {{-- breadcrumb --}}
       @include('home.components.breadcrumb')
 
-      <style>
-        .berita .left-image {
-          object-fit: cover;
-          width: 420px;
-          height: 100%:
-        }
-
-        .berita .right-content p {
-          margin: -15px 0 -150px 0;
-        }
-
-        .berita .right-content .text-muted {
-          margin-top: -17px !important;
-          font-size: 15px;
-        }
-
-        .berita .right-content p,
-        .berita .right-content span {
-          font-size: 15px;
-        }
-
-        @media (max-width: 768px) {
-          .berita .left-image {
-            width: 100%;
-          }
-
-          .berita .right-content {
-            padding: 20px 25px !important;
-          }
-
-          .berita .right-content .text-muted {
-            font-size: 12px !important;
-          }
-
-          .berita .right-content p,
-          .berita .right-content span {
-            font-size: 12px !important;
-            line-height: 20px
-          }
-        }
-      </style>
-
-
       @if ($berita->count() != 0 && request()->has('search'))
-        <div class="text-muted text-center text-p">
+        <div class="text-muted text-center">
           <br> Hasil pencarian dengan kata kunci : <i class="fw-bold">{{ request()->search }}</i>
         </div>
       @endif
@@ -75,19 +32,20 @@
             <div class="tabs">
               <div class="row">
                 <div class="col">
-                  <ul class="nacc berita">
+                  <ul class="nacc">
                     <li class="active">
                       <div>
                         <div class="left-image">
                           <img src="{{ asset($item->gambar) }}">
                         </div>
                         <div class="right-content">
-                          <h4 class="lh-base">{{ $item->judul }}</h4>
+                          <h4 onclick="return window.location.href='{{ url('berita/' . $item->slug) }}'">
+                            {!! str_limit($item->judul, $limit = 90, $end = '...') !!}</h4>
                           <div class="text-muted">
                             <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $item->tanggal }}
                             <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat
                           </div>
-                          <p>{!! str_limit($item->isi, $limit = 150, $end = '...') !!}</p>
+                          <div>{!! str_limit($item->isi, $limit = 100, $end = '...') !!}</div>
                           <span><a href="{{ url("berita/$item->slug") }}">Selengkapnya..</a></span>
                         </div>
                       </div>

@@ -17,54 +17,15 @@
 
   <section class="service-details mt-5">
 
-    <style>
-      .accordion {
-        margin-bottom: 30px;
-      }
-
-      .accordion .content {
-        margin-top: 10px;
-      }
-
-      table {
-        vertical-align: top !important;
-        font-size: 15px;
-      }
-
-      .text-p {
-        font-size: 15px;
-      }
-
-      @media (max-width: 768px) {
-        .title {
-          margin-bottom: 30px;
-        }
-
-        table {
-          font-size: 12px;
-          line-height: 20px;
-        }
-
-        .text-p {
-          font-size: 12px;
-          line-height: 20px;
-        }
-
-        .btn-formulir {
-          font-size: 12px !important;
-        }
-      }
-    </style>
-
-    <section class="top-section mt-0">
+    <section class="top-section mt-0 title-list-informasi">
       <div class="container">
         {{-- breadcrumb --}}
         @include('home.components.breadcrumb')
 
-        <div class="row title mt-5">
+        <div class="row title mt-2 content">
           <div class="col-lg-12 align-self-center">
             <h4 class="mb-3 txt-biru fw-bold">{{ $formulir->judul }}</h4>
-            <p class="text-p">{{ $formulir->deskripsi }}</p>
+            <p>{{ $formulir->deskripsi }}</p>
           </div>
         </div>
       </div>

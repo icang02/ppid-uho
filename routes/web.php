@@ -9,7 +9,17 @@ use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/link', function () {
 
+    $target = $_SERVER['DOCUMENT_ROOT'] . "/zppid/storage/app/public";
+    $link = $_SERVER['DOCUMENT_ROOT'] . "/storage";
+
+    if (symlink($target, $link)) {
+        echo "OK symlink done..";
+    } else {
+        echo "Gagal..";
+    }
+});
 
 // route
 Route::get('/seed', function () {

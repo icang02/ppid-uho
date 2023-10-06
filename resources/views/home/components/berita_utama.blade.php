@@ -1,4 +1,4 @@
-<section class="testimonials" id="testimonials">
+<section class="testimonials" id="beritaUtama">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -8,56 +8,9 @@
         </div>
       </div>
 
-      <style>
-        .text-h {
-          font-size: 18px !important;
-          line-height: 23px !important;
-        }
-
-        .text-p,
-        .text-p p {
-          font-size: 15px !important;
-          line-height: 23px !important;
-        }
-
-        .pembungkus {
-          max-width: 100%;
-          overflow: hidden;
-          position: relative;
-          padding-bottom: 62.5%;
-        }
-
-        .responsive-element {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-position: center;
-          background-size: cover;
-        }
-
-        @media (max-width: 768px) {
-          .text-h {
-            font-size: 18px !important;
-            line-height: 25px !important;
-          }
-
-          .text-p,
-          .text-p p {
-            font-size: 12px !important;
-            line-height: 20px !important;
-          }
-
-          .pembungkus {
-            padding-bottom: 56.25%;
-          }
-        }
-      </style>
-
       <div class="col-lg-12">
         <div class="container-fluid px-0 px-lg-5">
-          <div class="row gx-4 justify-content-center">
+          <div class="row gx-4 justify-content-center content-berita">
 
             @if ($berita->isEmpty())
               <div class="text-muted text-center">Belum ada berita terbaru.</div>
@@ -66,23 +19,26 @@
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <div class="card" style="width: 100%;">
                     <div class="pembungkus">
-                      <div class="responsive-element" style="background-image: url({{ asset('img/123.png') }})">
+                      <div class="responsive-element" style="background-image: url({{ asset('img/123.png') }})"
+                        onclick="return window.location.href='{{ url('berita/' . $item->slug) }}'">
                       </div>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title text-h">{{ $item->judul }}</h5>
-                      <div class="text-muted text-p">
+                      <h5 class="card-title">
+                        <a href="{{ url("berita/$item->slug") }}">{!! str_limit($item->judul, $limit = 120, $end = '...') !!}</a>
+                      </h5>
+                      <div class="text-muted">
                         <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $item->tanggal }}
                         <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat
                       </div>
-                      <div class="card-text mt-3 text-p">
-                        {!! str_limit($item->isi, $limit = 150, $end = '...') !!}
+                      <div class="card-text py-2">
+                        {!! str_limit($item->isi, $limit = 90, $end = '...') !!}
                       </div>
                     </div>
-                    <div class="card-body">
+                    {{-- <div class="card-body">
                       <a href="{{ url("berita/$item->slug") }}"
                         class="btn btn-warning card-link px-md-3 py-md-2 px-2 py-1 text-p">Selengkapnya</a>
-                    </div>
+                    </div> --}}
                   </div>
                 </div>
               @endforeach

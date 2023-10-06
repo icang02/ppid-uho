@@ -1,4 +1,4 @@
-<section class="simple-cta" id="permohonan" style="padding: 70px 0px 80px 0px;">
+<section class="simple-cta" id="permohonan">
   <div class="container">
     <div class="row justify-content-center g-4">
       <div class="col-lg-12 text-center mb-5">

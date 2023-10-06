@@ -1,33 +1,5 @@
 @extends('home.layouts.main')
 @section('content')
-  <style>
-    .accordions {
-      padding: 30px 45px !important;
-    }
-
-    .text-p {
-      font-size: 15px !important;
-      line-height: 25px;
-    }
-
-    .btn-minimize {
-      margin-top: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .accordions {
-        padding: 15px 20px !important;
-      }
-
-      .text-p {
-        font-size: 12px !important;
-        line-height: 20px;
-      }
-    }
-  </style>
-
-  <link rel="stylesheet" href="{{ asset('css/page/informasi-publik.css') }}">
-
   <div class="page-heading">
     <div class="container">
       <div class="row">
@@ -41,16 +13,16 @@
     </div>
   </div>
 
-  <section class="service-details mt-5">
+  <section class="service-details mt-5 title-list-informasi">
     <section class="top-section mt-0">
       <div class="container">
         {{-- breadcrumb --}}
         @include('home.components.breadcrumb', ['breacumb' => $breadcumb])
 
-        <div class="row title mt-5">
+        <div class="row title mt-2 content">
           <div class="col-lg-12 align-self-center">
             <h4 class="mb-3 txt-biru fw-bold">{{ $informasiPublik->judul }}</h4>
-            <p class="text-p">{{ $informasiPublik->deskripsi }}</p>
+            <p>{{ $informasiPublik->deskripsi }}</p>
           </div>
         </div>
       </div>
@@ -66,16 +38,14 @@
               @forelse ($listInformasiPublik as $item)
                 <article class="accordion">
                   <div class="accordion-head">
-                    <span class="text-p">{{ $item->judul }}</span>
+                    <span>{{ $item->judul }}</span>
                     <span class="icon">
                       <i class="icon fa fa-chevron-right btn-minimize"></i>
                     </span>
                   </div>
                   <div class="accordion-body">
                     <div class="content">
-                      <p class="text-p">
-                        {!! $item->isi !!}
-                      </p>
+                      {!! $item->isi !!}
                     </div>
                   </div>
                 </article>
