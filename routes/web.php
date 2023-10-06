@@ -41,3 +41,106 @@ Route::get('/tentang/visi-misi', function () {
         'breadcumb' => '<span class="txt-kuning">Visi & Misi</span>'
     ]);
 });
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+
+
+//routeee tentangggggggg
+Route::get('/dashboard/tentang/profile', function () {
+    return view('admin.tentang/profil');
+});
+Route::get('/dashboard/tentang/visi-misi', function () {
+    return view('admin.tentang/visi-misi');
+});
+Route::get('/dashboard/tentang/tugas-fungsi', function () {
+    return view('admin.tentang/tugas-fungsi');
+});
+Route::get('/dashboard/tentang/struktur-organisasi', function () {
+    return view('admin.tentang/struktur-organisasi');
+});
+
+
+
+//route beritaaaa
+Route::get('/dashboard/berita', function () {
+    return view('admin.berita/berita');
+});
+Route::get('/dashboard/form-berita', function () {
+    return view('admin.berita.form-berita');
+});
+Route::get('/dashboard/edit-berita', function () {
+    return view('admin.berita.edit-berita');
+});
+Route::get('/dashboard/detail-berita', function () {
+    return view('admin.berita.detail-berita');
+});
+
+
+//route formulirrrr
+
+Route::get('/dashboard/formulir/formulir-publik', function () {
+    return view('admin.formulir.formulir-publik');
+});
+Route::get('/dashboard/formulir/formulir-keberatan', function () {
+    return view('admin.formulir.formulir-keberatan');
+});
+Route::get('/dashboard/formulir/formulir-sengketa', function () {
+    return view('admin.formulir/formulir-sengketa');
+});
+
+//route regulasiii
+
+Route::get('/dashboard/regulasi', function () {
+    return view('admin.regulasi');
+});
+
+
+
+//route informasi
+
+Route::get('/dashboard/informasi/informasi-berkala', function () {
+    return view('admin.informasi.informasi-berkala');
+});
+Route::get('/dashboard/informasi/informasi-saat', function () {
+    return view('admin.informasi.informasi-saat');
+});
+Route::get('/dashboard/informasi/informasi-merta', function () {
+    return view('admin.informasi/informasi-merta');
+});
+
+
+//route data informasi
+
+Route::get('/dashboard/informasi/data-informasi-berkala', function () {
+    return view('admin.informasi.data-informasi.data-informasi-berkala');
+});
+Route::get('/dashboard/informasi/data-informasi-saat', function () {
+    return view('admin.informasi.data-informasi.data-informasi-saat');
+});
+
+
+//route edit landingpage
+Route::get('/dashboard/landing/ppid', function () {
+    return view('admin.landing.ppid');
+});
+Route::get('/dashboard/landing/permohonan', function () {
+    return view('admin.landing.permohonan');
+});
+Route::get('/dashboard/landing/infografis', function () {
+    return view('admin.landing.infografis');
+});
+Route::get('/dashboard/landing/slogan', function () {
+    return view('admin.landing.slogan');
+});
+Route::get('/dashboard/landing/sponsor', function () {
+    return view('admin.landing.sponsor');
+});
+
+//route loginnnnnnn
+Route::get('/auth', function () {
+    return view('admin.auth/login');
+});
+
