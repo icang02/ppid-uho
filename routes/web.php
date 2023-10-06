@@ -18,7 +18,7 @@ Route::get('/seed', function () {
 
 Route::get('/', [LandingController::class, 'index']);
 
-Route::get('/berita', [BeritaController::class, 'index']);
+Route::get('/berita', [BeritaController::class, 'index'])->name('index_berita');
 Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
 Route::get('/search-berita', [BeritaController::class, 'searchBerita']);
 
@@ -32,8 +32,12 @@ Route::get('/formulir/keberatan-layanan-informasi-publik', [FormulirController::
 Route::get('/formulir/penyelesaian-sengketa-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_sengketa');
 
 Route::get('/tentang/profil', function () {
-    return view('home.profil');
+    return view('home.profil', [
+        'breadcumb' => '<span class="txt-kuning">Profil</span>'
+    ]);
 });
 Route::get('/tentang/visi-misi', function () {
-    return view('home.visi-misi');
+    return view('home.visi-misi', [
+        'breadcumb' => '<span class="txt-kuning">Visi & Misi</span>'
+    ]);
 });

@@ -123,9 +123,9 @@
                 target="_blank">
                 @if (request()->is('formulir/permohonan-informasi-publik'))
                   BUAT PERMOHONAN
-                @elseif (request()->is('formulir/keberatan-atas-layanan-informasi-publik'))
+                @elseif (request()->is('formulir/keberatan-layanan-informasi-publik'))
                   Ajukan Keberatan
-                @elseif (request()->is('formulir/penyelesaian-sengketa-informsi'))
+                @elseif (request()->is('formulir/penyelesaian-sengketa-informasi-publik'))
                   Link Formulir
                 @endif
               </a>

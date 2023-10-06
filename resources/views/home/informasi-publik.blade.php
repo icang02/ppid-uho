@@ -45,7 +45,7 @@
     <section class="top-section mt-0">
       <div class="container">
         {{-- breadcrumb --}}
-        @include('home.components.breadcrumb')
+        @include('home.components.breadcrumb', ['breacumb' => $breadcumb])
 
         <div class="row title mt-5">
           <div class="col-lg-12 align-self-center">

@@ -16,8 +16,9 @@
 </style>
 
 <div class="breadcrumb">
-  <a href="{{ url('/') }}" class="text-dark">Beranda</a>&nbsp;>&nbsp;<span class="txt-kuning">Permohonan
-    Informasi
-    Publik</span>
+  <div>
+    <a href="{{ url('/') }}" class="text-dark">
+      Beranda</a>&nbsp;>&nbsp; {!! $breadcumb ?? '-' !!}
+  </div>
   <hr>
 </div>
