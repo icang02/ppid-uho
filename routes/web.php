@@ -153,4 +153,3 @@ Route::get('/dashboard/landing/sponsor', function () {
 Route::get('/auth', function () {
     return view('admin.auth/login');
 });
-
