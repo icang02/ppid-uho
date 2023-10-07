@@ -209,5 +209,44 @@ class DatabaseSeeder extends Seeder
             'judul' => 'Informasi Tentang Peraturan, Keputusan dan/atau Kebijakan Universitas Halu Oleo',
             'isi' => '<p class="text-p">Tersedia di unit kerja terkait, jika ingin memperoleh informasi terkait peraturan dan keputusan dapat mengisi formulirr informasi publik.</p>'
         ]);
+
+        // SEED TENTANG PRFIL DAN LAIN LAIN
+        Landing::create([
+            'judul' => 'Profil Pejabat Pengelola Informasi dan Dokumentasi (PPID)',
+            'bagian' => 'profil',
+            'isi' => '<p>PPID adalah kepanjangan dari Pejabat Pengelola Informasi dan Dokumentasi, yang berfungsi sebagai pengelola dan penyampai dokumen yang dimiliki oleh Badan Publik sesuai dengan amanat UU 14/2008 tentang Keterbukaan Informasi Publik. Dengan keberadaan PPID maka masyarakat yang akan menyampaikan permohonan informasi lebih mudah dan tidak berbelit karena dilayani lewat satu pintu.</p><br><p>Pejabat Pengelola Informasi dan Dokumentasi (PPID) adalah pejabat yang bertanggung jawab di bidang penyimpanan, pendokumentasian, penyediaan dan/ atau pelayanan informasi di badan publik.</p>'
+        ]);
+        Landing::create([
+            'judul' => 'Visi PPID',
+            'bagian' => 'visi',
+            'isi' => '<p>Menjadi penyedia layanan informasi publik yang profesional, transparan dan akuntabel sesuai dengan ketentuan
+            peraturan perundang-undangan.</p>'
+        ]);
+        Landing::create([
+            'judul' => 'Misi PPID',
+            'bagian' => 'misi',
+            'isi' => 'Meningkatkan tata kelola informasi publik/|Meningkatkan sumber daya manusia di bidang pelayanan informasi publik/|Mengembangkan kualitas sistem informasi pelayanan publik'
+        ]);
+        Landing::create([
+            'judul' => 'Tokok Pokok PPID',
+            'bagian' => 'tugas',
+            'isi' => '<p>PPID bertugas mengkoordinasikan pengumpulan seluruh Informasi Publik dari setiap unit kerja di lingkungan Universitas Halu Oleo yang meliputi; informasi yang wajib disediakan dan diumumkan secara berkala; informasi yang wajib tersedia setiap saat; informasi terbuka lainnya yang diminta Pemohon Informasi Publik.</p>'
+        ]);
+        Landing::create([
+            'judul' => 'Fungsi PPID',
+            'bagian' => 'fungsi',
+            'isi' => 'Penghimpunan informasi publik di lingkungan Universitas Gadjah Mada./|Penyampaian Informasi publik yang diperoleh dari seluruh unit kerja di lingkungan Universitas Gadjah Mada./|Penyediaann dan pemberian layanan informasi publik yang bersifat terbuka./|Penyelesaian sangketa pelayanan Informasi.'
+        ]);
+        Landing::create([
+            'judul' => 'Regulasi PPID',
+            'bagian' => 'regulasi',
+            'isi' => '<p>Regulasi PPID Universitas Halu Oleo.</p>'
+        ]);
+        Landing::create([
+            'judul' => 'Struktur Organisasi PPID UHO',
+            'bagian' => 'struktur',
+            'isi' => '<p>Struktur PPID Universitas Halu Oleo dapat dilihat pada gambar berikut.</p>',
+            'gambar' => 'img/berita.jpg'
+        ]);
     }
 }

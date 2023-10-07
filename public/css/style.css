@@ -204,6 +204,11 @@
   font-size: var(--text-lg);
   line-height: var(--lh-lg);
 }
+#tentang table {
+  vertical-align: top;
+  font-size: var(--text-lg) !important;
+  line-height: var(--lh-lg) !important;
+}
 
 /* HALAMAN INFORMASI PUBLIK */
 .title-list-informasi .content h4 {
@@ -293,11 +298,33 @@
   font-size: var(--text-p) !important;
   margin-bottom: 20px !important;
 }
-#detailBerita hr {
-  margin-top: 36px !important;
+.garis-bawah {
+  margin-top: 45px !important;
+}
+
+/* SEBELUM FOOTER */
+#partner {
+  padding: 40px 0 !important;
+}
+#partner h6 {
+  font-size: var(--text-p) !important;
+  margin-bottom: 13px;
+}
+#partner .garis-kuning {
+  width: 100%;
+  height: 2px;
+  background: var(--kuning);
+  margin-bottom: 25px;
+}
+#partner p {
+  color: #fff;
+  opacity: 0.9;
+  font-size: 0.75em !important;
+  line-height: var(--lh-p) !important;
 }
 
 /* FOOTER SECTION CONTENT */
 #footer .col-lg-12 p {
-  font-size: var(--text-lg) !important;
+  font-size: var(--text-p) !important;
+  opacity: 0.75;
 }

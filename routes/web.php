@@ -6,6 +6,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\InformasiPublikController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\TentangController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -46,16 +47,11 @@ Route::get('/formulir/permohonan-informasi-publik', [FormulirController::class, 
 Route::get('/formulir/keberatan-layanan-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_keberatan');
 Route::get('/formulir/penyelesaian-sengketa-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_sengketa');
 
-Route::get('/tentang/profil', function () {
-    return view('home.profil', [
-        'breadcumb' => '<span class="txt-kuning">Profil</span>'
-    ]);
-});
-Route::get('/tentang/visi-misi', function () {
-    return view('home.visi-misi', [
-        'breadcumb' => '<span class="txt-kuning">Visi & Misi</span>'
-    ]);
-});
+Route::get('/tentang/profil', [TentangController::class, 'index'])->name('tentang_profil');
+Route::get('/tentang/visi-misi', [TentangController::class, 'index'])->name('tentang_visi_misi');
+Route::get('/tentang/tugas-fungsi', [TentangController::class, 'index'])->name('tentang_tugas_fungsi');
+Route::get('/tentang/struktur-ppid', [TentangController::class, 'index'])->name('tentang_struktur_ppid');
+Route::get('/regulasi', [TentangController::class, 'index'])->name('regulasi');
 
 
 

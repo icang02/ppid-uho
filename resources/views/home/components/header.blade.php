@@ -17,10 +17,10 @@
             <li class="has-sub">
               <a href="javascript:void(0)" class="{{ !request()->is('tentang*') ?: 'active' }}">Tentang</a>
               <ul class="sub-menu tentang">
-                <li><a href="{{ url('tentang/profil') }}">Profil</a></li>
-                <li><a href="{{ url('tentang/visi-misi') }}">Visi & Misi</a></li>
-                <li><a href="{{ url('tentang/visi-misi') }}">Tugas & Fungsi</a></li>
-                <li><a href="{{ url('tentang/visi-misi') }}">Struktur PPID</a></li>
+                <li><a href="{{ route('tentang_profil') }}">Profil</a></li>
+                <li><a href="{{ route('tentang_visi_misi') }}">Visi & Misi</a></li>
+                <li><a href="{{ route('tentang_tugas_fungsi') }}">Tugas & Fungsi</a></li>
+                <li><a href="{{ route('tentang_struktur_ppid') }}">Struktur PPID</a></li>
               </ul>
             </li>
             <li class="has-sub">

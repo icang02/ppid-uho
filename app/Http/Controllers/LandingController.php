@@ -20,7 +20,7 @@ class LandingController extends Controller
         if (Berita::all()->isNotEmpty()) {
             $berita = Berita::where('kategori', 'berita')->take(6)->orderBy('tanggal', 'DESC')->get();
         } else {
-            $berita = 0;
+            $berita = collect([]);
         }
         // dd($berita);
 

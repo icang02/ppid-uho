@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h2>Profil PPID</h2>
+            <h2>{{ strip_tags($breadcumb) }}</h2>
             <div class="div-dec"></div>
           </div>
         </div>
@@ -21,16 +21,47 @@
 
         <div class="row title mt-2">
           <div class="col-lg-12 align-self-center">
-            <h4 class="mb-3 txt-biru fw-bold">Profil Pejabat Pengelola Informasi dan Dokumentasi (PPID)</h4>
-            <p>
-              PPID adalah kepanjangan dari Pejabat Pengelola Informasi dan Dokumentasi, yang berfungsi sebagai pengelola
-              dan penyampai dokumen yang dimiliki oleh Badan Publik sesuai dengan amanat UU 14/2008 tentang Keterbukaan
-              Informasi Publik. Dengan keberadaan PPID maka masyarakat yang akan menyampaikan permohonan informasi lebih
-              mudah dan tidak berbelit karena dilayani lewat satu pintu.
-              <br><br>
-              Pejabat Pengelola Informasi dan Dokumentasi (PPID) adalah pejabat yang bertanggung jawab di bidang
-              penyimpanan, pendokumentasian, penyediaan dan/ atau pelayanan informasi di badan publik.
-            </p>
+            @if (request()->is('tentang/profil') || request()->is('regulasi'))
+              <h4 class="mb-3 txt-biru fw-bold">{{ $tentang->judul }}</h4>
+              <div>
+                {!! $tentang->isi !!}
+              </div>
+            @endif
+
+            @if (request()->is('tentang/visi-misi') || request()->is('tentang/tugas-fungsi'))
+              <h4 class="mb-3 txt-biru fw-bold">{{ $tentang[0]->judul }}</h4>
+              <div>
+                {!! $tentang->first()->isi !!}
+              </div>
+
+              <h4 class="mb-3 mt-4 txt-biru fw-bold">{{ $tentang[1]->judul }}</h4>
+              <div>
+                <table>
+                  @forelse (explode('/|', $tentang[1]->isi) as $item)
+                    <tr>
+                      <td>{{ $loop->iteration }}.&nbsp;</td>
+                      <td>{{ $item }}</td>
+                    </tr>
+                  @empty
+                    -
+                  @endforelse
+                </table>
+              </div>
+            @endif
+
+            @if (request()->is('tentang/struktur-ppid'))
+              <div class="row gap-md-0 gap-3 justify-content-between">
+                <div class="col-md-6">
+                  <h4 class="mb-3 txt-biru fw-bold">{{ $tentang->judul }}</h4>
+                  <div>
+                    {!! $tentang->isi !!}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <img src="{{ asset($tentang->gambar) }}" alt="img.jpg">
+                </div>
+              </div>
+            @endif
           </div>
         </div>
       </div>

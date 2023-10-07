@@ -45,6 +45,9 @@
   .breadcrumb {
     font-size: var(--text-p) !important;
   }
+  .breadcrumb hr {
+    margin-top: 15px !important;
+  }
 
   /* TITLE DI SETIAP HALAMAN */
   .page-heading h2 {
@@ -151,6 +154,12 @@
   #beritaUtama .section-heading h4 {
     font-size: var(--text-h2) !important;
   }
+  #beritaUtama .content-berita .card {
+    border-radius: 10px !important;
+  }
+  #beritaUtama .content-berita .card .pembungkus {
+    border-radius: 10px 10px 0 0 !important;
+  }
   #beritaUtama .content-berita .card-title a {
     font-size: var(--text-h5) !important;
     line-height: var(--lh-p);
@@ -171,6 +180,10 @@
   .title-list-informasi .content p {
     font-size: var(--text-p);
     line-height: var(--lh-p);
+  }
+  #tentang table {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p) !important;
   }
 
   /* HALAMAN INFORMASI PUBLIK */
@@ -224,9 +237,8 @@
   .semua-berita .left-image img {
     object-fit: cover;
     width: 100% !important;
-    height: 240px !important;
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+    height: 227px !important;
+    border-radius: 10px 10px 0 0 !important;
   }
   .semua-berita .right-content {
     padding: 23px 20px 10px 20px !important;
@@ -265,8 +277,13 @@
   #detailBerita .left-content .text-body p {
     font-size: var(--text-p) !important;
   }
-  #detailBerita hr {
-    margin-top: -10px !important;
+  .garis-bawah {
+    margin-top: -23px !important;
+  }
+
+  /* SEBELUM FOOTER */
+  #partner .container {
+    padding: 1000px 300px 0 300px !important;
   }
 
   /* FOOTER SECTION CONTENT */
