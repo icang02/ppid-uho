@@ -51,6 +51,8 @@
               </div>
             </div>
           </div>
+
+          <hr>
         </div>
 
       </div>
@@ -64,32 +66,32 @@
       <div class="row">
         <div class="col-lg-2 col-sm-4 col-6">
           <div class="item">
-            <img src="assets/images/client-01.png" alt="">
+            <img src="{{ asset('assets/images/client-01.png') }}" alt="">
           </div>
         </div>
         <div class="col-lg-2 col-sm-4 col-6">
           <div class="item">
-            <img src="assets/images/client-01.png" alt="">
+            <img src="{{ asset('assets/images/client-01.png') }}" alt="">
           </div>
         </div>
         <div class="col-lg-2 col-sm-4 col-6">
           <div class="item">
-            <img src="assets/images/client-01.png" alt="">
+            <img src="{{ asset('assets/images/client-01.png') }}" alt="">
           </div>
         </div>
         <div class="col-lg-2 col-sm-4 col-6">
           <div class="item">
-            <img src="assets/images/client-01.png" alt="">
+            <img src="{{ asset('assets/images/client-01.png') }}" alt="">
           </div>
         </div>
         <div class="col-lg-2 col-sm-4 col-6">
           <div class="item">
-            <img src="assets/images/client-01.png" alt="">
+            <img src="{{ asset('assets/images/client-01.png') }}" alt="">
           </div>
         </div>
         <div class="col-lg-2 col-sm-4 col-6">
           <div class="item">
-            <img src="assets/images/client-01.png" alt="">
+            <img src="{{ asset('assets/images/client-01.png') }}" alt="">
           </div>
         </div>
       </div>

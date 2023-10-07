@@ -19,7 +19,7 @@
   --lh-xl: 30px !important;
 }
 
-@media only screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
   /* HERO CONTENT SECTION */
   #top .header-text h2 {
     font-size: 40px !important;
@@ -65,7 +65,7 @@
     line-height: 40px !important;
     margin: 0 !important;
     margin-top: 50px !important;
-    transform: translateX(-10px);
+    transform: translateX(-12px);
   }
   #top .header-text {
     display: flex;
@@ -73,13 +73,13 @@
     justify-content: center;
   }
   #top .header-text .div-dec {
-    transform: translateX(104px);
+    transform: translateX(106px);
   }
   .green-button a {
     background: var(--kuning) !important;
     padding: 10px 20px !important;
     font-size: var(--text-p) !important;
-    transform: translateX(72px);
+    transform: translateX(74px);
   }
 
   /* JENIS INFORMAI CONTENT SECTION */
@@ -220,10 +220,61 @@
     font-size: var(--text-p) !important;
   }
 
-  #footer .col-lg-12 p {
+  /* HALAMAN SEMUA BERITA */
+  .semua-berita .left-image img {
+    object-fit: cover;
+    width: 100% !important;
+    height: 240px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  .semua-berita .right-content {
+    padding: 23px 20px 10px 20px !important;
+  }
+  .semua-berita .right-content h4 {
+    font-size: var(--text-h5) !important;
+    line-height: var(--lh-lp) !important;
+  }
+  .semua-berita .right-content .text-muted {
+    font-size: var(--text-p) !important;
+  }
+  .semua-berita .right-content p {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p) !important;
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+  }
+  .semua-berita .right-content span a {
+    display: none;
+  }
+  .semua-berita .text-search {
     font-size: var(--text-p) !important;
   }
 
+  /* HALAMAN DETAIL BERITA */
+  #detailBerita .left-content {
+    margin-right: 0px !important;
+  }
+  #detailBerita .left-content h4 {
+    font-size: var(--text-h4) !important;
+    line-height: var(--lh-lg) !important;
+  }
+  #detailBerita .left-content .text-muted {
+    font-size: var(--text-p) !important;
+  }
+  #detailBerita .left-content .text-body p {
+    font-size: var(--text-p) !important;
+  }
+  #detailBerita hr {
+    margin-top: -10px !important;
+  }
+
+  /* FOOTER SECTION CONTENT */
+  #footer .col-lg-12 {
+    font-size: var(--text-p) !important;
+  }
+
+  /* HAMBURGER MENU MOBILE */
   .menu-trigger {
     /* top: 38px !important; */
     width: 19px !important;

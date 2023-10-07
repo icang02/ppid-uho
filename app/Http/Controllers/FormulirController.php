@@ -13,7 +13,7 @@ class FormulirController extends Controller
         if (request()->is('formulir/permohonan-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
             $jenisFormulir = JenisFormulir::where('jenis_formulir', 'permohonan')->get()->first();
-            $breadcumb = '<span class="txt-kuning">Permohonana Informasi Publik</span>';
+            $breadcumb = '<span class="txt-kuning">Permohonan Informasi Publik</span>';
         } elseif (request()->is('formulir/keberatan-layanan-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
             $jenisFormulir = JenisFormulir::where('jenis_formulir', 'keberatan')->get()->first();

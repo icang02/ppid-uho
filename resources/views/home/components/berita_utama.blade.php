@@ -12,7 +12,7 @@
         <div class="container-fluid px-0 px-lg-5">
           <div class="row gx-4 justify-content-center content-berita">
 
-            @if ($berita->isEmpty())
+            @if ($berita == 0)
               <div class="text-muted text-center">Belum ada berita terbaru.</div>
             @else
               @foreach ($berita as $item)
@@ -46,10 +46,12 @@
 
           </div>
 
-          <div class="col-12 mt-3 text-center">
-            <a class="btn py-2 px-3 py-md-3 px-md-4 bg-biru text-white btn-lainnya" href="{{ url('berita') }}">Lihat
-              Lainnya</a>
-          </div>
+          @if ($berita != 0)
+            <div class="col-12 mt-3 text-center">
+              <a class="btn py-2 px-3 py-md-3 px-md-4 bg-biru text-white btn-lainnya" href="{{ url('berita') }}">Lihat
+                Lainnya</a>
+            </div>
+          @endif
         </div>
       </div>
 </section>

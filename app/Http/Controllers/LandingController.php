@@ -20,7 +20,7 @@ class LandingController extends Controller
         if (Berita::all()->isNotEmpty()) {
             $berita = Berita::where('kategori', 'berita')->take(6)->orderBy('tanggal', 'DESC')->get();
         } else {
-            $berita = null;
+            $berita = 0;
         }
         // dd($berita);
 
@@ -30,24 +30,13 @@ class LandingController extends Controller
             'formulir' => $formulir,
             'qoutes' => $qoutes,
             'berita' => $berita,
-            'ppid' =>$ppid,
+            'ppid' => $ppid,
         ]);
     }
 
-
-    public function data(){
-        if (request()->is('dashboard/landing/permohonan')) {
-            $formulir = Landing::where('bagian', 'formulir')->get()->first();
-            return view('admin.landing.permohonan', [
-                'formulir' => $formulir,
-            ]);
-        }
-        if (request()->is('dashboard/landing/slogan')) {
-            $qoutes = Landing::where('bagian', 'qoutes')->get()->first();
-            return view('admin.landing.slogan', [
-                'quotes' => $qoutes,
-            ]);
-        }
+    // DASHBOARD METHOD
+    public function data()
+    {
         if (request()->is('dashboard/landing/ppid')) {
             $ppid = Landing::where('bagian', 'ppid')->get()->first();
             return view('admin.landing.ppid', [
@@ -60,47 +49,52 @@ class LandingController extends Controller
                 'info' => $infografis,
             ]);
         }
+        if (request()->is('dashboard/landing/permohonan')) {
+            $formulir = Landing::where('bagian', 'formulir')->get()->first();
+            return view('admin.landing.permohonan', [
+                'formulir' => $formulir,
+            ]);
+        }
+        if (request()->is('dashboard/landing/slogan')) {
+            $qoutes = Landing::where('bagian', 'qoutes')->get()->first();
+            return view('admin.landing.slogan', [
+                'quotes' => $qoutes,
+            ]);
+        }
     }
-   
+
 
     public function update(Request $request)
-    {   
+    {
         if (request()->is('landing/ppid/update')) {
             $data = Landing::where('bagian', 'ppid')->get()->first();
-            $direct= 'dashboard/landing/ppid';
+            $direct = 'dashboard/landing/ppid';
         }
         if (request()->is('landing/quotes/update')) {
             $data = Landing::where('bagian', 'qoutes')->get()->first();
-            $direct= 'dashboard/landing/slogan';
+            $direct = 'dashboard/landing/slogan';
         }
         if (request()->is('landing/permohonan/update')) {
-            $direct= 'dashboard/landing/permohonan';
+            $direct = 'dashboard/landing/permohonan';
             $data = Landing::where('bagian', 'formulir')->get()->first();
         }
         if (request()->is('landing/infografis/update')) {
-            $direct= 'dashboard/landing/infografis';
-            $data = Landing::where('bagian', 'tata cara permohonan')->get();
+            $direct = 'dashboard/landing/infografis';
+            $data = Landing::find($request->id);
 
-            // Storage::delete($imgPath);
-            $imgPath = $request->file('img')->store('img');  
+            $imgPath = $data->gambar;
+            if ($request->has('img')) {
+                Storage::delete(str_replace('storage/', '', $imgPath));
+                $imgPath = 'storage/' . $request->file('img')->store('img');
+            }
         }
-          
-        $request->validate([
-            'judul' => 'required',
-            'isi' => 'required',
 
-        ]);
-        
         $data->update([
             'judul' => ucfirst($request->judul),
-            'isi' => $request->isi,
-            // 'img'=>$imgPath,
+            'isi' => $request->isi ?? null,
+            'gambar' => $imgPath ?? null,
         ]);
 
         return redirect($direct)->with('success', 'Data berhasil diupdate.');
     }
-
-
-
-
 }

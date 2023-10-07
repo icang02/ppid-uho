@@ -36,7 +36,8 @@
                     <li class="active">
                       <div>
                         <div class="left-image">
-                          <img src="{{ asset($item->gambar) }}">
+                          <img src="{{ asset($item->gambar) }}"
+                            onclick="return window.location.href='{{ url('berita/' . $item->slug) }}'">
                         </div>
                         <div class="right-content">
                           <h4 onclick="return window.location.href='{{ url('berita/' . $item->slug) }}'">
@@ -68,7 +69,7 @@
                         <br> Tidak ada hasil pencarian.
                       </div>
                     @else
-                      <div class="text-muted text-center">Belum ada berita terbaru.</div>
+                      <div class="text-muted text-center text-search">Belum ada berita terbaru.</div>
                     @endif
                   </ul>
                 </div>

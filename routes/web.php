@@ -9,6 +9,8 @@ use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
+
+// route symlink
 Route::get('/link', function () {
 
     $target = $_SERVER['DOCUMENT_ROOT'] . "/zppid/storage/app/public";
@@ -21,7 +23,10 @@ Route::get('/link', function () {
     }
 });
 
-// route
+// route migration
+Route::get('/fresh', function () {
+    return Artisan::call('migrate:fresh');
+});
 Route::get('/seed', function () {
     return Artisan::call('migrate:fresh --seed');
 });
@@ -52,12 +57,15 @@ Route::get('/tentang/visi-misi', function () {
     ]);
 });
 
+
+
+// route index dashboard
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
 
-//routeee tentangggggggg
+// route dashboard tentang
 Route::get('/dashboard/tentang/profile', function () {
     return view('admin.tentang/profil');
 });
@@ -72,8 +80,7 @@ Route::get('/dashboard/tentang/struktur-organisasi', function () {
 });
 
 
-
-//route beritaaaa
+// route dashboard berita
 Route::get('/dashboard/berita', function () {
     return view('admin.berita/berita');
 });
@@ -87,9 +94,7 @@ Route::get('/dashboard/detail-berita', function () {
     return view('admin.berita.detail-berita');
 });
 
-
-//route formulirrrr
-
+// route dashboard formulir
 Route::get('/dashboard/formulir/formulir-publik', function () {
     return view('admin.formulir.formulir-publik');
 });
@@ -100,16 +105,14 @@ Route::get('/dashboard/formulir/formulir-sengketa', function () {
     return view('admin.formulir/formulir-sengketa');
 });
 
-//route regulasiii
-
+// route dashboard regulasi
 Route::get('/dashboard/regulasi', function () {
     return view('admin.regulasi');
 });
 
 
 
-//route informasi
-
+// route dashboard informasi publik
 Route::get('/dashboard/informasi/informasi-berkala', function () {
     return view('admin.informasi.informasi-berkala');
 });
@@ -121,8 +124,7 @@ Route::get('/dashboard/informasi/informasi-merta', function () {
 });
 
 
-//route data informasi
-
+// route dashboard list data informasi publik
 Route::get('/dashboard/informasi/data-informasi-berkala', function () {
     return view('admin.informasi.data-informasi.data-informasi-berkala');
 });
@@ -130,12 +132,12 @@ Route::get('/dashboard/informasi/data-informasi-saat', function () {
     return view('admin.informasi.data-informasi.data-informasi-saat');
 });
 
-//route edit landingpage
-
+// route dashboard edit landing page
 Route::get('/dashboard/landing/ppid', [LandingController::class, 'data']);
 Route::get('/dashboard/landing/permohonan', [LandingController::class, 'data']);
 Route::get('/dashboard/landing/slogan', [LandingController::class, 'data']);
 Route::get('/dashboard/landing/infografis', [LandingController::class, 'data']);
+
 Route::post('/landing/ppid/update', [LandingController::class, 'update']);
 Route::post('/landing/permohonan/update', [LandingController::class, 'update']);
 Route::post('/landing/quotes/update', [LandingController::class, 'update']);
