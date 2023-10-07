@@ -65,6 +65,10 @@ class LandingController extends Controller
 
     public function update(Request $request)
     {   
+        if (request()->is('landing/ppid/update')) {
+            $data = Landing::where('bagian', 'ppid')->get()->first();
+            $direct= 'dashboard/landing/ppid';
+        }
         if (request()->is('landing/quotes/update')) {
             $data = Landing::where('bagian', 'qoutes')->get()->first();
             $direct= 'dashboard/landing/slogan';
