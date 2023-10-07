@@ -75,6 +75,7 @@
 
   @yield('content')
 
+  @include('home.components.partner')
   @include('home.components.footer')
 
   <!-- Scripts -->

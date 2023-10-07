@@ -48,11 +48,6 @@
                 class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Slogan</span></a>
         </li>
 
-        <li class="nav-item">
-          <a href="/dashboard/landing/sponsor" class="nav-link "><span class="pcoded-micon"><i
-                class="feather icon-lock"></i></span><span class="pcoded-mtext">Sponsor</span></a>
-        </li>
-
         <li class="nav-item pcoded-menu-caption">
           <label>Menu</label>
         </li>
@@ -61,10 +56,10 @@
           <a class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify "></i></span><span
               class="pcoded-mtext">Tentang</span></a>
           <ul class="pcoded-submenu">
-            <li><a href="/dashboard/tentang/profile">Profile</a></li>
-            <li><a href="/dashboard/tentang/visi-misi">Visi Misi</a></li>
-            <li><a href="/dashboard/tentang/tugas-fungsi">Tugas & Fungsi</a></li>
-            <li><a href="/dashboard/tentang/struktur-organisasi">Struktur Organisasi</a></li>
+            <li><a href="{{ route('tentang_profile_admin') }}">Profile</a></li>
+            <li><a href="{{ route('tentang_visi_misi_admin') }}">Visi Misi</a></li>
+            <li><a href="{{ route('tentang_tugas_fungsi_admin') }}">Tugas & Fungsi</a></li>
+            <li><a href="{{ route('tentang_struktur_ppid_admin') }}">Struktur Organisasi</a></li>
           </ul>
         </li>
 

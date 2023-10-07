@@ -282,8 +282,14 @@
   }
 
   /* SEBELUM FOOTER */
-  #partner .container {
-    padding: 1000px 300px 0 300px !important;
+  #partner .row {
+    padding: 0px 10px !important;
+  }
+  #partner .garis-kuning {
+    margin-bottom: 15px;
+  }
+  #partner p {
+    margin-bottom: 7px;
   }
 
   /* FOOTER SECTION CONTENT */

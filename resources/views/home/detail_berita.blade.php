@@ -60,6 +60,4 @@
       </div>
     </div>
   </section>
-
-  @include('home.components.partner')
 @endsection

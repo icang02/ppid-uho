@@ -57,8 +57,6 @@
         </div>
     </section>
 
-    @include('home.components.partner')
-
     <script>
       $(document).ready(function() {
         // Hapus class tertentu dari elemen

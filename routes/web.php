@@ -62,18 +62,12 @@ Route::get('/dashboard', function () {
 
 
 // route dashboard tentang
-Route::get('/dashboard/tentang/profile', function () {
-    return view('admin.tentang/profil');
-});
-Route::get('/dashboard/tentang/visi-misi', function () {
-    return view('admin.tentang/visi-misi');
-});
-Route::get('/dashboard/tentang/tugas-fungsi', function () {
-    return view('admin.tentang/tugas-fungsi');
-});
-Route::get('/dashboard/tentang/struktur-organisasi', function () {
-    return view('admin.tentang/struktur-organisasi');
-});
+Route::get('/dashboard/tentang/profil', [TentangController::class, 'indexAdmin'])->name('tentang_profile_admin');
+Route::get('/dashboard/tentang/visi-misi', [TentangController::class, 'indexAdmin'])->name('tentang_visi_misi_admin');
+Route::get('/dashboard/tentang/tugas-fungsi', [TentangController::class, 'indexAdmin'])->name('tentang_tugas_fungsi_admin');
+Route::get('/dashboard/tentang/struktur-ppid', [TentangController::class, 'indexAdmin'])->name('tentang_struktur_ppid_admin');
+
+Route::put('/dashboard/tentang/profil/update/{tentang}', [TentangController::class, 'updateTentang'])->name('update_tentang');
 
 
 // route dashboard berita

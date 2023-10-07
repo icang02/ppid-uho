@@ -13,6 +13,4 @@
   @include('home.components.qoutes')
 
   @include('home.components.berita_utama');
-
-  @include('home.components.partner')
 @endsection

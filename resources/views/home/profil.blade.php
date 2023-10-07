@@ -66,62 +66,6 @@
         </div>
       </div>
     </section>
+  </section>
 
-
-    <style>
-      .accordion {
-        margin-bottom: 30px;
-      }
-
-      .accordion .content {
-        margin-top: 10px;
-      }
-
-      table {
-        vertical-align: top !important;
-      }
-
-      @media (max-width: 768px) {
-        .title {
-          margin-bottom: 30px;
-        }
-      }
-    </style>
-
-    <section class="partners">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-2 col-sm-4 col-6">
-            <div class="item">
-              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6">
-            <div class="item">
-              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6">
-            <div class="item">
-              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6">
-            <div class="item">
-              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6">
-            <div class="item">
-              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6">
-            <div class="item">
-              <img src="{{ asset('assets/images/client-01.png') }}" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  @endsection
+@endsection

@@ -205,9 +205,11 @@
   line-height: var(--lh-lg);
 }
 #tentang table {
-  vertical-align: top;
   font-size: var(--text-lg) !important;
   line-height: var(--lh-lg) !important;
+}
+#tentang table tr {
+  vertical-align: top !important;
 }
 
 /* HALAMAN INFORMASI PUBLIK */

@@ -1,6 +1,6 @@
 <section class="partners" id="partner">
   <div class="container-fluid">
-    <div class="row justify-content-center gap-5 gap-md-0">
+    <div class="row justify-content-center gap-4 gap-md-0">
       <div class="col-lg-3">
         <h6 class="text-white">Pejabat Pengelola Informasi dan Dokumentasi (PPID)</h6>
         <div class="garis-kuning"></div>
