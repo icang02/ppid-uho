@@ -75,6 +75,12 @@ class DatabaseSeeder extends Seeder
             'isi' => '"Hak atas informasi yang terbuka menjadi pembukan jalan bagi terjaminnya pelaksanaan hak-hak asasi lainnya, seperti hak atas pendidikan, hak untuk hidup sejahtera, hak untuk hidup aman, dan hak warga negara lainnya."',
         ]);
 
+        Landing::create([
+            'bagian' => 'ppid',
+            'judul' => 'Pengertian PPID',
+            'isi' => 'PPID merupakan sarana layanan online bagi permohonan informasi publik dan sebagai salah satu wujud pelaksanaan keterbukaan informasi di Universitas Halu Oleo.',
+        ]);
+
         Berita::create([
             'kategori' => 'berita',
             'judul' => 'Daftar Bakal Calon Dewan Perwakilan Mahasiswa FAKULTAS (DPMF) Berdasarkan Kelengkapan Berkas',

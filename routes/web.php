@@ -130,20 +130,17 @@ Route::get('/dashboard/informasi/data-informasi-saat', function () {
     return view('admin.informasi.data-informasi.data-informasi-saat');
 });
 
-
 //route edit landingpage
-Route::get('/dashboard/landing/ppid', function () {
-    return view('admin.landing.ppid');
-});
-Route::get('/dashboard/landing/permohonan', function () {
-    return view('admin.landing.permohonan');
-});
-Route::get('/dashboard/landing/infografis', function () {
-    return view('admin.landing.infografis');
-});
-Route::get('/dashboard/landing/slogan', function () {
-    return view('admin.landing.slogan');
-});
+
+Route::get('/dashboard/landing/ppid', [LandingController::class, 'data']);
+Route::get('/dashboard/landing/permohonan', [LandingController::class, 'data']);
+Route::get('/dashboard/landing/slogan', [LandingController::class, 'data']);
+Route::get('/dashboard/landing/infografis', [LandingController::class, 'data']);
+Route::post('/landing/ppid/update', [LandingController::class, 'update']);
+Route::post('/landing/permohonan/update', [LandingController::class, 'update']);
+Route::post('/landing/quotes/update', [LandingController::class, 'update']);
+Route::post('/landing/infografis/update', [LandingController::class, 'update']);
+
 Route::get('/dashboard/landing/sponsor', function () {
     return view('admin.landing.sponsor');
 });

@@ -32,8 +32,8 @@
                     </div>
                    
                     <div class="card-body table-border-style">
-                        <button type="button" class="btn  btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLive"><i
-                            class="fas fa-plus"></i>Tambah Data</button>
+                        {{-- <button type="button" class="btn  btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLive"><i
+                            class="fas fa-plus"></i>Tambah Data</button> --}}
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
@@ -46,78 +46,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                              
-                                                <span>
-                                                    <button type="button" data-toggle="modal" data-target="#exampleModalLive"
-                                                        class="btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i></button>
-                                            </span>
-                                              
-                                         
-                                            <form class="d-inline">
-                                                <span>
-                                                    <button type="submit" class="btn-sm btn-danger">
-                                                        <i class="fas fa-trash"></i></button>
-                                                </span>
-                                            </form>
-                                        </td>
-                                        <td>berita</td>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <span>
-                                               
-                                               
-                                                    <button type="button" data-toggle="modal" data-target="#exampleModalLive"
-                                                        class="btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i></button>
-                                      
-                                            
-                                            </span>
-                                            <form class="d-inline">
-                                                <span>
-                                                    <button type="submit" class="btn-sm btn-danger">
-                                                        <i class="fas fa-trash"></i></button>
-                                                </span>
-                                            </form>
-                                        </td>
-                                        <td>berita</td>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <span>
-                                                    <button type="button" data-toggle="modal" data-target="#exampleModalLive"
-                                                        class="btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i></button>
-                                            </span>
-                                            <form class="d-inline">
-                                                <span>
-                                                    <button type="submit" class="btn-sm btn-danger">
-                                                        <i class="fas fa-trash"></i></button>
-                                                </span>
-                                            </form>
-                                        </td>
-                                        <td>berita</td>
-                                        <td>Mark</td>
-                                    </tr>
-                                   
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- [ Hover-table ] end -->
 
-            
-<div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
+                                    @foreach ($info as $item)
+                                        
+                                  
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <span>
+                                            <button type="button" data-toggle="modal" data-target="#exampleModalLive{{ $item->id }}"
+                                           class="btn-sm btn-warning">
+                                           <i class="fas fa-edit"></i> Edit</button>
+                                            </span>                     
+    
+                                        </td>
+                                        <td>{{$item->judul }}</td>
+                                        <td >
+                                              <img width="350px" src="{{ asset($item->gambar) }}">
+                                           </td>
+                                    </tr>
+
+<div id="exampleModalLive{{ $item->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -125,37 +74,52 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/landing/infografis/update" enctype="multipart/form-data" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Judul</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input name="judul" value="{{ $item->judul }}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
         
                     <label for="exampleInputEmail1">Gambar</label>
+
+                    <div class="mt-3 mb-3 text-center">
+                        <img width="300px" src="{{ asset($item->gambar) }}">
+                    </div>
+                                      
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                        <input name="img" value="{{ $item->gambar }}" type="file" class="custom-file-input" id="validatedCustomFile" required>
                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                         <div class="invalid-feedback">Example invalid custom file feedback</div>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn  btn-primary">Save changes</button>
+                </div>
         
-                
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn  btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn  btn-primary">Save changes</button>
-            </div>
+                
+               
+           
+      
         </div>
     </div>
 </div>
-      
+
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- [ Main Content ] end -->
     </div>
 </section>
-
 
 @endsection
 

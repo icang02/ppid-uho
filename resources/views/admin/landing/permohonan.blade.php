@@ -34,18 +34,19 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <form>
+
+                                <form action="/landing/permohonan/update" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Judul</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <input name="judul" type="text" value="{{ $formulir->judul }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">Deskripsi Formulir Permohonan</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $formulir->isi }}</textarea>
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     </div>
-                                 
                                     <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>
                                 </form>
                             </div>
