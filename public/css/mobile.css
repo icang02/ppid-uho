@@ -186,51 +186,37 @@
     line-height: var(--lh-p) !important;
   }
 
-  /* HALAMAN INFORMASI PUBLIK */
-  .title-list-informasi .content h4 {
-    font-size: var(--text-h3) !important;
-  }
-  .accordions {
-    padding: 10px 20px !important;
+  /* HALAMAN FORMULIR */
+  .title-list-informasi .txt-biru {
+    font-size: var(--text-h2) !important;
+    margin-bottom: 22px;
   }
   .list-informasi {
-    margin-top: 0px;
+    margin-top: 0px !important;
   }
-  .list-informasi .accordion-head span:first-child {
-    font-size: var(--text-h6) !important;
+  /* STYLE LIST INFORMASI PUBLIK */
+  .list-informasi .top-section {
+    margin-top: 0px !important;
   }
-  .list-informasi .accordion-body p {
-    font-size: var(--text-p) !important;
+  .list-informasi .accordions {
+    padding: 0 !important;
+    margin-top: 35px !important;
   }
-  .accordion-head {
-    padding: 8px 0 !important;
-  }
-  .accordion-head .icon {
-    font-size: var(--text-p) !important;
-  }
-  .accordion-body .content .text-p {
-    padding-bottom: 22px !important;
-    line-height: var(--lh-p) !important;
-  }
-
-  /* HALAMAN FORMULIR */
   .list-informasi .accordion {
+    padding: 10px 20px !important;
+  }
+  .list-informasi .accordion-head {
+    padding: 0px 0px !important;
+  }
+  .list-informasi .accordion-head span:first-child,
+  .list-informasi .accordion-head span:nth-child(2) {
     font-size: var(--text-p) !important;
-    line-height: var(--lh-p) !important;
   }
-  .list-informasi .accordion b {
-    display: block;
-    margin-bottom: 6px !important;
+  .list-informasi .accordion-head span:nth-child(2) {
+    padding-top: 8px !important;
   }
-  .list-informasi .accordion .content p {
-    font-size: var(--text-p) !important;
-    line-height: var(--lh-p) !important;
-  }
-  .list-informasi .tes {
-    margin-top: 25px !important;
-  }
-  .btn-formulir {
-    font-size: var(--text-p) !important;
+  .list-informasi .accordion-body .content {
+    margin-top: 13px !important;
   }
 
   /* HALAMAN SEMUA BERITA */
@@ -268,8 +254,9 @@
     margin-right: 0px !important;
   }
   #detailBerita .left-content h4 {
-    font-size: var(--text-h4) !important;
+    font-size: var(--text-h3) !important;
     line-height: var(--lh-lg) !important;
+    margin-top: 30px !important;
   }
   #detailBerita .left-content .text-muted {
     font-size: var(--text-p) !important;
@@ -301,5 +288,15 @@
   .menu-trigger {
     /* top: 38px !important; */
     width: 19px !important;
+  }
+
+  /* SETTINGAN PAS UPDATE DATA */
+  .div {
+    font-size: var(--text-p) !important;
+    line-height: var(--lh-p) !important;
+  }
+  .div p {
+    margin-bottom: 16px !important;
+    font-size: var(--text-p) !important;
   }
 }

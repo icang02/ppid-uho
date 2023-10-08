@@ -35,6 +35,8 @@
                     <i class="fa-solid fa-book-open-reader ms-3 me-1"></i> Oleh : {{ $berita->penulis }}
                   </div>
 
+                  <hr>
+
                   <div class="text-body">
                     {!! $berita->isi !!}
                   </div>

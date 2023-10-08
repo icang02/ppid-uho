@@ -196,56 +196,32 @@
   margin-top: 7px !important;
 }
 
-/* HALAMAN TENTANG PROFIL VISI MISI DLL */
-#tentang h4 {
-  font-size: var(--text-h2);
-}
-#tentang p {
-  font-size: var(--text-lg);
-  line-height: var(--lh-lg);
-}
-#tentang table {
-  font-size: var(--text-lg) !important;
-  line-height: var(--lh-lg) !important;
-}
-#tentang table tr {
-  vertical-align: top !important;
-}
-
-/* HALAMAN INFORMASI PUBLIK */
-.title-list-informasi .content h4 {
+/* HALAMAN FORMULIR */
+.title-list-informasi .txt-biru {
   font-size: var(--text-h2) !important;
-}
-.title-list-informasi .content p {
-  font-size: var(--text-lg);
-  line-height: var(--lh-lg);
-}
-.accordions {
-  padding: 10px 45px !important;
+  margin-bottom: 22px;
 }
 .list-informasi {
-  margin-top: 45px;
+  margin-top: 0px !important;
 }
-.list-informasi .accordion-head span:first-child {
-  font-size: var(--text-h5) !important;
+.list-informasi .top-section {
+  margin-top: 30px !important;
 }
-.list-informasi .accordion-body p {
-  font-size: var(--text-lg) !important;
+.list-informasi .accordions {
+  padding: 0 !important;
 }
-.accordion-head {
-  padding: 15px 0 !important;
-}
-.accordion-body .content .text-p {
-  padding-top: 4px !important;
-  padding-bottom: 22px !important;
-  line-height: var(--lh-lg) !important;
-}
-
-/* HALAMAN FORMULIR */
 .list-informasi .accordion {
+  padding: 15px 30px !important;
+}
+.list-informasi .accordion-head {
+  padding: 0px 0px !important;
+}
+.list-informasi .accordion-head span:first-child,
+.list-informasi .accordion-head span:nth-child(2) {
   font-size: var(--text-lg) !important;
-  line-height: var(--lh-lg) !important;
-  vertical-align: top;
+}
+.list-informasi .accordion-body .content {
+  margin-top: 13px !important;
 }
 
 /* HALAMAN SEMUA BERITA */
@@ -300,8 +276,15 @@
   font-size: var(--text-p) !important;
   margin-bottom: 20px !important;
 }
+#detailBerita .left-content hr {
+  margin-top: 26px !important;
+  margin-bottom: 24px !important;
+}
 .garis-bawah {
   margin-top: 45px !important;
+}
+#detailBerita .pembungkus {
+  border-radius: 10px;
 }
 
 /* SEBELUM FOOTER */
@@ -329,4 +312,39 @@
 #footer .col-lg-12 p {
   font-size: var(--text-p) !important;
   opacity: 0.75;
+}
+
+/* SETTINGAN PAS UPDATE DATA */
+.div {
+  font-size: var(--text-lg) !important;
+  line-height: var(--lh-lg) !important;
+}
+.div p {
+  margin-bottom: 16px !important;
+  font-size: var(--text-lg) !important;
+}
+.div ol li {
+  list-style: decimal;
+  padding-left: 3px;
+  margin-left: 26px;
+}
+.div ul li {
+  list-style: disc;
+  padding-left: 3px;
+  margin-left: 26px;
+}
+.div ol li:last-child {
+  margin-bottom: 12px;
+}
+.div ul li:last-child {
+  margin-bottom: 12px;
+}
+.div h1,
+.div h2,
+.div h3,
+.div h4,
+.div h5,
+.div h6 {
+  margin-bottom: 8px !important;
+  font-weight: bold !important;
 }

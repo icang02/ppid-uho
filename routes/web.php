@@ -60,14 +60,34 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
+// route dashboard edit landing page
+Route::get('/dashboard/landing/ppid', [LandingController::class, 'data']);
+Route::get('/dashboard/landing/permohonan', [LandingController::class, 'data']);
+Route::get('/dashboard/landing/slogan', [LandingController::class, 'data']);
+Route::get('/dashboard/landing/infografis', [LandingController::class, 'data']);
+
+Route::post('/landing/ppid/update', [LandingController::class, 'update']);
+Route::post('/landing/permohonan/update', [LandingController::class, 'update']);
+Route::post('/landing/quotes/update', [LandingController::class, 'update']);
+Route::post('/landing/infografis/update', [LandingController::class, 'update']);
+
 
 // route dashboard tentang
 Route::get('/dashboard/tentang/profil', [TentangController::class, 'indexAdmin'])->name('tentang_profile_admin');
 Route::get('/dashboard/tentang/visi-misi', [TentangController::class, 'indexAdmin'])->name('tentang_visi_misi_admin');
 Route::get('/dashboard/tentang/tugas-fungsi', [TentangController::class, 'indexAdmin'])->name('tentang_tugas_fungsi_admin');
 Route::get('/dashboard/tentang/struktur-ppid', [TentangController::class, 'indexAdmin'])->name('tentang_struktur_ppid_admin');
+Route::get('/dashboard/regulasi', [TentangController::class, 'indexAdmin'])->name('regulasi_dashboard');
 
-Route::put('/dashboard/tentang/profil/update/{tentang}', [TentangController::class, 'updateTentang'])->name('update_tentang');
+Route::put('/dashboard/tentang/profil/update/{id}', [TentangController::class, 'updateTentang'])->name('update_tentang');
+
+
+// route dashboard formulir
+Route::get('/dashboard-formulir-permohonan-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_permohonan');
+Route::get('/dashboard-formulir-keberatan-layanan-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_keberatan');
+Route::get('/dashboard-formulir-penyelesaian-sengketa-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_sengketa');
+
+Route::put('/dashboard-formulir/update/{id}', [TentangController::class, 'updateTentang'])->name('update_formulir');
 
 
 // route dashboard berita
@@ -95,49 +115,21 @@ Route::get('/dashboard/formulir/formulir-sengketa', function () {
     return view('admin.formulir/formulir-sengketa');
 });
 
-// route dashboard regulasi
-Route::get('/dashboard/regulasi', function () {
-    return view('admin.regulasi');
-});
+
+// ROUTE DASHBOARD INFORMASI PUBLIK
+Route::get('/dashboard/informasi/informasi-berkala', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_berkala');
+Route::get('/dashboard/informasi/informasi-setiap-saat', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_setiap_saat');
+Route::get('/dashboard/informasi/informasi-serta-merta', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_serta_merta');
+Route::put('/dashboard/informasi-publik/update/{id}', [InformasiPublikController::class, 'update'])->name('admin_update_informasi_publik');
+
+Route::get('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'listInformasi'])->name('admin_list_informasi_publik');
+Route::put('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'updateListInformasi'])->name('admin_update_list_informasi_publik');
+Route::delete('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'deleteListInformasi'])->name('admin_delete_list_informasi_publik');
 
 
 
-// route dashboard informasi publik
-Route::get('/dashboard/informasi/informasi-berkala', function () {
-    return view('admin.informasi.informasi-berkala');
-});
-Route::get('/dashboard/informasi/informasi-saat', function () {
-    return view('admin.informasi.informasi-saat');
-});
-Route::get('/dashboard/informasi/informasi-merta', function () {
-    return view('admin.informasi/informasi-merta');
-});
 
-
-// route dashboard list data informasi publik
-Route::get('/dashboard/informasi/data-informasi-berkala', function () {
-    return view('admin.informasi.data-informasi.data-informasi-berkala');
-});
-Route::get('/dashboard/informasi/data-informasi-saat', function () {
-    return view('admin.informasi.data-informasi.data-informasi-saat');
-});
-
-// route dashboard edit landing page
-Route::get('/dashboard/landing/ppid', [LandingController::class, 'data']);
-Route::get('/dashboard/landing/permohonan', [LandingController::class, 'data']);
-Route::get('/dashboard/landing/slogan', [LandingController::class, 'data']);
-Route::get('/dashboard/landing/infografis', [LandingController::class, 'data']);
-
-Route::post('/landing/ppid/update', [LandingController::class, 'update']);
-Route::post('/landing/permohonan/update', [LandingController::class, 'update']);
-Route::post('/landing/quotes/update', [LandingController::class, 'update']);
-Route::post('/landing/infografis/update', [LandingController::class, 'update']);
-
-Route::get('/dashboard/landing/sponsor', function () {
-    return view('admin.landing.sponsor');
-});
-
-//route loginnnnnnn
-Route::get('/auth', function () {
+// ROUTE LOGIN
+Route::get('/admin', function () {
     return view('admin.auth/login');
 });

@@ -12,21 +12,17 @@ class FormulirController extends Controller
     {
         if (request()->is('formulir/permohonan-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
-            $jenisFormulir = JenisFormulir::where('jenis_formulir', 'permohonan')->get()->first();
             $breadcumb = '<span class="txt-kuning">Permohonan Informasi Publik</span>';
         } elseif (request()->is('formulir/keberatan-layanan-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
-            $jenisFormulir = JenisFormulir::where('jenis_formulir', 'keberatan')->get()->first();
             $breadcumb = '<span class="txt-kuning">Keberatan Layanan Informasi Publik</span>';
         } elseif (request()->is('formulir/penyelesaian-sengketa-informasi-publik')) {
             $formulir = Formulir::where('jenis_formulir', 'sengketa')->get()->first();
-            $jenisFormulir = JenisFormulir::where('jenis_formulir', 'sengketa')->get()->first();
             $breadcumb = '<span class="txt-kuning">Penyelesaian Sengketa Informasi Publik</span>';
         }
 
         return view('home.formulir', [
-            'formulir' => $formulir,
-            'jenisFormulir' => $jenisFormulir,
+            'data' => $formulir,
             'breadcumb' => $breadcumb
         ]);
     }

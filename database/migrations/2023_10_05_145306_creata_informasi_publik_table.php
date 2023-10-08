@@ -16,7 +16,7 @@ class CreataInformasiPublikTable extends Migration
         Schema::create('informasi_publik', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul');
-            $table->text('deskripsi');
+            $table->text('isi');
         });
     }
 

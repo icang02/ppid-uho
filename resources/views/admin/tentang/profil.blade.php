@@ -26,32 +26,78 @@
         <!-- [ form-element ] start -->
         <div class="col-sm-12">
           <div class="card">
-            <div class="card-header">
-              <h5>Halaman Profile</h5>
+            <div class="card-header d-flex align-items-center justify-content-between flex-md-row flex-column">
+              <h5>Halaman Informasi Berkala</h5>
+              @if (request()->is('dashboard/informasi*'))
+                <button onclick="return window.location.href='{{ route('admin_list_informasi_publik', $tentang->id) }}'"
+                  class="btn btn-sm btn-primary mt-2 mt-md-0">Data Informasi Berkala</button>
+              @endif
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
 
-                  <form action="{{ route('update_tentang', $tentang->id) }}" method="post">
-                    @method('put')
-                    @csrf
+                  @if (request()->is('dashboard-formulir*'))
+                    <form action="{{ route('update_formulir', $tentang->id) }}" method="post">
+                    @elseif (request()->is('dashboard/informasi*'))
+                      <form action="{{ route('admin_update_informasi_publik', $tentang->id) }}" method="post">
+                      @else
+                        <form action="{{ route('update_tentang', $tentang->id) }}" method="post"
+                          enctype="multipart/form-data">
+                  @endif
+                  @method('put')
+                  @csrf
 
-                    @if (request()->is('dashboard/tentang/profil'))
+                  <div class="form-group">
+                    <label for="judul">Judul</label>
+                    <input type="text" class="form-control" name="judul" id="judul" value="{{ $tentang->judul }}"
+                      placeholder="Enter judul">
+                  </div>
+
+                  @if (request()->is('dashboard-formulir*'))
+                    <div class="form-group">
+                      <label for="link">Link Formulir</label>
+                      <input type="link" class="form-control" name="link" id="link"
+                        value="{{ $tentang->link }}" placeholder="Enter link">
+                    </div>
+                  @endif
+
+                  @if (request()->is('dashboard/tentang/struktur-ppid'))
+                    <div class="form-group">
+                      <label for="img">Gambar</label>
+                      <input type="file" class="form-control" name="img" id="img">
+                    </div>
+                  @endif
+
+                  <div class="form-group">
+                    <label for="isi" class="d-block">Isi / Detail</label>
+                    <textarea name="isi" id="tiny">
+                        {{ $tentang->isi }}
+                      </textarea>
+                  </div>
+
+                  <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>
+                  </form>
+
+                  {{-- @if (request()->is('dashboard/tentang/visi-misi') || request()->is('dashboard/regulasi'))
+                    <form action="{{ route('update_tentang', $tentang[0]->id) }}" method="post">
+                      @method('put')
+                      @csrf
+
+                      <style>
+                        ol {
+                          list-style: circle !important;
+                        }
+                      </style>
                       <div class="form-group">
                         <label for="judul">Judul</label>
                         <input type="text" class="form-control" name="judul" id="judul"
-                          value="{{ $tentang->judul }}" placeholder="Enter judul">
+                          value="{{ $tentang[0]->judul }}" placeholder="Enter judul">
                       </div>
 
-                      <div class="form-group">
-                        <label for="isi">Isi Profil</label>
-                        <textarea class="form-control" id="isi" rows="5" name="isi">{{ $tentang->isi }}</textarea>
-                      </div>
-                    @endif
-
-                    <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>
-                  </form>
+                      <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>
+                    </form>
+                  @endif --}}
 
                 </div>
               </div>

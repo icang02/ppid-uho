@@ -17,7 +17,7 @@ class CreateFormulirTable extends Migration
             $table->bigIncrements('id');
             $table->string('judul');
             $table->string('jenis_formulir');
-            $table->text('deskripsi');
+            $table->text('isi');
             $table->string('link')->nullable();
         });
     }

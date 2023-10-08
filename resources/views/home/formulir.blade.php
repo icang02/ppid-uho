@@ -1,7 +1,5 @@
 @extends('home.layouts.main')
 @section('content')
-  <link rel="stylesheet" href="{{ asset('css/page/informasi-publik.css') }}">
-
   <div class="page-heading">
     <div class="container">
       <div class="row">
@@ -24,8 +22,7 @@
 
         <div class="row title mt-2 content">
           <div class="col-lg-12 align-self-center">
-            <h4 class="mb-3 txt-biru fw-bold">{{ $formulir->judul }}</h4>
-            <p>{{ $formulir->deskripsi }}</p>
+            <h4 class="txt-biru fw-bold">{{ $data->judul }}</h4>
           </div>
         </div>
       </div>
@@ -36,69 +33,61 @@
         <div class="row">
           <div class="col-lg-12 tes align-self-center mb-3">
 
-            <article class="accordion">
-              <b>{{ $jenisFormulir->persyaratan }}</b>
-              <div class="content">
-                <table>
-                  @foreach (explode('/|', $jenisFormulir->isi_persyaratan) as $item)
-                    <tr>
-                      <td>{{ $loop->iteration }}.&nbsp;</td>
-                      <td>{{ $item }}</td>
-                    </tr>
-                  @endforeach
-                </table>
-              </div>
-            </article>
-
-            <article class="accordion mt-3">
-              <b>{{ $jenisFormulir->mekanisme }}</b>
-              <div class="content">
-                <table>
-                  @foreach (explode('/|', $jenisFormulir->isi_mekanisme) as $item)
-                    <tr>
-                      <td>{{ $loop->iteration }}.&nbsp;</td>
-                      <td>{{ $item }}</td>
-                    </tr>
-                  @endforeach
-                </table>
-              </div>
-            </article>
-
-
-            <article class="accordion mt-3">
-              <b>{{ $jenisFormulir->jangka_waktu }}</b>
-              <div class="content">
-                <p>{{ $jenisFormulir->isi_jangka_waktu }}</p>
-              </div>
-            </article>
-
-            <article class="accordion mt-3">
-              <b>{{ $jenisFormulir->biaya }}</b>
-              <div class="content">
-                <p class="text-p">{{ $jenisFormulir->isi_biaya }}</p>
-              </div>
-            </article>
-
-            <div class="col-12 mt-5">
-              <a class="btn py-2 px-3 py-md-3 px-md-4 bg-biru text-white btn-formulir" href="{{ url($formulir->link) }}"
-                target="_blank">
-                @if (request()->is('formulir/permohonan-informasi-publik'))
-                  BUAT PERMOHONAN
-                @elseif (request()->is('formulir/keberatan-layanan-informasi-publik'))
-                  Ajukan Keberatan
-                @elseif (request()->is('formulir/penyelesaian-sengketa-informasi-publik'))
-                  Link Formulir
-                @endif
-              </a>
+            <div class="div">
+              {!! $data->isi !!}
             </div>
 
-            <script>
-              $('table tr td').addClass('align-top')
-            </script>
+            @if (request()->is('tentang/struktur-ppid'))
+              <img src="{{ asset($data->gambar) }}" class="img-thumbnail" alt="img.jpg">
+            @endif
+
+            {{-- TOMBOL LINK FORMULIR --}}
+            @if (request()->is('formulir*'))
+              <div class="mt-5">
+                <a class="btn py-2 px-3 py-md-3 px-md-4 bg-biru text-white btn-formulir" href="{{ url($data->link) }}"
+                  target="_blank">
+                  @if (request()->is('formulir/permohonan-informasi-publik'))
+                    BUAT PERMOHONAN
+                  @elseif (request()->is('formulir/keberatan-layanan-informasi-publik'))
+                    Ajukan Keberatan
+                  @elseif (request()->is('formulir/penyelesaian-sengketa-informasi-publik'))
+                    Link Formulir
+                  @endif
+                </a>
+              </div>
+            @endif
+
+            @if (request()->is('informasi-publik*'))
+              {{-- LIST INFORMASI PUBLIK --}}
+              <section class="top-section">
+                <div class="accordions is-first-expanded ms-0">
+
+                  @forelse ($data->list_informasi_publik as $item)
+                    <article class="accordion">
+                      <div class="accordion-head">
+                        <span>{{ $item->judul }}</span>
+                        <span class="icon">
+                          <i class="icon fa fa-chevron-right btn-minimize"></i>
+                        </span>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="content div">
+                          {!! $item->isi !!}
+                        </div>
+                      </div>
+                    </article>
+                  @empty
+                    Kosong
+                  @endforelse
+              </section>
+            @endif
           </div>
         </div>
+
+        <hr>
       </div>
     </section>
+
 
     <script>
       $(document).ready(function() {
