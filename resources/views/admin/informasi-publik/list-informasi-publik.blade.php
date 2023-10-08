@@ -9,12 +9,11 @@
           <div class="row align-items-center">
             <div class="col-md-12">
               <div class="page-header-title">
-                <h5 class="m-b-10">List Informasi Publik</h5>
+                <h5 class="m-b-10">Menu Utama</h5>
               </div>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="#!">Berita & informasi</a></li>
-                <li class="breadcrumb-item"><a href="#!">List Informasi Publik</a></li>
+                {!! $breadcumb !!}
               </ul>
             </div>
           </div>
@@ -31,9 +30,56 @@
               <span class="d-block m-t-5">Daftar {{ strtolower($data->judul) }}.</span>
             </div>
 
+            {{-- MODAL TAMBAH DATA --}}
+            <div id="modalTambah" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalDetailLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <form action="{{ route('admin_add_list_informasi_publik') }}" method="post">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalDetailLabel">Tambah Data</h5>
+                    </div>
+
+                    <div class="modal-body">
+                      @csrf
+                      <input type="hidden" name="informasi_publik_id" value="{{ $data->id }}">
+                      <div class="form-group">
+                        <label for="judul">Judul</label>
+                        <input type="text" class="form-control" id="judul" placeholder="Enter judul" name="judul"
+                          required value="{{ old('judul') }}">
+                      </div>
+                      <div class="form-group">
+                        <label for="isi">Isi</label>
+                        <textarea name="isi" id="tiny" name="isi"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                      <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
             <div class="card-body table-border-style">
-              <button type="button" class="btn  btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLive">
+              <button type="button" class="btn  btn-primary mb-3" data-toggle="modal" data-target="#modalTambah">
                 <i class="fas fa-plus"></i>&nbsp; Tambah Data</button>
+
+              @error('isi')
+                <div class="alert alert-danger" role="alert">
+                  {{ $message }}
+                </div>
+                <script>
+                  setTimeout(function() {
+                    // Menggunakan jQuery untuk menghilangkan elemen
+                    $(".alert").fadeOut();
+                  }, 3000); // 3000 milidetik (3 detik)
+                </script>
+              @enderror
+
               <div class="table-responsive">
                 <table class="table table-sm table-bordered table-hover">
                   <thead>
@@ -50,16 +96,16 @@
                         <td>
                           <button type="button" data-toggle="modal" data-target="#modalDetail{{ $item->id }}"
                             class="btn-sm btn btn-info">
-                            <i class="fas fa-eye"></i>&nbsp; Lihat</button>
+                            <i class="fas fa-eye"></i></button>
                           <button type="button" data-toggle="modal" data-target="#exampleModalLive{{ $item->id }}"
                             class="btn-sm btn btn-warning">
-                            <i class="fas fa-edit"></i>&nbsp; Edit</button>
+                            <i class="fas fa-edit"></i></button>
                           <form action="" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button type="submit" data-toggle="modal" class="btn-sm btn btn-danger"
                               onclick="return confirm('Hapus data ini?')">
-                              <i class="fas fa-trash"></i>&nbsp; Hapus</button>
+                              <i class="fas fa-trash"></i></button>
                           </form>
                         </td>
                         <td>{{ $item->judul }}</td>
@@ -104,8 +150,8 @@
                                 @method('put')
                                 <div class="form-group">
                                   <label for="judul">Judul</label>
-                                  <input name="judul" value="{{ $item->judul }}" type="text" class="form-control"
-                                    id="judul" placeholder="Enter judul" required>
+                                  <input name="judul" value="{{ $item->judul }}" type="text"
+                                    class="form-control" id="judul" placeholder="Enter judul" required>
                                 </div>
                                 <div class="form-group">
                                   <label for="judul">Isi Informasi</label>

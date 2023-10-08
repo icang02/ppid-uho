@@ -9,12 +9,13 @@
           <div class="row align-items-center">
             <div class="col-md-12">
               <div class="page-header-title">
-                <h5 class="m-b-10">Berita & Informasi</h5>
+                <h5 class="m-b-10">Menu Landing</h5>
               </div>
               <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="#!">Berita & informasi</a></li>
-                <li class="breadcrumb-item"><a href="#!">List Berita & Informasi</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i></a></li>
+                <li class="breadcrumb-item">Landing</li>
+                <li class="breadcrumb-item"><a href="{{ url('dashboard/landing/infografis') }}">Tata Cara / Infografis</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -27,15 +28,12 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h5>Hover Table</h5>
-              <span class="d-block m-t-5">use class <code>table-hover</code> inside table element</span>
+              <h5>Tata Cara / Infografis</h5>
             </div>
 
             <div class="card-body table-border-style">
-              {{-- <button type="button" class="btn  btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLive"><i
-                            class="fas fa-plus"></i>Tambah Data</button> --}}
               <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table-hover table-sm table-bordered">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -48,18 +46,18 @@
 
                     @foreach ($info as $item)
                       <tr>
-                        <td>1</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>
                           <span>
                             <button type="button" data-toggle="modal" data-target="#exampleModalLive{{ $item->id }}"
-                              class="btn-sm btn-warning">
+                              class="btn-sm btn btn-warning">
                               <i class="fas fa-edit"></i> Edit</button>
                           </span>
 
                         </td>
                         <td>{{ $item->judul }}</td>
                         <td>
-                          <img width="350px" src="{{ asset($item->gambar) }}">
+                          <img width="200" style="border: 1px solid #c5c5c5" src="{{ asset($item->gambar) }}">
                         </td>
                       </tr>
 
@@ -81,14 +79,12 @@
                                   <input name="judul" value="{{ $item->judul }}" type="text" class="form-control"
                                     id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter judul"
                                     required>
-                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small>
                                 </div>
 
                                 <label for="exampleInputEmail1">Gambar</label>
 
                                 <div class="mt-3 mb-3 text-center">
-                                  <img width="300px" src="{{ asset($item->gambar) }}">
+                                  <img width="280" style="border: 1px solid #c5c5c5" src="{{ asset($item->gambar) }}">
                                 </div>
 
                                 <div class="custom-file">
@@ -96,8 +92,6 @@
                                     class="custom-file-input" id="validatedCustomFile">
                                   <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                   <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -106,10 +100,6 @@
                             </div>
 
                             </form>
-
-
-
-
                           </div>
                         </div>
                       </div>

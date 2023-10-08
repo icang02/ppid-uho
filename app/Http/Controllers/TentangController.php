@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Formulir;
+use App\InformasiPublik;
 use App\Landing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Prophecy\Doubler\LazyDouble;
 
 class TentangController extends Controller
 {
@@ -41,55 +41,70 @@ class TentangController extends Controller
 
     public function indexAdmin()
     {
+        // BAGIAN TENTANG
         if (request()->is('dashboard/tentang/profil')) {
             $tentang = Landing::where('bagian', 'profil')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Profil</span>';
-        }
-        if (request()->is('dashboard/regulasi')) {
-            $tentang = Landing::where('bagian', 'regulasi')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Regulasi</span>';
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Tentang</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/tentang/profil">Profil</a></li>';
+            $title = 'Profil';
         }
         if (request()->is('dashboard/tentang/visi-misi')) {
             $tentang = Landing::where('bagian', 'visi')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Visi & Misi</span>';
+            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
+                          <li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/tentang/visi-misi">Visi & Misi</a></li>';
+            $title = 'Visi & Misi';
         }
         if (request()->is('dashboard/tentang/tugas-fungsi')) {
             $tentang = Landing::where('bagian', 'tugas')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Tugas & Fungsi</span>';
+            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
+                          <li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/tentang/tugas-fungsi">Tugas & Fungsi</a></li>';
+            $title = 'Tugas & Fungsi';
         }
         if (request()->is('dashboard/tentang/struktur-ppid')) {
             $tentang = Landing::where('bagian', 'struktur')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Struktur PPID</span>';
+            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
+                          <li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/tentang/struktur-ppid">Struktur Organisasi</a></li>';
+            $title = 'Struktur Organisasi';
+        }
+        if (request()->is('dashboard/regulasi')) {
+            $tentang = Landing::where('bagian', 'regulasi')->get()->first();
+            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
+                          <li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/tentang/regulasi">Regulasi</a></li>';
+            $title = 'Regulasi';
         }
 
+        // BAGIAN FORMULIR PERMOHONAN
         if (request()->is('dashboard-formulir-permohonan-informasi-publik')) {
             $tentang = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Struktur PPID</span>';
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Formulir</li>
+                          <li class="breadcrumb-item"><a href="/dashboard-formulir-permohonan-informasi-publik">Permohonan Informasi Publik</a></li>';
+            $title = 'Permohonan Informasi Publik';
         }
         if (request()->is('dashboard-formulir-keberatan-layanan-informasi-publik')) {
             $tentang = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Struktur PPID</span>';
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Formulir</li>
+                          <li class="breadcrumb-item"><a href="/dashboard-formulir-keberatan-layanan-informasi-publik">Keberatan Layanan Informasi Publik</a></li>';
+            $title = 'Keberatan Layanan Informasi Publik';
         }
         if (request()->is('dashboard-formulir-penyelesaian-sengketa-informasi-publik')) {
             $tentang = Formulir::where('jenis_formulir', 'sengketa')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Struktur PPID</span>';
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Formulir</li>
+                          <li class="breadcrumb-item"><a href="/dashboard-formulir-penyelesaian-sengketa-informasi-publik">Penyelesaian Sengketa Informasi Publik</a></li>';
+            $title = 'Penyelesaian Sengketa Informasi Publik';
         }
 
-        if (request()->is('dashboard-formulir-permohonan-informasi-publik')) {
-            $tentang = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Struktur PPID</span>';
-        }
-        if (request()->is('dashboard-formulir-keberatan-layanan-informasi-publik')) {
-            $tentang = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Struktur PPID</span>';
-        }
-        if (request()->is('dashboard-formulir-penyelesaian-sengketa-informasi-publik')) {
-            $tentang = Formulir::where('jenis_formulir', 'sengketa')->get()->first();
-            $breadcumb =  '<span class="txt-kuning">Struktur PPID</span>';
-        }
-
-        return view('admin.tentang/profil', [
+        return view('admin.tentang.profil', [
             'tentang' => $tentang,
+            'breadcumb' => $breadcumb,
+            'title' => $title,
         ]);
     }
 
@@ -101,18 +116,11 @@ class TentangController extends Controller
             $tentang = Landing::findOrFail($id);
         }
 
-        // tambah div pas update
-        if (strpos($request->isi, '<div')) {
-            $isi = $request->isi;
-        } else {
-            $isi = '<div class="div">' . $request->isi . '</div>';
-        }
-
         // upload gambar
         if (request()->is('dashboard-formulir/update*')) {
             $tentang->update([
                 'judul' => $request->judul,
-                'isi' => $isi,
+                'isi' => $request->isi,
                 'link' => $request->link ?? null
             ]);
         } else {
@@ -124,7 +132,7 @@ class TentangController extends Controller
 
             $tentang->update([
                 'judul' => $request->judul,
-                'isi' => $isi,
+                'isi' => $request->isi,
                 'gambar' => $imgPath ?? null
             ]);
         }

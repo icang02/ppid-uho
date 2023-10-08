@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h2>Formulir Informasi</h2>
+            <h2>{{ strip_tags($breadcumb) }}</h2>
             <div class="div-dec"></div>
           </div>
         </div>

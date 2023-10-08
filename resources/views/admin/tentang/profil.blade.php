@@ -9,12 +9,11 @@
           <div class="row align-items-center">
             <div class="col-md-12">
               <div class="page-header-title">
-                <h5 class="m-b-10">Menu Tentang</h5>
+                <h5 class="m-b-10">Menu Utama</h5>
               </div>
               <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="">Tentang</a></li>
-                <li class="breadcrumb-item"><a href="">Profile</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i></a></li>
+                {!! $breadcumb !!}
               </ul>
             </div>
           </div>
@@ -27,10 +26,10 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between flex-md-row flex-column">
-              <h5>Halaman Informasi Berkala</h5>
+              <h5>{{ $title }}</h5>
               @if (request()->is('dashboard/informasi*'))
-                <button onclick="return window.location.href='{{ route('admin_list_informasi_publik', $tentang->id) }}'"
-                  class="btn btn-sm btn-primary mt-2 mt-md-0">Data Informasi Berkala</button>
+                <a href="{{ route('admin_list_informasi_publik', $tentang->id) }}"
+                  class="btn btn-sm btn-primary mt-2 mt-md-0">Data Informasi Berkala</a>
               @endif
             </div>
             <div class="card-body">

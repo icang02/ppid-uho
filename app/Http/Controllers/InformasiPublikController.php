@@ -28,17 +28,22 @@ class InformasiPublikController extends Controller
     {
         if (request()->is('dashboard/informasi/informasi-berkala')) {
             $data = InformasiPublik::find(1);
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Informasi Publik</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-berkala">Informasi Berkala</a></li>';
+            $title = 'Informasi Berkala';
         } else if (request()->is('dashboard/informasi/informasi-setiap-saat')) {
             $data = InformasiPublik::find(2);
-        } else if (request()->is('dashboard/informasi/informasi-serta-merta')) {
-            $data = InformasiPublik::find(3);
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Informasi Publik</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-setiap-saat">Informasi Tersedia Setiap Saat</a></li>';
+            $title = 'Informasi Tersedia Setiap Saat';
         }
-
-        // dd($data);
 
         return view('admin.tentang.profil', [
             'tentang' => $data,
-            'breadcumb' => '-',
+            'breadcumb' => $breadcumb,
+            'title' => $title,
         ]);
     }
 
@@ -54,9 +59,42 @@ class InformasiPublikController extends Controller
 
     public function listInformasi(InformasiPublik $data)
     {
+        $id = $data->id;
+        if ($id == 1) {
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Informasi Publik</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-berkala">Informasi Berkala</a></li>
+                          <li class="breadcrumb-item"><a href="/dashboard/informasi/list-informasi/' . $id . '">List Informasi</a></li>';
+        } else {
+            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
+                          <li class="breadcrumb-item">Informasi Publik</li>
+                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-setiap-saat">Informasi Tersedia Setiap Saat</a></li>
+                          <li class="breadcrumb-item"><a href="/dashboard/informasi/list-informasi/' . $id . '">List Informasi</a></li>';
+        }
+
+
         return view('admin.informasi-publik.list-informasi-publik', [
-            'data' => $data
+            'data' => $data,
+            'breadcumb' => $breadcumb,
         ]);
+    }
+
+    public function addListInformasi(Request $request)
+    {
+        // dd($request->all());
+        $request->validate([
+            'isi' => 'required',
+        ], [
+            'isi.required' => 'Field isi tidak boleh kosong.',
+        ]);
+
+        ListInformasiPublik::create([
+            'informasi_publik_id' => $request->informasi_publik_id,
+            'judul' => ucfirst($request->judul),
+            'isi' => $request->isi,
+        ]);
+
+        return redirect()->back();
     }
 
     public function updateListInformasi(Request $request, $id)

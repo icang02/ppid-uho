@@ -21,7 +21,7 @@ class CreateBeritaTable extends Migration
             $table->date('tanggal');
             $table->string('penulis');
             $table->text('isi');
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->integer('view')->default(0);
             $table->timestamps();
         });

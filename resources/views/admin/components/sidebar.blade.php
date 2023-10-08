@@ -5,10 +5,10 @@
 
       <div class="">
         <div class="main-menu-header">
-          <img class="img-radius" src="/admin-assets/assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
+          <img class="img-radius" src="{{ asset('img/user.png') }}" alt="User-Profile-Image">
           <div class="user-details">
-            <span>Admin</span>
-            <div>Administrator</div>
+            <span>{{ auth()->user()->name }}</span>
+            <div>{{ 'PPID' }}</div>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
         </li>
 
         <li class="nav-item pcoded-menu-caption">
-          <label>Menu</label>
+          <label>Menu Utama</label>
         </li>
 
         <li class="nav-item pcoded-hasmenu">
@@ -93,8 +93,8 @@
                 class="feather icon-box"></i></span><span class="pcoded-mtext">Regulasi</span></a>
         </li>
 
-        <li class="nav-item mt-3">
-          <a href="/admin" class="nav-link "><span class="pcoded-micon"><i
+        <li class="nav-item mt-3 pb-4">
+          <a href="{{ route('logout') }}" class="nav-link "><span class="pcoded-micon"><i
                 class="feather icon-log-out"></i></span><span class="pcoded-mtext">Log Out</span></a>
         </li>
       </ul>

@@ -10,7 +10,7 @@
   <meta name="keywords" content="">
   <meta name="author" content="Phoenixcoded" />
   <!-- Favicon icon -->
-  <link rel="icon" href="/admin-assets/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
 
   <!-- vendor css -->
   <link rel="stylesheet" href="/admin-assets/assets/css/style.css">
@@ -18,6 +18,47 @@
   {{-- tiny editor cdn --}}
   <script src="https://cdn.tiny.cloud/1/gpbwgwsn7c6j08npcqbznlniosdnau8smuipab8mhzhy2x9u/tinymce/6/tinymce.min.js"
     referrerpolicy="origin"></script>
+
+  {{-- jquery cdn --}}
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <style>
+    .fixed-button {
+      display: none;
+    }
+
+    .pembungkus {
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 62.5%;
+      border-radius: 10px;
+      border: 1.5px solid #bcbcbc;
+    }
+
+    .pembungkus-img {
+      width: 25%;
+    }
+
+    .responsive-element {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    @media (max-width: 576px) {
+      .pembungkus-img {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body class="">
@@ -64,6 +105,12 @@
       ],
       ai_request: (request, respondWith) => respondWith.string(() => Promise.reject(
         "See docs to implement AI Assistant"))
+    });
+
+    // jquery
+    $(document).ready(function() {
+      // Hapus class tertentu
+      // $('.fixed-button').hide();
     });
   </script>
 

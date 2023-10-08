@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Formulir;
-use App\JenisFormulir;
 use Illuminate\Http\Request;
 
 class FormulirController extends Controller

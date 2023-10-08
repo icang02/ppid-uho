@@ -212,6 +212,7 @@
 }
 .list-informasi .accordion {
   padding: 15px 30px !important;
+  line-height: var(--lh-lg) !important;
 }
 .list-informasi .accordion-head {
   padding: 0px 0px !important;
