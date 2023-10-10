@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -88,6 +89,17 @@ class DatabaseSeeder extends Seeder
             'isi' => 'PPID merupakan sarana layanan online bagi permohonan informasi publik dan sebagai salah satu wujud pelaksanaan keterbukaan informasi di Universitas Halu Oleo.',
         ]);
 
+
+        // KATEGORI BERITA
+        // BERITA DAN INFORMASI
+        Berita::create([
+            'kategori' => 'informasi serta merta',
+            'judul' => 'Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik',
+            'slug' => Str::slug('Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik'),
+            'tanggal' => '2023-12-31',
+            'penulis' => 'PPID',
+            'isi' => '<p>Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
+        ]);
         Berita::create([
             'kategori' => 'berita',
             'judul' => 'Daftar Bakal Calon Dewan Perwakilan Mahasiswa FAKULTAS (DPMF) Berdasarkan Kelengkapan Berkas',
@@ -95,28 +107,19 @@ class DatabaseSeeder extends Seeder
             'tanggal' => '2023-05-03',
             'penulis' => 'PPID',
             'isi' => '<p>Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
-            'gambar' => 'img/berita.jpg',
         ]);
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 8; $i++) {
+            $randomDate = Carbon::now()->subDays(rand(1, 30));
+            $randomFormattedDate = $randomDate->format('Y-m-d');
             Berita::create([
                 'kategori' => 'berita',
-                'judul' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi.',
+                'judul' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi. ipsum dolor sit amet consectetur adipisicing elit',
                 'slug' => Str::slug('Lorem ipsum dolor sit amet consectetur adipisicing elit'),
-                'tanggal' => '2020-01-03',
+                'tanggal' => $randomFormattedDate,
                 'penulis' => 'PPID',
                 'isi' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p>',
-                'gambar' => 'img/berita.jpg',
             ]);
         }
-        Berita::create([
-            'kategori' => 'informasi serta merta',
-            'judul' => 'Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik',
-            'slug' => Str::slug('Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik'),
-            'tanggal' => '2023-10-10',
-            'penulis' => 'PPID',
-            'isi' => '<p>Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
-            'gambar' => 'img/berita.jpg',
-        ]);
 
         Formulir::create([
             'judul' => 'Permohonan Informasi Publik',
@@ -211,6 +214,7 @@ class DatabaseSeeder extends Seeder
             'isi' => '<p>Informasi Serta Merta adalah informasi berkaitan dengan hajat hidup orang banyak dan ketertiban umum, serta wajib diumumkan secara serta merta tanpa penundaan.</p>',
         ]);
 
+
         ListInformasiPublik::create([
             'informasi_publik_id' => 1,
             'judul' => 'Informasi Tentang Profil Universitas Halu Oleo',
@@ -268,13 +272,39 @@ class DatabaseSeeder extends Seeder
         Landing::create([
             'judul' => 'Regulasi PPID',
             'bagian' => 'regulasi',
-            'isi' => '<p>Regulasi PPID Universitas Halu Oleo.</p>'
+            'isi' => '<h6 style="text-align: center;">Regulasi Mengenai Keterbukaan Informasi Publik</h6>
+            <ul>
+            <li><a href="https://drive.google.com/file/d/1JuE3iA-XTkse99MolMovn5UGlX3lgafj/view?usp=sharing" target="_blank" rel="noopener">Undang-Undang Nomor 14 Tahun 2008 Tentang Keterbukaan Informasi Publik</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Undang-Undang Nomor 25 Tahun 2009 Tentang Pelayanan Publik</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Undang-Undang Nomor 43 Tahun 2009 Tentang Kearsipan</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Pemerintah Republik Indonesia Nomor 61 Tahun 2010 tentang Pelaksanaan Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Pusat Nomor 01 Tahun 2022 Tentang Monitoring dan Evaluasi Keterbukaan Informasi Publik</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Nomor 1 Tahun 2021 tentang Standar Layanan Informasi Publik</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Pusat Nomor 01 Tahun 2017 tentang Pengklasifikasian Informasi Publik</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Nomor 1 Tahun 2013 tentang Prosedur Penyelesaian Sengketa Informasi Publik</a></li>
+            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Menteri Pendidikan dan Kebudayaan Republik Indonesia Nomor 41 Tahun 2020 tentang Layanan Informasi Publik di Kementerian Pendidikan dan Kebudayaan</a></li>
+            </ul>'
         ]);
         Landing::create([
             'judul' => 'Struktur Organisasi PPID UHO',
             'bagian' => 'struktur',
             'isi' => '<p>Struktur PPID Universitas Halu Oleo dapat dilihat pada gambar berikut.</p>',
-            'gambar' => 'img/berita.jpg'
+        ]);
+
+        Landing::create([
+            'judul' => 'Pejabat Pengelola Informasi dan Dokumentasi (PPID)',
+            'bagian' => 'footer',
+            'isi' => 'Kampus Hijau Bumi Tridharma, Jl. HEA Mokodompit, Sulawesi Tenggara'
+        ]);
+        Landing::create([
+            'judul' => 'Waktu Layanan',
+            'bagian' => 'footer',
+            'isi' => 'Senin — Jumat 08:00-16.00 WITA'
+        ]);
+        Landing::create([
+            'judul' => 'Hubungi Kami',
+            'bagian' => 'footer',
+            'isi' => 'Contact Center: - Email: ppid@ppid.uho.ac.id WhatsApp: - Instagram: ppid_uho'
         ]);
     }
 }

@@ -48,12 +48,17 @@
                 class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Slogan</span></a>
         </li>
 
+        <li class="nav-item">
+          <a href="{{ route('admin_footer') }}" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Footer</span></a>
+        </li>
+
         <li class="nav-item pcoded-menu-caption">
           <label>Menu Utama</label>
         </li>
 
         <li class="nav-item pcoded-hasmenu">
-          <a class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify "></i></span><span
+          <a class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span
               class="pcoded-mtext">Tentang</span></a>
           <ul class="pcoded-submenu">
             <li><a href="{{ route('tentang_profile_admin') }}">Profile</a></li>

@@ -34,9 +34,46 @@
   {{-- jquery cdn --}}
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <style>
+    .to-admin {
+      position: fixed;
+      background: #0e3b63;
+      bottom: 30px;
+      right: 35px;
+      z-index: 99999;
+      border-radius: 5px;
+      text-align: center;
+      padding: 7px 14px;
+    }
+
+    .to-admin a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    @media (max-width: 576px) {
+      .to-admin {
+        bottom: 15px;
+        right: 15px;
+        padding: 4px 14px;
+      }
+
+      .to-admin a {
+        font-size: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  @if (auth()->check())
+    <div class="to-admin shadow">
+      <a href="{{ route('dashboard') }}">Dashboard</a>
+    </div>
+  @endif
+
   @if (request()->is('/'))
     <script>
       window.addEventListener('scroll', function(event) {

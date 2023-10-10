@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Deskripsi PPID</label>
-                      <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $ppid->isi }}</textarea>
+                      <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="6">{{ $ppid->isi }}</textarea>
                     </div>
 
                     <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>

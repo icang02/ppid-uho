@@ -20,6 +20,7 @@ class InformasiPublikController extends Controller
 
         return view('home.formulir', [
             'data' => $informasiPublik,
+            'listData' => $informasiPublik->list_informasi_publik()->paginate(10),
             'breadcumb' => $breadcumb,
         ]);
     }
@@ -28,15 +29,19 @@ class InformasiPublikController extends Controller
     {
         if (request()->is('dashboard/informasi/informasi-berkala')) {
             $data = InformasiPublik::find(1);
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Informasi Publik</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-berkala">Informasi Berkala</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Informasi Publik</li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_informasi_berkala') . '">Informasi Berkala</a></li>'
+            ];
             $title = 'Informasi Berkala';
         } else if (request()->is('dashboard/informasi/informasi-setiap-saat')) {
             $data = InformasiPublik::find(2);
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Informasi Publik</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-setiap-saat">Informasi Tersedia Setiap Saat</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Informasi Publik</li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_informasi_setiap_saat') . '">Informasi Tersedia Setiap Saat</a></li>'
+            ];
             $title = 'Informasi Tersedia Setiap Saat';
         }
 
@@ -61,20 +66,24 @@ class InformasiPublikController extends Controller
     {
         $id = $data->id;
         if ($id == 1) {
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Informasi Publik</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-berkala">Informasi Berkala</a></li>
-                          <li class="breadcrumb-item"><a href="/dashboard/informasi/list-informasi/' . $id . '">List Informasi</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Informasi Publik</li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_informasi_berkala') . '">Informasi Berkala</a></li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_list_informasi_publik', $id) . '">List Informasi</a></li>'
+            ];
         } else {
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Informasi Publik</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-setiap-saat">Informasi Tersedia Setiap Saat</a></li>
-                          <li class="breadcrumb-item"><a href="/dashboard/informasi/list-informasi/' . $id . '">List Informasi</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Informasi Publik</li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_informasi_setiap_saat') . '">Informasi Tersedia Setiap Saat</a></li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_list_informasi_publik', $id) . '">List Informasi</a></li>'
+            ];
         }
-
 
         return view('admin.informasi-publik.list-informasi-publik', [
             'data' => $data,
+            'listData' => $data->list_informasi_publik()->paginate(10),
             'breadcumb' => $breadcumb,
         ]);
     }

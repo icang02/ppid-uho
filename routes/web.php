@@ -68,10 +68,13 @@ Route::get('/dashboard/landing/permohonan', [LandingController::class, 'data']);
 Route::get('/dashboard/landing/slogan', [LandingController::class, 'data']);
 Route::get('/dashboard/landing/infografis', [LandingController::class, 'data']);
 
+Route::get('/dashboard/footer', [LandingController::class, 'data'])->name('admin_footer');
+
 Route::post('/landing/ppid/update', [LandingController::class, 'update']);
 Route::post('/landing/permohonan/update', [LandingController::class, 'update']);
 Route::post('/landing/quotes/update', [LandingController::class, 'update']);
 Route::post('/landing/infografis/update', [LandingController::class, 'update']);
+Route::post('/dashboard/footer', [LandingController::class, 'update'])->name('admin_update_footer');
 
 
 // route dashboard tentang

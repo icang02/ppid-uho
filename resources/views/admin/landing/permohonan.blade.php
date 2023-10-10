@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Deskripsi Formulir Permohonan</label>
-                      <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $formulir->isi }}</textarea>
+                      <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="6">{{ $formulir->isi }}</textarea>
                     </div>
                     <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>
                   </form>

@@ -46,6 +46,16 @@
                 </li>
               </ul>
             </li>
+            <li class="has-sub">
+              <a href="javascript:void(0)" class="{{ !request()->is('laporan*') ?: 'active' }}">Laporan</a>
+              <ul class="sub-menu laporan">
+                <li><a href="{{ url('formulir/permohonan-informasi-publik') }}">Laporan Akses Informasi Publik</a></li>
+                <li><a href="{{ url('formulir/keberatan-layanan-informasi-publik') }}">Laporan Layanan Informasi
+                    Publik</a></li>
+                <li><a href="{{ url('formulir/penyelesaian-sengketa-informasi-publik') }}">Laporan Survei Layanan
+                    Informasi</a></li>
+              </ul>
+            </li>
             <li class="scroll-to-section">
               <a href="{{ url('regulasi') }}" class="{{ !request()->is('regulasi') ?: 'active' }}">Regulasi</a>
             </li>

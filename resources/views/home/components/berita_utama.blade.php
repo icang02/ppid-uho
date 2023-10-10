@@ -15,25 +15,7 @@
             @if ($berita->isNotEmpty())
               @foreach ($berita as $item)
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                  <div class="card" style="width: 100%;">
-                    <div class="pembungkus">
-                      <div class="responsive-element" style="background-image: url({{ asset('img/123.png') }})"
-                        onclick="return window.location.href='{{ url('berita/' . $item->slug) }}'">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a href="{{ url("berita/$item->slug") }}">{!! str_limit($item->judul, $limit = 120, $end = '...') !!}</a>
-                      </h5>
-                      <div class="text-muted">
-                        <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $item->tanggal }}
-                        <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat
-                      </div>
-                      <div class="card-text py-2">
-                        {!! str_limit($item->isi, $limit = 90, $end = '...') !!}
-                      </div>
-                    </div>
-                  </div>
+                  @include('home.components.card-berita-utama')
                 </div>
               @endforeach
             @else

@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Isi Slogan</label>
-                      <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $quotes->isi }}</textarea>
+                      <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="6">{{ $quotes->isi }}</textarea>
                     </div>
                     <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>
                   </form>

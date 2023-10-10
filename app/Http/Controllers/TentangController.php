@@ -44,60 +44,75 @@ class TentangController extends Controller
         // BAGIAN TENTANG
         if (request()->is('dashboard/tentang/profil')) {
             $tentang = Landing::where('bagian', 'profil')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Tentang</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/tentang/profil">Profil</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Tentang</li>',
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item"><a href="' . route('tentang_profile_admin') . '">Profil</a></li>'
+            ];
             $title = 'Profil';
         }
         if (request()->is('dashboard/tentang/visi-misi')) {
             $tentang = Landing::where('bagian', 'visi')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
-                          <li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/tentang/visi-misi">Visi & Misi</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Tentang</li>',
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item"><a href="' . route('tentang_visi_misi_admin') . '">Visi & Misi</a></li>'
+            ];
             $title = 'Visi & Misi';
         }
         if (request()->is('dashboard/tentang/tugas-fungsi')) {
             $tentang = Landing::where('bagian', 'tugas')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
-                          <li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/tentang/tugas-fungsi">Tugas & Fungsi</a></li>';
-            $title = 'Tugas & Fungsi';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Tentang</li>',
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item"><a href="' . route('tentang_tugas_fungsi_admin') . '">Tugas & Fungsi</a></li>'
+            ];
         }
         if (request()->is('dashboard/tentang/struktur-ppid')) {
             $tentang = Landing::where('bagian', 'struktur')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
-                          <li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/tentang/struktur-ppid">Struktur Organisasi</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Tentang</li>',
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item"><a href="' . route('tentang_struktur_ppid_admin') . '">Struktur Organisasi</a></li>'
+            ];
             $title = 'Struktur Organisasi';
         }
         if (request()->is('dashboard/regulasi')) {
             $tentang = Landing::where('bagian', 'regulasi')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Tentang</li>
-                          <li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/tentang/regulasi">Regulasi</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Tentang</li>',
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item"><a href="' . route("regulasi_dashboard") . '">Regulasi</a></li>'
+            ];
             $title = 'Regulasi';
         }
 
         // BAGIAN FORMULIR PERMOHONAN
         if (request()->is('dashboard-formulir-permohonan-informasi-publik')) {
             $tentang = Formulir::where('jenis_formulir', 'permohonan')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Formulir</li>
-                          <li class="breadcrumb-item"><a href="/dashboard-formulir-permohonan-informasi-publik">Permohonan Informasi Publik</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Formulir</li>',
+                '<li class="breadcrumb-item"><a href="' . route('formulir_permohonan') . '">Permohonan Informasi Publik</a></li>'
+            ];
             $title = 'Permohonan Informasi Publik';
         }
         if (request()->is('dashboard-formulir-keberatan-layanan-informasi-publik')) {
             $tentang = Formulir::where('jenis_formulir', 'keberatan')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Formulir</li>
-                          <li class="breadcrumb-item"><a href="/dashboard-formulir-keberatan-layanan-informasi-publik">Keberatan Layanan Informasi Publik</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Formulir</li>',
+                '<li class="breadcrumb-item"><a href="' . route('formulir_keberatan') . '">Keberatan Layanan Informasi Publik</a></li>'
+            ];
             $title = 'Keberatan Layanan Informasi Publik';
         }
         if (request()->is('dashboard-formulir-penyelesaian-sengketa-informasi-publik')) {
             $tentang = Formulir::where('jenis_formulir', 'sengketa')->get()->first();
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Formulir</li>
-                          <li class="breadcrumb-item"><a href="/dashboard-formulir-penyelesaian-sengketa-informasi-publik">Penyelesaian Sengketa Informasi Publik</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Formulir</li>',
+                '<li class="breadcrumb-item"><a href="' . route('formulir_sengketa') . '">Penyelesaian Sengketa Informasi Publik</a></li>'
+            ];
             $title = 'Penyelesaian Sengketa Informasi Publik';
         }
 

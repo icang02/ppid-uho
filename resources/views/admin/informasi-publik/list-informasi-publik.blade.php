@@ -13,7 +13,7 @@
               </div>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                {!! $breadcumb !!}
+                {!! implode('', $breadcumb) !!}
               </ul>
             </div>
           </div>
@@ -90,7 +90,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($data->list_informasi_publik as $item)
+                    @foreach ($listData as $item)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>
@@ -171,6 +171,9 @@
                   </tbody>
                 </table>
               </div>
+            </div>
+            <div class="card-footer">
+              {!! $listData->render() !!}
             </div>
           </div>
         </div>

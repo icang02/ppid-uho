@@ -26,7 +26,7 @@
             @include('home.components.breadcrumb')
 
             <div class="row mt-2">
-              <div class="col-lg-6 order-2 order-md-1">
+              <div class="col-lg-7 order-2 order-md-1">
                 <div class="left-content">
                   <h4>{{ $berita->judul }}</h4>
                   <div class="text-muted">
@@ -42,14 +42,16 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 order-1 order-md-2">
-                <div class="right-image">
-                  <div class="pembungkus">
-                    <div class="responsive-element" style="background-image: url({{ asset($berita->gambar) }})">
+              <div class="col-lg-5 order-1 order-md-2">
+                <div class="right-image mb-5">
+                  {{-- <div class="pembungkus">
+                    <div class="responsive-element"
+                      style="background-image: url({{ asset($berita->gambar ?? 'img/berita.jpg') }})">
                     </div>
-                  </div>
-
+                  </div> --}}
+                  <img src="{{ asset($berita->gambar ?? 'img/berita.jpg') }}" class="img-thumbnail shadow">
                 </div>
+                @include('home.components.card-berita')
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="left-image">
-          <img src="{{ asset($formulir->gambar) }}" alt="">
+          <img src="{{ asset('img/formulir-home.jpg') }}" alt="">
         </div>
       </div>
       <div class="col-lg-6 align-self-center p-0">

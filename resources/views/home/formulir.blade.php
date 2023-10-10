@@ -1,6 +1,18 @@
 @extends('home.layouts.main')
 @section('content')
-  <div class="page-heading">
+  @php
+    if (request()->is('tentang*')) {
+        $imgPath = 'img/rektorat2.png';
+    } elseif (request()->is('informasi-publik*')) {
+        $imgPath = 'img/tugu.png';
+    } elseif (request()->is('formulir*')) {
+        $imgPath = 'img/audit.png';
+    } elseif (request()->is('regulasi*')) {
+        $imgPath = 'img/audit.png';
+    }
+  @endphp
+
+  <div class="page-heading" style="background-image: url('{{ asset($imgPath) }}')">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -31,14 +43,18 @@
     <section class="top-section list-informasi">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 tes align-self-center mb-3">
 
+          <div
+            class="{{ request()->is('regulasi*') || request()->is('formulir*') ? 'col-lg-7 order-2 ps-md-4' : 'col-lg-8' }}">
             <div class="div">
               {!! $data->isi !!}
             </div>
 
             @if (request()->is('tentang/struktur-ppid'))
-              <img src="{{ asset($data->gambar) }}" class="img-thumbnail" alt="img.jpg">
+              <div class="text-center">
+                <img src="{{ asset($data->gambar ?? 'img/berita.jpg') }}" class="img-thumbnail img-struktur"
+                  alt="img.jpg">
+              </div>
             @endif
 
             {{-- TOMBOL LINK FORMULIR --}}
@@ -62,7 +78,7 @@
               <section class="top-section">
                 <div class="accordions is-first-expanded ms-0">
 
-                  @forelse ($data->list_informasi_publik as $item)
+                  @forelse ($listData as $item)
                     <article class="accordion">
                       <div class="accordion-head">
                         <span>{{ $item->judul }}</span>
@@ -80,11 +96,40 @@
                     Kosong
                   @endforelse
               </section>
+
+              <div style="float: right;" class="mt-4">
+                {!! $listData->render() !!}
+              </div>
+            @endif
+          </div>
+
+          @if (request()->is('regulasi*') || request()->is('formulir*'))
+            {{-- <hr class="d-block d-md-none my-4 order-2"> --}}
+          @endif
+
+          <div
+            class="{{ request()->is('regulasi*') || request()->is('formulir*') ? 'col-lg-5 ps-md-0' : 'col-lg-4 ps-md-5' }} mt-2 mt-md-0">
+            @if (request()->is('tentang*') || request()->is('informasi-publik*'))
+              <hr class="d-block d-md-none mt-4 mb-5">
+              @include('home.components.card-berita')
+            @else
+              @php
+                $imgPath = 'img/regulasi.jpg';
+                if (request()->is('formulir/permohonan-informasi-publik')) {
+                    $imgPath = 'img/permohonan.jpg';
+                } elseif (request()->is('formulir/keberatan-layanan-informasi-publik')) {
+                    $imgPath = 'img/keberatan.jpg';
+                } elseif (request()->is('formulir/penyelesaian-sengketa-informasi-publik')) {
+                    $imgPath = 'img/Penyelesaian Sengketa.jpg';
+                }
+              @endphp
+              <img src="{{ asset($imgPath) }}" class="img-thumbnail d-none d-md-block"
+                style="width: 540px; height: 395px; object-fit: cover">
             @endif
           </div>
         </div>
 
-        <hr>
+        <hr class="mt-5">
       </div>
     </section>
 

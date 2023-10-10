@@ -15,7 +15,17 @@
   <!-- vendor css -->
   <link rel="stylesheet" href="{{ asset('admin-assets/assets/css/style.css') }}">
 
+  <style>
+    .fixed-button {
+      display: none;
+    }
 
+    .auth-wrapper {
+      background-image: url('img/home-img.png') !important;
+      background-position: center !important;
+      background-size: cover !important;
+    }
+  </style>
 </head>
 
 <body>

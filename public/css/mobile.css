@@ -93,7 +93,8 @@
   /* NAVBAR CONTENT SECTION */
   .sub-menu.tentang,
   .sub-menu.informasi-publik,
-  .sub-menu.formulir-permohonan {
+  .sub-menu.formulir-permohonan,
+  .sub-menu.laporan {
     width: 100% !important;
   }
 
@@ -175,6 +176,12 @@
   #formulir .accordion-body p {
     font-size: var(--text-p) !important;
     line-height: var(--lh-p);
+  }
+  .btn-formulir {
+    font-size: var(--text-p) !important;
+  }
+  .img-struktur {
+    width: 100%;
   }
 
   /* QOUTES SECTION CONTENT */
@@ -260,7 +267,7 @@
   .semua-berita .left-image img {
     object-fit: cover;
     width: 100% !important;
-    height: 227px !important;
+    height: 228px !important;
     border-radius: 10px 10px 0 0 !important;
   }
   .semua-berita .right-content {

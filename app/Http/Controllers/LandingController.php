@@ -22,7 +22,7 @@ class LandingController extends Controller
         } else {
             $berita = collect([]);
         }
-        // dd($berita);
+        // dd($footer);
 
         return view('home.home', [
             'jenisInformasi' => $jenisInformasi,
@@ -61,6 +61,12 @@ class LandingController extends Controller
                 'quotes' => $qoutes,
             ]);
         }
+        if (request()->is('dashboard/footer')) {
+            $infografis = Landing::where('bagian', 'footer')->get();
+            return view('admin.landing.footer', [
+                'info' => $infografis,
+            ]);
+        }
     }
 
 
@@ -68,18 +74,14 @@ class LandingController extends Controller
     {
         if (request()->is('landing/ppid/update')) {
             $data = Landing::where('bagian', 'ppid')->get()->first();
-            $direct = 'dashboard/landing/ppid';
         }
         if (request()->is('landing/quotes/update')) {
             $data = Landing::where('bagian', 'qoutes')->get()->first();
-            $direct = 'dashboard/landing/slogan';
         }
         if (request()->is('landing/permohonan/update')) {
-            $direct = 'dashboard/landing/permohonan';
             $data = Landing::where('bagian', 'formulir')->get()->first();
         }
         if (request()->is('landing/infografis/update')) {
-            $direct = 'dashboard/landing/infografis';
             $data = Landing::find($request->id);
 
             $imgPath = $data->gambar;
@@ -88,6 +90,9 @@ class LandingController extends Controller
                 $imgPath = 'storage/' . $request->file('img')->store('img');
             }
         }
+        if (request()->is('dashboard/footer')) {
+            $data = Landing::find($request->id);
+        }
 
         $data->update([
             'judul' => ucfirst($request->judul),
@@ -95,6 +100,6 @@ class LandingController extends Controller
             'gambar' => $imgPath ?? null,
         ]);
 
-        return redirect($direct)->with('success', 'Data berhasil diupdate.');
+        return redirect()->back()->with('success', 'Data berhasil diupdate.');
     }
 }

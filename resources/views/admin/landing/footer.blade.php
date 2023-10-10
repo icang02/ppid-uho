@@ -13,8 +13,8 @@
               </div>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i></a></li>
-                <li class="breadcrumb-item">Landing</li>
-                <li class="breadcrumb-item"><a href="{{ url('dashboard/landing/infografis') }}">Tata Cara / Infografis</a>
+                <li class="breadcrumb-item">Menu Utama</li>
+                <li class="breadcrumb-item"><a href="{{ url('dashboard/landing/infografis') }}">Footer</a>
                 </li>
               </ul>
             </div>
@@ -28,18 +28,18 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h5>Tata Cara / Infografis</h5>
+              <h5>Keterangan Footer</h5>
             </div>
 
             <div class="card-body table-border-style">
               <div class="table-responsive">
                 <table class="table table-hover table-sm table-bordered">
                   <thead>
-                    <tr>
+                    <tr class="text-wrap">
                       <th>No</th>
                       <th>Aksi</th>
                       <th>Judul</th>
-                      <th>Gambar</th>
+                      <th>Isi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -55,10 +55,8 @@
                           </span>
 
                         </td>
-                        <td>{{ $item->judul }}</td>
-                        <td>
-                          <img width="200" style="border: 1px solid #c5c5c5" src="{{ asset($item->gambar) }}">
-                        </td>
+                        <td class="text-wrap">{{ $item->judul }}</td>
+                        <td class="text-wrap">{{ $item->isi }}</td>
                       </tr>
 
                       <div id="exampleModalLive{{ $item->id }}" class="modal fade" tabindex="-1" role="dialog"
@@ -66,37 +64,28 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLiveLabel">Modal Title</h5>
+                              <h5 class="modal-title" id="exampleModalLiveLabel">Edit Data</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                   aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
-                              <form action="/landing/infografis/update" enctype="multipart/form-data" method="POST">
+                              <form action="{{ route('admin_update_footer', $item->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $item->id }}">
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Judul</label>
-                                  <input name="judul" value="{{ $item->judul }}" type="text" class="form-control"
-                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter judul"
-                                    required>
+                                  <label for="judul">Judul</label>
+                                  <input name="judul" value="{{ old('judul', $item->judul) }}" type="text"
+                                    class="form-control" id="judul" placeholder="Enter judul" required>
                                 </div>
 
-                                <label for="exampleInputEmail1">Gambar</label>
-
-                                <div class="mt-3 mb-3 text-center">
-                                  <img width="280" style="border: 1px solid #c5c5c5" src="{{ asset($item->gambar) }}">
-                                </div>
-
-                                <div class="custom-file">
-                                  <input name="img" value="{{ $item->gambar }}" type="file"
-                                    class="custom-file-input" id="validatedCustomFile" accept=".jpg,.jpeg,.png">
-                                  <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                  <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                <div class="form-group">
+                                  <label for="isi">Isi</label>
+                                  <textarea class="form-control" name="isi" id="isi" rows="6" required>{{ old('isi', $item->isi) }}</textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn  btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="submit" class="btn  btn-primary">Save changes</button>
+                              <button type="button" class="btn  btn-secondary" data-dismiss="modal">Kembali</button>
+                              <button type="submit" class="btn  btn-primary">Simpan Perubahan</button>
                             </div>
 
                             </form>

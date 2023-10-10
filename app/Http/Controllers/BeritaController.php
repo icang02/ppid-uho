@@ -55,14 +55,18 @@ class BeritaController extends Controller
     {
         if (request()->is('dashboard/berita')) {
             $data = Berita::where('kategori', 'berita')->orderBy('tanggal', 'desc')->paginate(10);
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/berita">Berita & Informasi</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_berita') . '">Berita & Informasi</a></li>'
+            ];
             $title = 'Berita & Informasi';
         } else {
             $data = Berita::where('kategori', 'informasi serta merta')->orderBy('tanggal', 'desc')->paginate(10);
-            $breadcumb = '<li class="breadcrumb-item">Menu Utama</li>
-                          <li class="breadcrumb-item">Informasi Publik</li>
-                          <li class="breadcrumb-item"><a href="/dashboard/informasi/informasi-serta-merta">Informasi Serta Merta</a></li>';
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Informasi Publik</li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_informasi_serta_merta') . '">Informasi Serta Merta</a></li>'
+            ];
             $title = 'Informasi Serta Merta';
         }
 
