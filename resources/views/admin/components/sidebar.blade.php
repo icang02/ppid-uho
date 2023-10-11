@@ -93,6 +93,16 @@
           </ul>
         </li>
 
+        <li class="nav-item pcoded-hasmenu">
+          <a class="nav-link "><span class="pcoded-micon"><i class="feather icon-map"></i></span><span
+              class="pcoded-mtext">Laporan</span></a>
+          <ul class="pcoded-submenu">
+            <li><a href="{{ route('admin_laporan_akses') }}">Akses Informasi Publik</a></li>
+            <li><a href="{{ route('admin_laporan_layanan') }}">Layanan Informasi Publik</a></li>
+            <li><a href="{{ route('admin_laporan_survei') }}">Survei Layanan Informasi</a></li>
+          </ul>
+        </li>
+
         <li class="nav-item">
           <a href="{{ route('regulasi_dashboard') }}" class="nav-link "><span class="pcoded-micon"><i
                 class="feather icon-box"></i></span><span class="pcoded-mtext">Regulasi</span></a>

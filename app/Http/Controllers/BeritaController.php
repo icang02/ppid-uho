@@ -21,6 +21,11 @@ class BeritaController extends Controller
                 $berita = Berita::where('kategori', 'informasi serta merta')->where('judul', 'like', '%' . request()->search . '%')->paginate(6);
                 $breadcumb = '<span class="txt-kuning">Informasi Serta Merta</span>';
             }
+            if (request()->search == null && request()->is('berita*')) {
+                return redirect()->route('index_berita');
+            } elseif (request()->search == null && request()->is('informasi-publik*')) {
+                return redirect()->route('info_serta_merta');
+            }
         } else {
             if (request()->is('berita*')) {
                 $berita = Berita::where('kategori', 'berita')->paginate(6);
@@ -92,21 +97,23 @@ class BeritaController extends Controller
 
     public function addAdmin(Request $request)
     {
-        if (request()->is('dashboard/berita')) {
-            $kategori = 'berita';
-        } else {
-            $kategori = 'informasi serta merta';
-        }
-
         $request->validate([
             'isi' => 'required',
+            'gambar' => 'mimes:png,jpg,jpeg|max:1024',
         ], [
-            'isi.required' => 'Isi berita / informasi tidak boleh kosong.'
+            'isi.required' => 'Isi berita / informasi tidak boleh kosong.',
+            'gambar.mimes' => 'Upload file dengan format jpeg, jpg, atau png.',
+            'gambar.max' => 'Ukuran gambar maksimal 1Mb.',
         ]);
-        $request->has('gambar') ? $imgPath = 'storage/' .  $request->file('gambar') : $imgPath = null;
+        $imgPath = null;
+        if ($request->has('gambar')) {
+            $imgPath = 'storage/' .  $request->file('gambar')->store('img');
+            // $request->file('gambar')->store('img');
+        }
 
+        // dd($request->all());
         Berita::create([
-            'kategori' => $kategori,
+            'kategori' => 'informasi serta merta',
             'judul' => ucfirst($request->judul),
             'slug' => Str::slug($request->judul),
             'tanggal' => $request->tanggal,
@@ -115,15 +122,18 @@ class BeritaController extends Controller
             'gambar' => $imgPath,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil ditambahkan.');
     }
 
     public function updateAdmin(Request $request, $id)
     {
         $request->validate([
             'isi' => 'required',
+            'gambar' => 'mimes:png,jpg,jpeg|max:1024',
         ], [
-            'isi.required' => 'Isi berita / informasi tidak boleh kosong.'
+            'isi.required' => 'Isi berita / informasi tidak boleh kosong.',
+            'gambar.mimes' => 'Upload file dengan format jpeg, jpg, atau png.',
+            'gambar.max' => 'Ukuran gambar maksimal 1Mb.',
         ]);
 
         $data = Berita::findOrFail($id);
@@ -141,7 +151,7 @@ class BeritaController extends Controller
             'gambar' => $imgPath
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil diupdate.');
     }
 
     public function deleteAdmin($id)
@@ -149,6 +159,6 @@ class BeritaController extends Controller
         $data = Berita::find($id);
         Storage::delete(str_replace('storage/', '', $data->gambar));
         $data->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil dihapus.');;
     }
 }

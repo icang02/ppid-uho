@@ -54,6 +54,12 @@
                       </div>
                     </div>
 
+                    @if (request()->is('dashboard/berita'))
+                      <input type="hidden" name="kategori" value="berita">
+                    @elseif (request()->is('dashboard/informasi/informasi-serta-merta'))
+                      <input type="hidden" name="kategori" value="informasi serta merta">
+                    @endif
+
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
                       <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
@@ -67,6 +73,12 @@
             <div class="card-body table-border-style">
               <button type="button" class="btn  btn-primary mb-3" data-toggle="modal" data-target="#modalTambah">
                 <i class="fas fa-plus"></i>&nbsp; Tambah Data</button>
+
+              @if (session('success'))
+                <div class="alert alert-success">
+                  {{ session('success') }}
+                </div>
+              @endif
 
               @error('isi')
                 <div class="alert alert-danger" role="alert">
@@ -90,7 +102,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($listData as $item)
+                    @forelse ($listData as $item)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>
@@ -100,7 +112,8 @@
                           <button type="button" data-toggle="modal" data-target="#exampleModalLive{{ $item->id }}"
                             class="btn-sm btn btn-warning">
                             <i class="fas fa-edit"></i></button>
-                          <form action="" method="post" class="d-inline">
+                          <form action="{{ route('admin_delete_list_informasi_publik', $item->id) }}" method="post"
+                            class="d-inline">
                             @method('delete')
                             @csrf
                             <button type="submit" data-toggle="modal" class="btn-sm btn btn-danger"
@@ -167,7 +180,11 @@
                           </div>
                         </div>
                       </div>
-                    @endforeach
+                    @empty
+                      <tr class="text-center">
+                        <td colspan="3">Belum ada data.</td>
+                      </tr>
+                    @endforelse
                   </tbody>
                 </table>
               </div>

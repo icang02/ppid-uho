@@ -54,12 +54,20 @@ class InformasiPublikController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+        ], [
+            'judul.required' => 'Kolom judul tidak boleh kosong.',
+            'isi.required' => 'Kolom isi tidak boleh kosong.',
+        ]);
+
         $data = InformasiPublik::findOrFail($id);
         $data->update([
             'judul' => $request->judul,
             'isi' => $request->isi,
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil diupdate.');
     }
 
     public function listInformasi(InformasiPublik $data)
@@ -103,7 +111,7 @@ class InformasiPublikController extends Controller
             'isi' => $request->isi,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil ditambahkan.');
     }
 
     public function updateListInformasi(Request $request, $id)
@@ -114,12 +122,12 @@ class InformasiPublikController extends Controller
             'judul' => $request->judul,
             'isi' => $request->isi,
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil diupdate.');
     }
-    public function deleteListInformasi(Request $request, $id)
+    public function deleteListInformasi($id)
     {
         $data = ListInformasiPublik::findOrFail($id);
         $data->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil dihapus.');
     }
 }

@@ -119,6 +119,19 @@ Route::put('/dashboard/informasi/list-informasi/{data}', [InformasiPublikControl
 Route::delete('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'deleteListInformasi'])->name('admin_delete_list_informasi_publik');
 
 
+// ROUTE LAPORAN BIASA
+Route::get('/dashboard/laporan/akses-informasi-publik', [LaporanController::class, 'indexAdmin1'])->name('admin_laporan_akses');
+Route::get('/dashboard/laporan/akses-informasi-publik/{tahun}', [LaporanController::class, 'imgLaporanAkses'])->name('admin_img_laporan_akses');
+Route::get('/dashboard/laporan/akses-informasi-publik/delete/{id}', [LaporanController::class, 'imgDeleteLaporanAkses'])->name('admin_img_laporan_akses_delete');
+
+Route::get('/dashboard/laporan/layanan-informasi-publik', [LaporanController::class, 'indexAdmin'])->name('admin_laporan_layanan');
+Route::get('/dashboard/laporan/survei-layanan-informasi', [LaporanController::class, 'indexAdmin'])->name('admin_laporan_survei');
+
+Route::get('/dashboard/laporan/delete/{id}', [LaporanController::class, 'deleteAdmin'])->name('admin_laporan_delete');
+Route::put('/dashboard/laporan/update/{id}', [LaporanController::class, 'updateAdmin'])->name('admin_laporan_update');
+Route::post('/dashboard/laporan/add', [LaporanController::class, 'addAdmin'])->name('admin_laporan_add');
+
+
 // ROUTE LOGIN
 Route::get('/admin', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin', [AuthController::class, 'authenticate'])->name('authenticate')->middleware('guest');

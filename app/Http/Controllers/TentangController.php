@@ -67,6 +67,7 @@ class TentangController extends Controller
                 '<li class="breadcrumb-item">Menu Utama</li>',
                 '<li class="breadcrumb-item"><a href="' . route('tentang_tugas_fungsi_admin') . '">Tugas & Fungsi</a></li>'
             ];
+            $title = 'Tugas & Fungsi';
         }
         if (request()->is('dashboard/tentang/struktur-ppid')) {
             $tentang = Landing::where('bagian', 'struktur')->get()->first();
@@ -126,10 +127,42 @@ class TentangController extends Controller
     public function updateTentang(Request $request, $id)
     {
         if (request()->is('dashboard-formulir/update*')) {
+            $request->validate([
+                'judul' => 'required',
+                'isi' => 'required',
+                'link' => 'required',
+            ], [
+                'judul.required' => 'Kolom judul tidak boleh kosong.',
+                'isi.required' => 'Kolom isi tidak boleh kosong.',
+                'link.required' => 'Kolom link tidak boleh kosong.',
+            ]);
+
             $tentang = Formulir::findOrFail($id);
         } else {
+            if (request()->has('img')) {
+                $request->validate([
+                    'judul' => 'required',
+                    'isi' => 'required',
+                    'img' => 'mimes:png,jpg,jpeg|max:1024',
+                ], [
+                    'judul.required' => 'Kolom judul tidak boleh kosong.',
+                    'isi.required' => 'Kolom isi tidak boleh kosong.',
+                    'img.mimes' => 'Upload file dengan format jpeg, jpg, atau png.',
+                    'img.max' => 'Ukuran gambar maksimal 1Mb.',
+                ]);
+            } else {
+                $request->validate([
+                    'judul' => 'required',
+                    'isi' => 'required',
+                ], [
+                    'judul.required' => 'Kolom judul tidak boleh kosong.',
+                    'isi.required' => 'Kolom isi tidak boleh kosong.',
+                ]);
+            }
+
             $tentang = Landing::findOrFail($id);
         }
+        // dd($request->all());
 
         // upload gambar
         if (request()->is('dashboard-formulir/update*')) {
@@ -140,6 +173,7 @@ class TentangController extends Controller
             ]);
         } else {
             $imgPath = $tentang->gambar;
+
             if ($request->has('img')) {
                 Storage::delete(str_replace('storage/', '', $imgPath));
                 $imgPath = 'storage/' . $request->file('img')->store('img');
@@ -152,6 +186,6 @@ class TentangController extends Controller
             ]);
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil diupdate.');
     }
 }

@@ -78,9 +78,14 @@
 </div>
 <div class="wrapper">
   <div class="search-data">
-    <form action="{{ request()->path() == 'berita' ? route('index_berita') : route('info_serta_merta') }}"
-      method="get">
-      <input type="text" id="myInput" name="search" autocomplete="off">
+    @if (request()->is('berita*'))
+      <form action="{{ route('index_berita') }}" method="get">
+      @elseif (request()->is('informasi-publik*'))
+        <form action="{{ route('info_serta_merta') }}" method="get">
+        @else
+          <form action="{{ route('index_berita') }}" method="get">
+    @endif
+    <input type="text" id="myInput" name="search" autocomplete="off">
     </form>
     <label>Masukan kata kunci..</label>
     <div class="line"></div>

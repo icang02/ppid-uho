@@ -32,6 +32,21 @@
             </div>
 
             <div class="card-body table-border-style">
+
+              @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </div>
+              @endif
+
+              @if (session('success'))
+                <div class="alert alert-success">
+                  {{ session('success') }}
+                </div>
+              @endif
+
               <div class="table-responsive">
                 <table class="table table-hover table-sm table-bordered">
                   <thead>
@@ -75,10 +90,10 @@
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $item->id }}">
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Judul</label>
-                                  <input name="judul" value="{{ $item->judul }}" type="text" class="form-control"
-                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter judul"
-                                    required>
+                                  <label for="judul">Judul</label>
+                                  <input name="judul" value="{{ old('judul', $item->judul) }}" type="text"
+                                    class="form-control" id="judul" aria-describedby="emailHelp"
+                                    placeholder="Enter judul">
                                 </div>
 
                                 <label for="exampleInputEmail1">Gambar</label>

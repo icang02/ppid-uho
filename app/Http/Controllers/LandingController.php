@@ -73,24 +73,66 @@ class LandingController extends Controller
     public function update(Request $request)
     {
         if (request()->is('landing/ppid/update')) {
+            $request->validate([
+                'judul' => 'required',
+                'isi' => 'required',
+            ], [
+                'judul.required' => 'Kolom judul tidak boleh kosong.',
+                'isi.required' => 'Kolom isi tidak boleh kosong.',
+            ]);
+
             $data = Landing::where('bagian', 'ppid')->get()->first();
         }
         if (request()->is('landing/quotes/update')) {
+            $request->validate([
+                'judul' => 'required',
+                'isi' => 'required',
+            ], [
+                'judul.required' => 'Kolom judul tidak boleh kosong.',
+                'isi.required' => 'Kolom isi tidak boleh kosong.',
+            ]);
+
             $data = Landing::where('bagian', 'qoutes')->get()->first();
         }
         if (request()->is('landing/permohonan/update')) {
+            $request->validate([
+                'judul' => 'required',
+                'isi' => 'required',
+            ], [
+                'judul.required' => 'Kolom judul tidak boleh kosong.',
+                'isi.required' => 'Kolom isi tidak boleh kosong.',
+            ]);
+
             $data = Landing::where('bagian', 'formulir')->get()->first();
         }
         if (request()->is('landing/infografis/update')) {
-            $data = Landing::find($request->id);
+            $request->validate([
+                'judul' => 'required',
+                'img' => 'mimes:png,jpg,jpeg|max:1024',
+            ], [
+                'judul.required' => 'Kolom judul tidak boleh kosong.',
+                'img.mimes' => 'Upload file dengan format jpeg, jpg, atau png.',
+                'img.max' => 'Ukuran gambar maksimal 1Mb.',
+            ]);
 
+            $data = Landing::find($request->id);
             $imgPath = $data->gambar;
+
+
             if ($request->has('img')) {
                 Storage::delete(str_replace('storage/', '', $imgPath));
                 $imgPath = 'storage/' . $request->file('img')->store('img');
             }
         }
         if (request()->is('dashboard/footer')) {
+            $request->validate([
+                'judul' => 'required',
+                'isi' => 'required',
+            ], [
+                'judul.required' => 'Kolom judul tidak boleh kosong.',
+                'isi.required' => 'Kolom isi tidak boleh kosong.',
+            ]);
+
             $data = Landing::find($request->id);
         }
 

@@ -32,6 +32,15 @@
             </div>
 
             <div class="card-body table-border-style">
+
+              @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </div>
+              @endif
+
               <div class="table-responsive">
                 <table class="table table-hover table-sm table-bordered">
                   <thead>
@@ -75,12 +84,12 @@
                                 <div class="form-group">
                                   <label for="judul">Judul</label>
                                   <input name="judul" value="{{ old('judul', $item->judul) }}" type="text"
-                                    class="form-control" id="judul" placeholder="Enter judul" required>
+                                    class="form-control" id="judul" placeholder="Enter judul">
                                 </div>
 
                                 <div class="form-group">
                                   <label for="isi">Isi</label>
-                                  <textarea class="form-control" name="isi" id="isi" rows="6" required>{{ old('isi', $item->isi) }}</textarea>
+                                  <textarea class="form-control" name="isi" id="isi" rows="6">{{ old('isi', $item->isi) }}</textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">

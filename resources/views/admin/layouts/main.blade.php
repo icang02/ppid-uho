@@ -109,7 +109,9 @@
     // jquery
     $(document).ready(function() {
       // Hapus class tertentu
-      // $('.fixed-button').hide();
+      setTimeout(() => {
+        $('.alert').fadeOut();
+      }, 4000);
     });
   </script>
 

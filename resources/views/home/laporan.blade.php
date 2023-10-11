@@ -36,11 +36,6 @@
     <section class="top-section list-informasi">
       <div class="container px-0 px-md-0">
         <div class="row px-0 px-md-5  gap-4 gap-md-5 justify-content-center">
-          @php
-            $data = ['2023', '2022', '2020'];
-            // $data = [];
-          @endphp
-
           <style>
             .bg-gelap {
               background: #000;
@@ -81,7 +76,7 @@
           @forelse ($data as $item)
             <div class="col-lg-3">
               <div class="card relative shadow mx-auto" style="width: 230px;">
-                <a href="{{ route('dashboard') }}" target="_blank">
+                <a href="{{ url($item->link) }}" target="_blank">
                   <div class="bg-gelap">
                     <span class="icon">
                       <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
@@ -90,12 +85,12 @@
                 </a>
 
                 <div class="card-body text-center">
-                  <img src="{{ asset('img/cover-laporan.png') }}" style="object-fit: cover; width: 100%">
+                  <img src="{{ asset($item->gambar) }}" style="object-fit: cover; width: 100%">
                 </div>
               </div>
               <div class="card mx-auto px-2 py-1 text-center bg-biru"
                 style="width: 230px; border-bottom: 4px solid #f4b700">
-                <p class="text-white">Laporan Tahun {{ $item }}</p>
+                <p class="text-white">Laporan Tahun {{ $item->tahun }}</p>
               </div>
             </div>
           @empty

@@ -37,6 +37,12 @@
               <div class="row">
                 <div class="col-md-12">
 
+                  @if (session('success'))
+                    <div class="alert alert-success">
+                      {{ session('success') }}
+                    </div>
+                  @endif
+
                   @if (request()->is('dashboard-formulir*'))
                     <form action="{{ route('update_formulir', $tentang->id) }}" method="post">
                     @elseif (request()->is('dashboard/informasi*'))
@@ -50,30 +56,44 @@
 
                   <div class="form-group">
                     <label for="judul">Judul</label>
-                    <input type="text" class="form-control" name="judul" id="judul" value="{{ $tentang->judul }}"
-                      placeholder="Enter judul">
+                    <input type="text" class="form-control" name="judul" id="judul"
+                      value="{{ old('judul', $tentang->judul) }}" placeholder="Enter judul">
+                    @error('judul')
+                      <small class="text-danger">{{ $message }}</small>
+                    @enderror
                   </div>
 
                   @if (request()->is('dashboard-formulir*'))
                     <div class="form-group">
                       <label for="link">Link Formulir</label>
                       <input type="link" class="form-control" name="link" id="link"
-                        value="{{ $tentang->link }}" placeholder="Enter link">
+                        value="{{ old('link', $tentang->link) }}" placeholder="Enter link">
+                      @error('link')
+                        <small class="text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   @endif
 
                   @if (request()->is('dashboard/tentang/struktur-ppid'))
                     <div class="form-group">
                       <label for="img">Gambar</label>
-                      <input type="file" class="form-control" name="img" id="img">
+                      <input type="file" class="form-control" name="img" id="img" accept=".jpg,.jpeg,.png">
+                      @error('img')
+                        <small class="text-danger">{{ $message }}</small>
+                      @enderror
+                      <img src="{{ asset($tentang->gambar ?? 'img/berita.jpg') }}" width="200"
+                        class="img-thumbnail mt-2 d-block">
                     </div>
                   @endif
 
                   <div class="form-group">
                     <label for="isi" class="d-block">Isi / Detail</label>
                     <textarea name="isi" id="tiny">
-                        {{ $tentang->isi }}
-                      </textarea>
+                        {{ old('isi', $tentang->isi) }}
+                    </textarea>
+                    @error('isi')
+                      <small class="text-danger d-block">{{ $message }}</small>
+                    @enderror
                   </div>
 
                   <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>

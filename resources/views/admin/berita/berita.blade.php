@@ -83,11 +83,6 @@
                         </div>
 
                         <script>
-                          setTimeout(function() {
-                            // Menggunakan jQuery untuk menghilangkan elemen
-                            $(".alert").fadeOut();
-                          }, 3000); // 3000 milidetik (3 detik)
-
                           // Mendapatkan elemen input file dan elemen img untuk preview
                           var fileInput = document.querySelector('.fileInput');
                           var imagePreview = document.querySelector('.imagePreview');
@@ -130,11 +125,19 @@
               <button data-toggle="modal" data-target="#modalTambah" class="btn btn-primary mb-3">
                 <i class="fas fa-plus mr-1"></i> Tambah Data</button>
 
-              @error('isi')
-                <div class="alert alert-danger" role="alert">
-                  {{ $message }}
+              @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
                 </div>
-              @enderror
+              @endif
+
+              @if (session('success'))
+                <div class="alert alert-success">
+                  {{ session('success') }}
+                </div>
+              @endif
 
               <div class="table-responsive">
                 <table class="table table-bordered table-sm table-hover">

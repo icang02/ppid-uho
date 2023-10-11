@@ -33,16 +33,29 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
+
+                  @if (session('success'))
+                    <div class="alert alert-success">
+                      {{ session('success') }}
+                    </div>
+                  @endif
+
                   <form action="/landing/ppid/update" method="POST">
                     @csrf
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Judul</label>
-                      <input name="judul" value="{{ $ppid->judul }}" type="text" class="form-control"
-                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <label for="judul">Judul</label>
+                      <input name="judul" value="{{ old('judul', $ppid->judul) }}" type="text" class="form-control"
+                        id="judul" placeholder="Enter judul">
+                      @error('judul')
+                        <small class="text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                     <div class="form-group">
-                      <label for="exampleFormControlTextarea1">Deskripsi PPID</label>
-                      <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="6">{{ $ppid->isi }}</textarea>
+                      <label for="isi">Deskripsi PPID</label>
+                      <textarea name="isi" class="form-control" id="isi" rows="6">{{ old('isi', $ppid->isi) }}</textarea>
+                      @error('isi')
+                        <small class="text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
 
                     <button class="btn btn-primary mt-3" type="submit">Simpan Perubahan</button>

@@ -20,14 +20,22 @@
       {{-- breadcrumb --}}
       @include('home.components.breadcrumb')
 
-      <form action="{{ url('berita') }}" method="get" class="d-block d-md-none" style="position: relative"
-        id="formSearch">
-        <span style="position: absolute; left: 18px; top: 8px">
-          <i class="fa-solid fa-magnifying-glass" style="color: #949494"></i>
-        </span>
-        <input type="text" class="form-control form-control-sm py-2" name="search" autocomplete="off"
-          placeholder="Masukan kata kunci.." style="padding-left: 40px" />
-        <hr>
+      @if (request()->is('berita*'))
+        <form action="{{ route('index_berita') }}" method="get" class="d-block d-md-none" style="position: relative"
+          id="formSearch">
+        @elseif (request()->is('informasi-publik*'))
+          <form action="{{ route('info_serta_merta') }}" method="get" class="d-block d-md-none"
+            style="position: relative" id="formSearch">
+          @else
+            <form action="{{ route('index_berita') }}" method="get" class="d-block d-md-none" style="position: relative"
+              id="formSearch">
+      @endif
+      <span style="position: absolute; left: 18px; top: 17px">
+        <i class="fa-solid fa-magnifying-glass" style="color: #949494"></i>
+      </span>
+      <input type="text" class="form-control form-control-sm py-3" name="search" autocomplete="off"
+        placeholder="Masukan kata kunci.." style="padding-left: 40px" />
+      <hr>
       </form>
 
       @if ($berita->count() != 0 && request()->search != '')
