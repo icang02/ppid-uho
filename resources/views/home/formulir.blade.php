@@ -8,7 +8,7 @@
     } elseif (request()->is('formulir*')) {
         $imgPath = 'img/audit.png';
     } elseif (request()->is('regulasi*')) {
-        $imgPath = 'img/audit.png';
+        $imgPath = 'img/bg-regulasi.png';
     }
   @endphp
 
@@ -103,10 +103,6 @@
             @endif
           </div>
 
-          @if (request()->is('regulasi*') || request()->is('formulir*'))
-            {{-- <hr class="d-block d-md-none my-4 order-2"> --}}
-          @endif
-
           <div
             class="{{ request()->is('regulasi*') || request()->is('formulir*') ? 'col-lg-5 ps-md-0' : 'col-lg-4 ps-md-5' }} mt-2 mt-md-0">
             @if (request()->is('tentang*') || request()->is('informasi-publik*'))
@@ -124,7 +120,7 @@
                 }
               @endphp
               <img src="{{ asset($imgPath) }}" class="img-thumbnail d-none d-md-block"
-                style="width: 540px; height: 395px; object-fit: cover">
+                style="width: 540px; height: 395px; object-fit: cover; object-position: center">
             @endif
           </div>
         </div>

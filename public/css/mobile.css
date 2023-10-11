@@ -207,7 +207,7 @@
     font-size: var(--text-h5) !important;
     line-height: var(--lh-p);
   }
-  #beritaUtama .content-berita .card-text .text-p {
+  #beritaUtama .content-berita .card-text .div {
     font-size: var(--text-p) !important;
     line-height: var(--lh-p);
   }
@@ -280,7 +280,7 @@
   .semua-berita .right-content .text-muted {
     font-size: var(--text-p) !important;
   }
-  .semua-berita .right-content p {
+  .semua-berita .right-content .desk {
     font-size: var(--text-p) !important;
     line-height: var(--lh-p) !important;
     margin-top: 12px !important;
@@ -290,6 +290,9 @@
     display: none;
   }
   .semua-berita .text-search {
+    font-size: var(--text-p) !important;
+  }
+  .hasil-search {
     font-size: var(--text-p) !important;
   }
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\InformasiPublikController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\TentangController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,7 @@ Route::get('/', [LandingController::class, 'index']);
 Route::get('/berita', [BeritaController::class, 'index'])->name('index_berita');
 Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
 Route::get('/search-berita', [BeritaController::class, 'searchBerita']);
+Route::post('/update-view/{id}', [BeritaController::class, 'updateView']);
 
 
 Route::get('/informasi-publik/informasi-berkala', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('info_berkala');
@@ -57,6 +59,9 @@ Route::get('/tentang/tugas-fungsi', [TentangController::class, 'index'])->name('
 Route::get('/tentang/struktur-ppid', [TentangController::class, 'index'])->name('tentang_struktur_ppid');
 Route::get('/regulasi', [TentangController::class, 'index'])->name('regulasi');
 
+Route::get('/laporan/akses-informasi-publik', [LaporanController::class, 'index'])->name('laporan_akses');
+Route::get('/laporan/layanan-informasi-publik', [LaporanController::class, 'index'])->name('laporan_layanan');
+Route::get('/laporan/survei-layanan-informasi', [LaporanController::class, 'index'])->name('laporan_survei');
 
 
 // route index dashboard

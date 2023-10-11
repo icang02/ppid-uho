@@ -43,20 +43,25 @@
                 </div>
               </div>
               <div class="col-lg-5 order-1 order-md-2">
-                <div class="right-image mb-5">
+                <div class="right-image mb-0 mb-md-5">
                   {{-- <div class="pembungkus">
                     <div class="responsive-element"
                       style="background-image: url({{ asset($berita->gambar ?? 'img/berita.jpg') }})">
                     </div>
                   </div> --}}
-                  <img src="{{ asset($berita->gambar ?? 'img/berita.jpg') }}" class="img-thumbnail shadow">
+                  <img src="{{ asset($berita->gambar ?? 'img/berita.jpg') }}" class="shadow">
                 </div>
-                @include('home.components.card-berita')
+                <div class="d-none d-md-block">
+                  @include('home.components.card-berita')
+                </div>
               </div>
             </div>
           </div>
 
           <div class="garis-bawah">
+            <div class="mb-5 d-block d-md-none" style="margin-top: 40px">
+              @include('home.components.card-berita')
+            </div>
             <hr>
           </div>
         </div>
@@ -64,4 +69,35 @@
       </div>
     </div>
   </section>
+
+  <script>
+    $(document).ready(function() {
+      var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+      setTimeout(function() {
+        updateData();
+      }, 10000);
+
+      function updateData() {
+        $.ajax({
+          type: 'POST',
+          url: '/update-view/{{ $berita->id }}',
+          data: {
+            // Data yang ingin Anda kirimkan dalam permintaan
+          },
+          headers: {
+            'X-CSRF-TOKEN': csrfToken
+          },
+          success: function(response) {
+            // Tangani respons dari server
+            // console.log(response.msg);
+          },
+          error: function(error) {
+            // Tangani kesalahan jika ada
+            console.log(error);
+          }
+        });
+      }
+    });
+  </script>
 @endsection

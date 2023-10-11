@@ -47,13 +47,14 @@
 
   {{-- list berita --}}
   @php
-    $berita = App\Berita::where('kategori', 'berita')
+    $beritaList = App\Berita::where('kategori', 'berita')
+        ->where('id', '!=', $berita->id ?? '')
         ->orderBy('tanggal', 'desc')
         ->take(4)
         ->get();
   @endphp
 
-  @foreach ($berita as $i => $item)
+  @foreach ($beritaList as $i => $item)
     <div class="d-flex flex-column berita-body">
       <div class="d-flex px-3">
         <div>
@@ -70,7 +71,7 @@
       </div>
     </div>
 
-    @if ($i != count($berita) - 1)
+    @if ($i != count($beritaList) - 1)
       <hr>
     @else
       <div class="pb-4"></div>

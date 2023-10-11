@@ -49,10 +49,10 @@
             <li class="has-sub">
               <a href="javascript:void(0)" class="{{ !request()->is('laporan*') ?: 'active' }}">Laporan</a>
               <ul class="sub-menu laporan">
-                <li><a href="{{ url('formulir/permohonan-informasi-publik') }}">Laporan Akses Informasi Publik</a></li>
-                <li><a href="{{ url('formulir/keberatan-layanan-informasi-publik') }}">Laporan Layanan Informasi
+                <li><a href="{{ route('laporan_akses') }}">Laporan Akses Informasi Publik</a></li>
+                <li><a href="{{ route('laporan_layanan') }}">Laporan Layanan Informasi
                     Publik</a></li>
-                <li><a href="{{ url('formulir/penyelesaian-sengketa-informasi-publik') }}">Laporan Survei Layanan
+                <li><a href="{{ route('laporan_survei') }}">Laporan Survei Layanan
                     Informasi</a></li>
               </ul>
             </li>
@@ -78,7 +78,8 @@
 </div>
 <div class="wrapper">
   <div class="search-data">
-    <form action="{{ url('berita') }}" method="get">
+    <form action="{{ request()->path() == 'berita' ? route('index_berita') : route('info_serta_merta') }}"
+      method="get">
       <input type="text" id="myInput" name="search" autocomplete="off">
     </form>
     <label>Masukan kata kunci..</label>

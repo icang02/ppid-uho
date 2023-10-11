@@ -20,8 +20,18 @@
       {{-- breadcrumb --}}
       @include('home.components.breadcrumb')
 
-      @if ($berita->count() != 0 && request()->has('search'))
-        <div class="text-muted text-center">
+      <form action="{{ url('berita') }}" method="get" class="d-block d-md-none" style="position: relative"
+        id="formSearch">
+        <span style="position: absolute; left: 18px; top: 8px">
+          <i class="fa-solid fa-magnifying-glass" style="color: #949494"></i>
+        </span>
+        <input type="text" class="form-control form-control-sm py-2" name="search" autocomplete="off"
+          placeholder="Masukan kata kunci.." style="padding-left: 40px" />
+        <hr>
+      </form>
+
+      @if ($berita->count() != 0 && request()->search != '')
+        <div class="text-muted text-center hasil-search mb-1">
           <br> Hasil pencarian dengan kata kunci : <i class="fw-bold">{{ request()->search }}</i>
         </div>
       @endif
@@ -42,16 +52,16 @@
                         <div class="right-content">
                           <h4 onclick="return window.location.href='{{ url('berita/' . $item->slug) }}'"
                             class="judul{{ $item->id }}">
-                            Memuat ...
-                            {{-- {!! str_limit($item->judul, $limit = 130, $end = '...') !!} --}}
+                            {{-- Memuat ... --}}
+                            {!! str_limit($item->judul, $limit = 130, $end = '...') !!}
                           </h4>
                           <div class="text-muted">
                             <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $item->tanggal }}
                             <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat
                           </div>
-                          <div class="isi{{ $item->id }}">
-                            <p></p>
-                            {{-- {!! str_limit($item->isi, $limit = 130, $end = '...') !!} --}}
+                          <div class="isi{{ $item->id }} desk">
+                            {{-- <p></p> --}}
+                            {!! str_limit(strip_tags($item->isi), $limit = 130, $end = '...') !!}
                           </div>
                           <span><a href="{{ url("berita/$item->slug") }}">Selengkapnya..</a></span>
                         </div>
@@ -64,7 +74,7 @@
           </div>
         </div>
 
-        <script>
+        {{-- <script>
           function strLimit(text, limit, end = '...') {
             if (text.length > limit) {
               return text.substring(0, limit) + end;
@@ -91,7 +101,7 @@
           window.addEventListener('resize', updateStringLimit);
 
           // console.log('{{ $berita[0]->judul }}');
-        </script>
+        </script> --}}
       @empty
         <div class="col">
           <div class="naccs">
@@ -100,7 +110,7 @@
                 <div class="col">
                   <ul class="nacc">
                     @if (request()->has('search'))
-                      <div class="text-muted text-center text-p">Kata kunci :
+                      <div class="text-muted text-center hasil-search">Kata kunci :
                         <i class="fw-bold text-p">{{ request()->search }}</i>
                         <br> Tidak ada hasil pencarian.
                       </div>

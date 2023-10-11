@@ -6,15 +6,21 @@ use App\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class BeritaController extends Controller
 {
     public function index()
     {
+        // dd(request()->path() == 'berita');
+
         if (request()->has('search')) {
-            $berita = Berita::where('judul', 'like', '%' . request()->search . '%')->paginate(6);
-            $breadcumb = '<span class="txt-kuning">Berita & Informasi</span>';
+            if (request()->path() == 'berita') {
+                $berita = Berita::where('kategori', 'berita')->where('judul', 'like', '%' . request()->search . '%')->paginate(6);
+                $breadcumb = '<span class="txt-kuning">Berita & Informasi</span>';
+            } else {
+                $berita = Berita::where('kategori', 'informasi serta merta')->where('judul', 'like', '%' . request()->search . '%')->paginate(6);
+                $breadcumb = '<span class="txt-kuning">Informasi Serta Merta</span>';
+            }
         } else {
             if (request()->is('berita*')) {
                 $berita = Berita::where('kategori', 'berita')->paginate(6);
@@ -36,18 +42,25 @@ class BeritaController extends Controller
     {
         $berita = Berita::where('slug', $slug)->get()->first();
 
-        if ($berita) {
-            $berita->increment('view');
+        // if ($berita) {
+        // $berita->increment('view');
 
-            $berita->kategori == 'berita' ?
-                $breadcumb = '<a href="/berita" class="text-dark">Berita & Informasi</a>&nbsp;>&nbsp;<span class="txt-kuning">Detail<span>' :
-                $breadcumb = '<a href="/informasi-publik/informasi-serta-merta" class="text-dark">Informasi Serta Merta</a>&nbsp;>&nbsp;<span class="txt-kuning">Detail<span>';
-        }
+        $berita->kategori == 'berita' ?
+            $breadcumb = '<a href="/berita" class="text-dark">Berita & Informasi</a>&nbsp;>&nbsp;<span class="txt-kuning">Detail<span>' :
+            $breadcumb = '<a href="/informasi-publik/informasi-serta-merta" class="text-dark">Informasi Serta Merta</a>&nbsp;>&nbsp;<span class="txt-kuning">Detail<span>';
+        // }
 
         return view('home.detail_berita', [
             'berita' => $berita,
             'breadcumb' => $breadcumb
         ]);
+    }
+
+    public function updateView($id)
+    {
+        $data = Berita::find($id);
+        $data->increment('view');
+        return response()->json(['msg' => 'View berita bertambah.. id: ' . $id]);
     }
 
     // INDEX ADMIN BERITA

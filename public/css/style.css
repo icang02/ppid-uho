@@ -196,7 +196,7 @@
 #beritaUtama .content-berita .card-body .text-muted {
   font-size: var(--text-p) !important;
 }
-#beritaUtama .content-berita .card-text .text-p {
+#beritaUtama .content-berita .card-text .div {
   font-size: var(--text-lg) !important;
   line-height: var(--lh-p);
   margin-top: 7px !important;
@@ -245,7 +245,7 @@
 
 .semua-berita .right-content h4 {
   font-size: var(--text-h3) !important;
-  line-height: var(--lh-lg) !important;
+  line-height: var(--lh-xl) !important;
   margin-bottom: 10px !important;
   margin-right: 0 !important;
   cursor: pointer;
@@ -258,10 +258,12 @@
   font-size: var(--text-p) !important;
   margin-top: 10px !important;
 }
-.semua-berita .right-content p {
+.semua-berita .right-content .desk {
   font-size: var(--text-lg) !important;
   line-height: var(--lh-lg) !important;
   margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: #000;
 }
 .semua-berita .right-content span a,
 #detailBerita .left-content .text-body p {

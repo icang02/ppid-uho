@@ -1,6 +1,5 @@
 <?php
 
-use App\Berita;
 use App\Formulir;
 use App\InformasiPublik;
 use App\Landing;
@@ -8,8 +7,6 @@ use App\ListInformasiPublik;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,13 +17,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(BeritaSeeder::class);
+
         User::create([
             'name' => 'Admin',
             'username' => 'admin',
             'password' => Hash::make('uHO@ppid')
         ]);
 
-        // $this->call(UsersTableSeeder::class);
         Landing::create([
             'bagian' => 'jenis informasi',
             'judul' => 'Informasi Berkala',
@@ -89,37 +87,6 @@ class DatabaseSeeder extends Seeder
             'isi' => 'PPID merupakan sarana layanan online bagi permohonan informasi publik dan sebagai salah satu wujud pelaksanaan keterbukaan informasi di Universitas Halu Oleo.',
         ]);
 
-
-        // KATEGORI BERITA
-        // BERITA DAN INFORMASI
-        Berita::create([
-            'kategori' => 'informasi serta merta',
-            'judul' => 'Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik',
-            'slug' => Str::slug('Cegah Sebaran Covid-19, UHO Terapkan Bekerja dari Rumah dan Buka Call Center untuk Sivitas Akademik'),
-            'tanggal' => '2023-12-31',
-            'penulis' => 'PPID',
-            'isi' => '<p>Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
-        ]);
-        Berita::create([
-            'kategori' => 'berita',
-            'judul' => 'Daftar Bakal Calon Dewan Perwakilan Mahasiswa FAKULTAS (DPMF) Berdasarkan Kelengkapan Berkas',
-            'slug' => Str::slug('Daftar Bakal Calon Dewan Perwakilan Mahasiswa FAKULTAS (DPMF) Berdasarkan Kelengkapan Berkas'),
-            'tanggal' => '2023-05-03',
-            'penulis' => 'PPID',
-            'isi' => '<p>Universitas Halu Oleo memberlakukan Work From Home (WFH) atau bekerja dari rumah, mulai tanggal 12 s.d. 23 Januari 2021. Kebijakan ini tertuang pada Surat Edaran Rektor UHO tentang Penyesuaian Sistem Kerja Dosen dan Tenaga Kependidikan dalam Rangka Upaya Pencegahan Penyebaran Covid-19 di Lingkungan Universitas Halu Oleo.</p>',
-        ]);
-        for ($i = 0; $i < 8; $i++) {
-            $randomDate = Carbon::now()->subDays(rand(1, 30));
-            $randomFormattedDate = $randomDate->format('Y-m-d');
-            Berita::create([
-                'kategori' => 'berita',
-                'judul' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi. ipsum dolor sit amet consectetur adipisicing elit',
-                'slug' => Str::slug('Lorem ipsum dolor sit amet consectetur adipisicing elit'),
-                'tanggal' => $randomFormattedDate,
-                'penulis' => 'PPID',
-                'isi' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p>',
-            ]);
-        }
 
         Formulir::create([
             'judul' => 'Permohonan Informasi Publik',
@@ -275,14 +242,14 @@ class DatabaseSeeder extends Seeder
             'isi' => '<h6 style="text-align: center;">Regulasi Mengenai Keterbukaan Informasi Publik</h6>
             <ul>
             <li><a href="https://drive.google.com/file/d/1JuE3iA-XTkse99MolMovn5UGlX3lgafj/view?usp=sharing" target="_blank" rel="noopener">Undang-Undang Nomor 14 Tahun 2008 Tentang Keterbukaan Informasi Publik</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Undang-Undang Nomor 25 Tahun 2009 Tentang Pelayanan Publik</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Undang-Undang Nomor 43 Tahun 2009 Tentang Kearsipan</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Pemerintah Republik Indonesia Nomor 61 Tahun 2010 tentang Pelaksanaan Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Pusat Nomor 01 Tahun 2022 Tentang Monitoring dan Evaluasi Keterbukaan Informasi Publik</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Nomor 1 Tahun 2021 tentang Standar Layanan Informasi Publik</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Pusat Nomor 01 Tahun 2017 tentang Pengklasifikasian Informasi Publik</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Komisi Informasi Nomor 1 Tahun 2013 tentang Prosedur Penyelesaian Sengketa Informasi Publik</a></li>
-            <li><a href="https://ppid.uho.ac.id" target="_blank" rel="noopener">Peraturan Menteri Pendidikan dan Kebudayaan Republik Indonesia Nomor 41 Tahun 2020 tentang Layanan Informasi Publik di Kementerian Pendidikan dan Kebudayaan</a></li>
+            <li><a href="https://drive.google.com/file/d/1UesmKcx2GA71Ld4-lwvF37LhtffVbLdg/view?usp=sharing" target="_blank" rel="noopener">Undang-Undang Nomor 25 Tahun 2009 Tentang Pelayanan Publik</a></li>
+            <li><a href="https://drive.google.com/file/d/1I7hkz65HzNhKO7mkmc5XAYcqO5964Y5f/view?usp=sharing" target="_blank" rel="noopener">Undang-Undang Nomor 43 Tahun 2009 Tentang Kearsipan</a></li>
+            <li><a href="https://drive.google.com/file/d/1ywY0t_mxdUz_QdNhzSV92SE0QeRJys9L/view?usp=sharing" target="_blank" rel="noopener">Peraturan Pemerintah Republik Indonesia Nomor 61 Tahun 2010 tentang Pelaksanaan Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik</a></li>
+            <li><a href="https://drive.google.com/file/d/1xYNTMfYXhwfAjwrEee30Zlu_sEC2P2I5/view?usp=sharing" target="_blank" rel="noopener">Peraturan Komisi Informasi Pusat Nomor 01 Tahun 2022 Tentang Monitoring dan Evaluasi Keterbukaan Informasi Publik</a></li>
+            <li><a href="https://drive.google.com/file/d/1kSXMnSFcqKn8IR93Pqx7uEGObO-_7DIH/view?usp=sharing" target="_blank" rel="noopener">Peraturan Komisi Informasi Nomor 1 Tahun 2021 tentang Standar Layanan Informasi Publik</a></li>
+            <li><a href="https://drive.google.com/file/d/1Z8Ev63rF56Q3sIAMxf91Ra1fs-E4JnLK/view?usp=sharing" target="_blank" rel="noopener">Peraturan Komisi Informasi Pusat Nomor 01 Tahun 2017 tentang Pengklasifikasian Informasi Publik</a></li>
+            <li><a href="https://drive.google.com/file/d/1nRvJTo0XvG_J7-ge3nBT1wrYW0qDS2l8/view?usp=sharing" target="_blank" rel="noopener">Peraturan Komisi Informasi Nomor 1 Tahun 2013 tentang Prosedur Penyelesaian Sengketa Informasi Publik</a></li>
+            <li><a href="https://drive.google.com/file/d/1zkvC6PxTUGlKdQPMEnhFd4wwok6bbKy0/view?usp=sharing" target="_blank" rel="noopener">Peraturan Menteri Pendidikan dan Kebudayaan Republik Indonesia Nomor 41 Tahun 2020 tentang Layanan Informasi Publik di Kementerian Pendidikan dan Kebudayaan</a></li>
             </ul>'
         ]);
         Landing::create([

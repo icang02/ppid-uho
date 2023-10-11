@@ -14,7 +14,7 @@
     </div>
     <div class="card-text pt-0 pb-0">
       <div class="div">
-        {!! str_limit($item->isi, $limit = 90, $end = '...') !!}
+        {!! str_limit(strip_tags($item->isi), $limit = 90, $end = '...') !!}
       </div>
     </div>
   </div>

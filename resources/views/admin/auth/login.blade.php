@@ -41,8 +41,10 @@
 
   <div class="auth-wrapper">
     <div class="auth-content text-center">
-      <img src="{{ asset('img/ppid.png') }}" alt="" width="200"
-        class="img-fluid mb-4 shadow rounded-lg px-2 py-1">
+      <a href="{{ url('/') }}">
+        <img src="{{ asset('img/ppid.png') }}" alt="" width="200"
+          class="img-fluid mb-4 shadow rounded-lg px-2 py-1">
+      </a>
       <div class="card borderless">
         <div class="row align-items-center ">
           <div class="col-md-12">
