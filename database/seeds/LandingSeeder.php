@@ -51,7 +51,7 @@ class LandingSeeder extends Seeder
         ]);
         Landing::create([
             'bagian' => 'tata cara permohonan',
-            'judul' => 'Prosedur Permohonan Penyelesaian Sengekata Informasi',
+            'judul' => 'Prosedur Permohonan Penyelesaian Sengketa Informasi',
             'gambar' => 'img/4.png',
         ]);
 
@@ -65,7 +65,7 @@ class LandingSeeder extends Seeder
         Landing::create([
             'bagian' => 'qoutes',
             'judul' => 'Kominfo Ri',
-            'isi' => '"Hak atas informasi yang terbuka menjadi pembukan jalan bagi terjaminnya pelaksanaan hak-hak asasi lainnya, seperti hak atas pendidikan, hak untuk hidup sejahtera, hak untuk hidup aman, dan hak warga negara lainnya."',
+            'isi' => '"Hak atas informasi yang terbuka menjadi pembuka jalan bagi terjaminnya pelaksanaan hak-hak asasi lainnya, seperti hak atas pendidikan, hak untuk hidup sejahtera, hak untuk hidup aman, dan hak warga negara lainnya."',
         ]);
 
         Landing::create([

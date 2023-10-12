@@ -25,7 +25,7 @@
         <div class="row title mt-2 content">
           <div class="col-lg-12 align-self-center">
             <h4 class="txt-biru fw-bold text-center mb-5">
-              Laporan Akses Informasi Publik Tahun {{ $data->tahun }}
+              Laporan Akses Informasi Publik {{ isset($data) ? "Tahun $data->tahun" : '' }}
               {{-- {{ $data->judul }} --}}
             </h4>
           </div>
@@ -39,7 +39,7 @@
 
           @forelse ($dataGambar as $i => $item)
             <div class="{{ $i == 0 ? 'col-lg-7' : 'col-lg-5' }}">
-              <img src="{{ asset('img/berita.jpg') }}" class="img-thumbnail">
+              <img src="{{ asset($item->gambar ?? 'img/berita.jpg') }}" class="img-thumbnail">
             </div>
           @empty
             <div class="col-lg-12 text-center mt-4">
@@ -47,10 +47,13 @@
             </div>
           @endforelse
 
-          <div class="col-12 text-center">
-            <a href="{{ url($data->link) }}" target="_blank" class="btn-sm btn text-white bg-kuning">Unduh File
-              Laporan</a>
-          </div>
+
+          @if (isset($data))
+            <div class="col-12 text-center">
+              <a href="{{ url($data->link) }}" target="_blank" class="btn-sm btn text-white bg-kuning">Unduh File
+                Laporan</a>
+            </div>
+          @endif
 
           @if ($laporan->isNotEmpty())
             <div class="col-lg-12">

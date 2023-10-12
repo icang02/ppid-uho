@@ -27,13 +27,13 @@ class LaporanController extends Controller
                 $data = LaporanGambar::orderBy('tahun', 'desc')->first();
             }
 
-            $dataGambar = ImgLaporanGambar::where('tahun', $data->tahun)->get();
+            $dataGambar = ImgLaporanGambar::where('tahun', $data->tahun ?? null)->get();
+            // dd($data);
             $breadcumb =  '<span class="txt-kuning">Laporan Akses Informasi Publik</span>';
 
-            // dd($dataGambar);
             return view('home.laporan-gambar', [
                 'data' => $data,
-                'laporan' => LaporanGambar::where('tahun', '!=', $data->tahun)->get(),
+                'laporan' => LaporanGambar::where('tahun', '!=', $data->tahun ?? null)->get(),
                 'dataGambar' => $dataGambar,
                 'breadcumb' => $breadcumb,
             ]);
@@ -71,6 +71,63 @@ class LaporanController extends Controller
             'breadcumb' => $breadcumb,
             'title' => $title,
         ]);
+    }
+
+    public function addLaporanAkses(Request $request)
+    {
+        $cek = LaporanGambar::where('tahun', $request->tahun)->first();
+        if ($cek) {
+            return redirect()->back()->with("error", "Periode tahun $request->tahun sudah ada .")->withInput();
+        }
+
+        LaporanGambar::create([
+            'link' => $request->link,
+            'tahun' => $request->tahun,
+        ]);
+        if ($request->has('gambar')) {
+            foreach ($request->file('gambar') as $item) {
+                ImgLaporanGambar::create([
+                    'tahun' => $request->tahun,
+                    'gambar' => 'storage/' . $item->store('img'),
+                ]);
+            }
+        }
+        return redirect()->back()->with("success", "Data berhasil ditambahkan.");
+    }
+
+    public function updateLaporanAkses(Request $request, $id)
+    {
+        // cek tahun updatenya
+
+        $data = LaporanGambar::find($id);
+
+        if ($request->tahun != $data->tahun) {
+
+            $cekTahun = LaporanGambar::where('tahun', $request->tahun)->first();
+            if ($cekTahun) {
+                return redirect()->back()->withInput()->with('error', "Tidak dapat mengubah periode/tahun ke $request->tahun karena data sudah ada.");
+            }
+            $data->update([
+                // 'tahun' => $request->tahun,
+                'link' => $request->link,
+            ]);
+        } else {
+            $data->update([
+                // 'tahun' => $request->tahun,
+                'link' => $request->link,
+            ]);
+        }
+
+        if ($request->has('gambar')) {
+            foreach ($request->file('gambar') as $item) {
+                ImgLaporanGambar::create([
+                    'tahun' => $data->tahun,
+                    'gambar' => 'storage/' . $item->store('img'),
+                ]);
+            }
+        }
+
+        return redirect()->back()->with('success', 'Data berhasil diupdate.');
     }
 
     public function addAdmin(Request $request)
@@ -132,6 +189,22 @@ class LaporanController extends Controller
         return redirect()->back()->with('success', 'Data berhasil dihapus.');
     }
 
+    public function deleteLaporanAkses($id)
+    {
+        $data = LaporanGambar::find($id);
+
+        $dataGambar = ImgLaporanGambar::where('tahun', $data->tahun)->get();
+        if ($dataGambar) {
+            foreach ($dataGambar as $item) {
+                Storage::delete(str_replace('storage/', '', $item->gambar));
+                $item->delete();
+            }
+        }
+        $data->delete();
+
+        return redirect()->back()->with('success', 'Data berhasil dihapus.');
+    }
+
     public function indexAdmin1()
     {
         $data = LaporanGambar::orderBy('tahun', 'desc')->get();
@@ -153,6 +226,7 @@ class LaporanController extends Controller
     public function imgLaporanAkses($tahun)
     {
         $data = ImgLaporanGambar::where('tahun', $tahun)->get();
+        $dataLaporan = LaporanGambar::where('tahun', $tahun)->first();
         // dd($data);
         $breadcumb = [
             '<li class="breadcrumb-item">Menu Utama</li>',
@@ -164,6 +238,7 @@ class LaporanController extends Controller
 
         return view('admin.laporan.img_laporan_gambar', [
             'data' => $data,
+            'dataLaporan' => $dataLaporan,
             'breadcumb' => $breadcumb,
             'title' => $title,
         ]);

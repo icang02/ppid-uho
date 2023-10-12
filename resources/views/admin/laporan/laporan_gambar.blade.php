@@ -63,7 +63,7 @@
                           aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                      <form action="{{ route('admin_laporan_add') }}" enctype="multipart/form-data" method="POST">
+                      <form action="{{ route('admin_add_laporan_akses') }}" enctype="multipart/form-data" method="POST">
                         @csrf
 
                         @if (request()->is('dashboard/laporan/layanan-informasi-publik'))
@@ -84,11 +84,11 @@
                             id="tahun" placeholder="Enter tahun" required>
                         </div>
 
-                        <label for="gambar">Cover</label>
+                        <label for="gambar">Data Gambar</label>
                         <div class="custom-file">
-                          <input name="gambar" type="file" class="custom-file-input" id="gambar"
-                            accept=".jpg,.jpeg,.png">
-                          <label class="custom-file-label" for="gambar">Choose file...</label>
+                          <input name="gambar[]" type="file" class="custom-file-input" id="gambar"
+                            accept=".jpg,.jpeg,.png" multiple>
+                          <label class="custom-file-label" for="gambar">Select more image...</label>
                           <div class="invalid-feedback">Example invalid custom file feedback</div>
                         </div>
                     </div>
@@ -126,13 +126,13 @@
                                 <i class="fas fa-eye"></i> Data Gambar</button>
                             </span>
                           </a>
-                          <span>
-                            <button type="button" data-toggle="modal" data-target="#modalTambah{{ $item->id }}"
+                          {{-- <span>
+                            <button href="{{ route('admin_laporan_gambar_delete', $item->id) }}"
                               class="btn-sm btn btn-warning">
                               <i class="fas fa-edit"></i> Edit</button>
-                          </span>
+                          </span> --}}
                           <span>
-                            <a href="{{ route('admin_laporan_delete', $item->id) }}" class="btn-sm btn btn-danger"
+                            <a href="{{ route('admin_laporan_gambar_delete', $item->id) }}" class="btn-sm btn btn-danger"
                               onclick="return confirm('Hapus data ini?')">
                               <i class="fas fa-trash"></i> Hapus</a>
                           </span>

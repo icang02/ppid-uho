@@ -76,7 +76,7 @@
 
       setTimeout(function() {
         updateData();
-      }, 10000);
+      }, 20000);
 
       function updateData() {
         $.ajax({
