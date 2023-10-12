@@ -68,71 +68,71 @@ Route::get('/laporan/survei-layanan-informasi', [LaporanController::class, 'inde
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
 // route dashboard edit landing page
-Route::get('/dashboard/landing/ppid', [LandingController::class, 'data']);
-Route::get('/dashboard/landing/permohonan', [LandingController::class, 'data']);
-Route::get('/dashboard/landing/slogan', [LandingController::class, 'data']);
-Route::get('/dashboard/landing/infografis', [LandingController::class, 'data']);
+Route::get('/dashboard/landing/ppid', [LandingController::class, 'data'])->middleware('auth');
+Route::get('/dashboard/landing/permohonan', [LandingController::class, 'data'])->middleware('auth');
+Route::get('/dashboard/landing/slogan', [LandingController::class, 'data'])->middleware('auth');
+Route::get('/dashboard/landing/infografis', [LandingController::class, 'data'])->middleware('auth');
 
-Route::get('/dashboard/footer', [LandingController::class, 'data'])->name('admin_footer');
+Route::get('/dashboard/footer', [LandingController::class, 'data'])->name('admin_footer')->middleware('auth');
 
 Route::post('/landing/ppid/update', [LandingController::class, 'update']);
 Route::post('/landing/permohonan/update', [LandingController::class, 'update']);
 Route::post('/landing/quotes/update', [LandingController::class, 'update']);
 Route::post('/landing/infografis/update', [LandingController::class, 'update']);
-Route::post('/dashboard/footer', [LandingController::class, 'update'])->name('admin_update_footer');
+Route::post('/dashboard/footer', [LandingController::class, 'update'])->name('admin_update_footer')->middleware('auth');
 
 
 // route dashboard tentang
-Route::get('/dashboard/tentang/profil', [TentangController::class, 'indexAdmin'])->name('tentang_profile_admin');
-Route::get('/dashboard/tentang/visi-misi', [TentangController::class, 'indexAdmin'])->name('tentang_visi_misi_admin');
-Route::get('/dashboard/tentang/tugas-fungsi', [TentangController::class, 'indexAdmin'])->name('tentang_tugas_fungsi_admin');
-Route::get('/dashboard/tentang/struktur-ppid', [TentangController::class, 'indexAdmin'])->name('tentang_struktur_ppid_admin');
-Route::get('/dashboard/regulasi', [TentangController::class, 'indexAdmin'])->name('regulasi_dashboard');
+Route::get('/dashboard/tentang/profil', [TentangController::class, 'indexAdmin'])->name('tentang_profile_admin')->middleware('auth');
+Route::get('/dashboard/tentang/visi-misi', [TentangController::class, 'indexAdmin'])->name('tentang_visi_misi_admin')->middleware('auth');
+Route::get('/dashboard/tentang/tugas-fungsi', [TentangController::class, 'indexAdmin'])->name('tentang_tugas_fungsi_admin')->middleware('auth');
+Route::get('/dashboard/tentang/struktur-ppid', [TentangController::class, 'indexAdmin'])->name('tentang_struktur_ppid_admin')->middleware('auth');
+Route::get('/dashboard/regulasi', [TentangController::class, 'indexAdmin'])->name('regulasi_dashboard')->middleware('auth');
 
-Route::put('/dashboard/tentang/profil/update/{id}', [TentangController::class, 'updateTentang'])->name('update_tentang');
+Route::put('/dashboard/tentang/profil/update/{id}', [TentangController::class, 'updateTentang'])->name('update_tentang')->middleware('auth');
 
 
 // route dashboard formulir
-Route::get('/dashboard-formulir-permohonan-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_permohonan');
-Route::get('/dashboard-formulir-keberatan-layanan-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_keberatan');
-Route::get('/dashboard-formulir-penyelesaian-sengketa-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_sengketa');
+Route::get('/dashboard-formulir-permohonan-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_permohonan')->middleware('auth');
+Route::get('/dashboard-formulir-keberatan-layanan-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_keberatan')->middleware('auth');
+Route::get('/dashboard-formulir-penyelesaian-sengketa-informasi-publik', [TentangController::class, 'indexAdmin'])->name('formulir_sengketa')->middleware('auth');
 
-Route::put('/dashboard-formulir/update/{id}', [TentangController::class, 'updateTentang'])->name('update_formulir');
+Route::put('/dashboard-formulir/update/{id}', [TentangController::class, 'updateTentang'])->name('update_formulir')->middleware('auth');
 
 
 // route dashboard berita
-Route::get('/dashboard/berita', [BeritaController::class, 'indexAdmin'])->name('admin_berita');
-Route::post('/dashboard/berita/add', [BeritaController::class, 'addAdmin'])->name('admin_add_berita');
-Route::put('/dashboard/berita/update/{id}', [BeritaController::class, 'updateAdmin'])->name('admin_update_berita');
-Route::delete('/dashboard/berita/delete/{id}', [BeritaController::class, 'deleteAdmin'])->name('admin_delete_berita');
+Route::get('/dashboard/berita', [BeritaController::class, 'indexAdmin'])->name('admin_berita')->middleware('auth');
+Route::post('/dashboard/berita/add', [BeritaController::class, 'addAdmin'])->name('admin_add_berita')->middleware('auth');
+Route::put('/dashboard/berita/update/{id}', [BeritaController::class, 'updateAdmin'])->name('admin_update_berita')->middleware('auth');
+Route::delete('/dashboard/berita/delete/{id}', [BeritaController::class, 'deleteAdmin'])->name('admin_delete_berita')->middleware('auth');
 
 
 // ROUTE DASHBOARD INFORMASI PUBLIK
-Route::get('/dashboard/informasi/informasi-berkala', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_berkala');
-Route::get('/dashboard/informasi/informasi-setiap-saat', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_setiap_saat');
-Route::get('/dashboard/informasi/informasi-serta-merta', [BeritaController::class, 'indexAdmin'])->name('admin_informasi_serta_merta');
-Route::put('/dashboard/informasi-publik/update/{id}', [InformasiPublikController::class, 'update'])->name('admin_update_informasi_publik');
+Route::get('/dashboard/informasi/informasi-berkala', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_berkala')->middleware('auth');
+Route::get('/dashboard/informasi/informasi-setiap-saat', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_setiap_saat')->middleware('auth');
+Route::get('/dashboard/informasi/informasi-serta-merta', [BeritaController::class, 'indexAdmin'])->name('admin_informasi_serta_merta')->middleware('auth');
+Route::put('/dashboard/informasi-publik/update/{id}', [InformasiPublikController::class, 'update'])->name('admin_update_informasi_publik')->middleware('auth');
 
-Route::get('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'listInformasi'])->name('admin_list_informasi_publik');
-Route::post('/dashboard/informasi/list-informasi/add', [InformasiPublikController::class, 'addListInformasi'])->name('admin_add_list_informasi_publik');
-Route::put('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'updateListInformasi'])->name('admin_update_list_informasi_publik');
-Route::delete('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'deleteListInformasi'])->name('admin_delete_list_informasi_publik');
+Route::get('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'listInformasi'])->name('admin_list_informasi_publik')->middleware('auth');
+Route::post('/dashboard/informasi/list-informasi/add', [InformasiPublikController::class, 'addListInformasi'])->name('admin_add_list_informasi_publik')->middleware('auth');
+Route::put('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'updateListInformasi'])->name('admin_update_list_informasi_publik')->middleware('auth');
+Route::delete('/dashboard/informasi/list-informasi/{data}', [InformasiPublikController::class, 'deleteListInformasi'])->name('admin_delete_list_informasi_publik')->middleware('auth');
 
 
 // ROUTE LAPORAN BIASA
-Route::get('/dashboard/laporan/akses-informasi-publik', [LaporanController::class, 'indexAdmin1'])->name('admin_laporan_akses');
-Route::post('/dashboard/laporan/akses-informasi-publik/add', [LaporanController::class, 'addLaporanAkses'])->name('admin_add_laporan_akses');
-Route::post('/dashboard/laporan/akses-informasi-publik/update/{id}', [LaporanController::class, 'updateLaporanAkses'])->name('admin_update_laporan_akses');
-Route::get('/dashboard/laporan/akses-informasi-publik/{tahun}', [LaporanController::class, 'imgLaporanAkses'])->name('admin_img_laporan_akses');
-Route::get('/dashboard/laporan/akses-informasi-publik/delete/{id}', [LaporanController::class, 'imgDeleteLaporanAkses'])->name('admin_img_laporan_akses_delete');
+Route::get('/dashboard/laporan/akses-informasi-publik', [LaporanController::class, 'indexAdmin1'])->name('admin_laporan_akses')->middleware('auth');
+Route::post('/dashboard/laporan/akses-informasi-publik/add', [LaporanController::class, 'addLaporanAkses'])->name('admin_add_laporan_akses')->middleware('auth');
+Route::post('/dashboard/laporan/akses-informasi-publik/update/{id}', [LaporanController::class, 'updateLaporanAkses'])->name('admin_update_laporan_akses')->middleware('auth');
+Route::get('/dashboard/laporan/akses-informasi-publik/{tahun}', [LaporanController::class, 'imgLaporanAkses'])->name('admin_img_laporan_akses')->middleware('auth');
+Route::get('/dashboard/laporan/akses-informasi-publik/delete/{id}', [LaporanController::class, 'imgDeleteLaporanAkses'])->name('admin_img_laporan_akses_delete')->middleware('auth');
 
-Route::get('/dashboard/laporan/layanan-informasi-publik', [LaporanController::class, 'indexAdmin'])->name('admin_laporan_layanan');
-Route::get('/dashboard/laporan/survei-layanan-informasi', [LaporanController::class, 'indexAdmin'])->name('admin_laporan_survei');
+Route::get('/dashboard/laporan/layanan-informasi-publik', [LaporanController::class, 'indexAdmin'])->name('admin_laporan_layanan')->middleware('auth');
+Route::get('/dashboard/laporan/survei-layanan-informasi', [LaporanController::class, 'indexAdmin'])->name('admin_laporan_survei')->middleware('auth');
 
-Route::get('/dashboard/laporan/delete/{id}', [LaporanController::class, 'deleteAdmin'])->name('admin_laporan_delete');
-Route::get('/dashboard/laporan-akses/delete/{id}', [LaporanController::class, 'deleteLaporanAkses'])->name('admin_laporan_gambar_delete');
-Route::put('/dashboard/laporan/update/{id}', [LaporanController::class, 'updateAdmin'])->name('admin_laporan_update');
-Route::post('/dashboard/laporan/add', [LaporanController::class, 'addAdmin'])->name('admin_laporan_add');
+Route::get('/dashboard/laporan/delete/{id}', [LaporanController::class, 'deleteAdmin'])->name('admin_laporan_delete')->middleware('auth');
+Route::get('/dashboard/laporan-akses/delete/{id}', [LaporanController::class, 'deleteLaporanAkses'])->name('admin_laporan_gambar_delete')->middleware('auth');
+Route::put('/dashboard/laporan/update/{id}', [LaporanController::class, 'updateAdmin'])->name('admin_laporan_update')->middleware('auth');
+Route::post('/dashboard/laporan/add', [LaporanController::class, 'addAdmin'])->name('admin_laporan_add')->middleware('auth');
 
 
 // ROUTE LOGIN
