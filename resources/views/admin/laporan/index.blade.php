@@ -13,7 +13,7 @@
               </div>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i></a></li>
-                {!! implode($breadcumb, '') !!}
+                {!! implode('', $breadcumb) !!}
                 </li>
               </ul>
             </div>
