@@ -55,5 +55,46 @@ class LaporanSeeder extends Seeder
             'tahun' => '2021',
             'gambar' => 'img/cover-laporan.png'
         ]);
+
+        // LAPORAN GAMBAR
+        // LaporanGambar::create([
+        //     'link' => 'https://ppid.uho.ac.id',
+        //     'tahun' => '2023',
+        // ]);
+        // LaporanGambar::create([
+        //     'link' => 'https://ppid.uho.ac.id',
+        //     'tahun' => '2022',
+        // ]);
+        // LaporanGambar::create([
+        //     'link' => 'https://ppid.uho.ac.id',
+        //     'tahun' => '2021',
+        // ]);
+
+        // ImgLaporanGambar::create([
+        //     'tahun' => '2023',
+        //     'gambar' => 'img/berita.jpg',
+        // ]);
+        // ImgLaporanGambar::create([
+        //     'tahun' => '2023',
+        //     'gambar' => 'img/berita.jpg',
+        // ]);
+        // ImgLaporanGambar::create([
+        //     'tahun' => '2023',
+        //     'gambar' => 'img/berita.jpg',
+        // ]);
+
+        // ImgLaporanGambar::create([
+        //     'tahun' => '2022',
+        //     'gambar' => 'img/berita.jpg',
+        // ]);
+        // ImgLaporanGambar::create([
+        //     'tahun' => '2022',
+        //     'gambar' => 'img/berita.jpg',
+        // ]);
+
+        // ImgLaporanGambar::create([
+        //     'tahun' => '2021',
+        //     'gambar' => 'img/berita.jpg',
+        // ]);
     }
 }

@@ -43,7 +43,7 @@
             </div>
           @empty
             <div class="col-lg-12 text-center mt-4">
-              <small>Belum ada ada gambar.</small>
+              <small>Belum ada data gambar.</small>
             </div>
           @endforelse
 

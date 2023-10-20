@@ -48,6 +48,7 @@ Route::post('/update-view/{id}', [BeritaController::class, 'updateView']);
 Route::get('/informasi-publik/informasi-berkala', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('info_berkala');
 Route::get('/informasi-publik/informasi-tersedia-setiap-saat', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('info_setiap_saat');
 Route::get('/informasi-publik/informasi-serta-merta', [BeritaController::class, 'index'])->name('info_serta_merta');
+Route::get('/informasi-publik/informasi-dikecualikan', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('infO_dikecualikan');
 
 Route::get('/formulir/permohonan-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_permohonan');
 Route::get('/formulir/keberatan-layanan-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_keberatan');
@@ -61,7 +62,7 @@ Route::get('/regulasi', [TentangController::class, 'index'])->name('regulasi');
 
 Route::get('/laporan/akses-informasi-publik', [LaporanController::class, 'index'])->name('laporan_akses');
 Route::get('/laporan/layanan-informasi-publik', [LaporanController::class, 'index'])->name('laporan_layanan');
-Route::get('/laporan/survei-layanan-informasi', [LaporanController::class, 'index'])->name('laporan_survei');
+// Route::get('/laporan/survei-layanan-informasi', [LaporanController::class, 'index'])->name('laporan_survei');
 
 
 // route index dashboard

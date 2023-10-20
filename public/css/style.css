@@ -359,6 +359,7 @@
 }
 .div a {
   color: var(--biru);
+  font-weight: 500 !important;
 }
 .div a:hover {
   color: var(--kuning);

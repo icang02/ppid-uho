@@ -16,6 +16,9 @@ class InformasiPublikController extends Controller
         } elseif (request()->is('informasi-publik/informasi-tersedia-setiap-saat')) {
             $informasiPublik = InformasiPublik::find(2);
             $breadcumb = '<span class="txt-kuning">Informasi Tersedia Setiap Saat</span>';
+        } elseif (request()->is('informasi-publik/informasi-dikecualikan')) {
+            $informasiPublik = InformasiPublik::find(4);
+            $breadcumb = '<span class="txt-kuning">Informasi Dikecualikan</span>';
         }
 
         return view('home.formulir', [

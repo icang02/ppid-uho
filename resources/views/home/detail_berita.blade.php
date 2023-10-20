@@ -31,13 +31,13 @@
                   <h4>{{ $berita->judul }}</h4>
                   <div class="text-muted">
                     <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $berita->tanggal }}
-                    <i class="fa-solid fa-eye ms-3"></i> {{ $berita->view }}x dilihat
+                    {{-- <i class="fa-solid fa-eye ms-3"></i> {{ $berita->view }}x dilihat --}}
                     <i class="fa-solid fa-book-open-reader ms-3 me-1"></i> Oleh : {{ $berita->penulis }}
                   </div>
 
                   <hr>
 
-                  <div class="text-body">
+                  <div class="text-body div">
                     {!! $berita->isi !!}
                   </div>
                 </div>

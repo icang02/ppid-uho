@@ -65,7 +65,7 @@
                           </h4>
                           <div class="text-muted">
                             <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $item->tanggal }}
-                            <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat
+                            {{-- <i class="fa-solid fa-eye ms-3"></i> {{ $item->view }}x dilihat --}}
                           </div>
                           <div class="isi{{ $item->id }} desk">
                             {{-- <p></p> --}}

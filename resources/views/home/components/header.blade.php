@@ -32,6 +32,7 @@
                     Saat</a>
                 </li>
                 <li><a href="{{ route('info_serta_merta') }}">Informasi Serta Merta</a></li>
+                <li><a href="{{ route('infO_dikecualikan') }}">Informasi Dikecualikan</a></li>
               </ul>
             </li>
             <li class="has-sub">
@@ -52,8 +53,8 @@
                 <li><a href="{{ route('laporan_akses') }}">Laporan Akses Informasi Publik</a></li>
                 <li><a href="{{ route('laporan_layanan') }}">Laporan Layanan Informasi
                     Publik</a></li>
-                <li><a href="{{ route('laporan_survei') }}">Laporan Survei Layanan
-                    Informasi</a></li>
+                {{-- <li><a href="{{ route('laporan_survei') }}">Laporan Survei Layanan
+                    Informasi</a></li> --}}
               </ul>
             </li>
             <li class="scroll-to-section">

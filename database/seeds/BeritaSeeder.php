@@ -33,6 +33,62 @@ class BeritaSeeder extends Seeder
         ]);
         Berita::create([
             'kategori' => 'berita',
+            'judul' => 'Rektor UHO Menyerahkan 24 SK Guru Besar',
+            'slug' => Str::slug('Rektor UHO Menyerahkan 24 SK Guru Besar'),
+            'tanggal' => '2023-09-18',
+            'penulis' => 'PPID',
+            'isi' => '<p>Upacara Hari Kesadaran Nasional yang diperingati pada Senin, 18 September 2023 menjadi momen yang digunakan Rektor Universitas Halu Oleo (UHO) Muhammad Zamrun &mdash;didampingi oleh Wakil Rektor II Weka Widayati&mdash; untuk menyerahkan secara resmi Surat Keputusan (SK) Penetapan Guru Besar.&nbsp;<em>Civitas academica</em>&nbsp;yang hadir dalam upacara yang terdiri dari civitas akademika UHO menyaksikan penyerahan SK ini dengan suka cita.&nbsp;</p>
+            <p>Dua puluh empat Guru Besar yang menerima SK tersebut berasal dari delapan fakultas. Rektor Muhammad Zamrun menegaskan, dengan ini seluruh fakultas di lingkup UHO telah memiliki Guru Besar. Tanggal Mulai Terhitung (TMT) jabatan fungsional Guru Besar ini beragam, mulai dari 1 Mei hingga 1 September 2023.</p>
+            <p>Berikut nama penerima SK Guru Besar yang mengukuhannya direncanakan akan berlangsung pada tanggal 21 &ndash; 22 September 2023:</p>
+            <p><a title="" href="https://fmipa.uho.ac.id/" target="_blank" rel="noopener">Fakultas Matematika dan Ilmu Pengetahuan Alam</a></p>
+            <ol>
+            <li>Prof. Armid, S.Si., M.Si., M.Sc., D.Sc.&nbsp;</li>
+            <li>Prof. Dr. Nur Arfa Yanti, S.Si., M.Si.</li>
+            <li>Prof. Dr. Ida Usman, S.Si., M.Si.</li>
+            <li>Prof. Dr. Suriani, M.Si.</li>
+            <li>Prof. Dr. Hasria, S.Pd., M.Si.</li>
+            <li>Prof. Dr. Mukhsar, S.Si., M.Si.</li>
+            </ol>
+            <p><a title="" href="http://eng.uho.ac.id/" target="_blank" rel="noopener">Fakultas Teknik</a></p>
+            <ol start="7">
+            <li>Prof. Dr. La Ode Muhammad Golok Jaya, S.T., M.T.</li>
+            <li>Prof. Dr. Adris Ade Putra, S.T., M.T.</li>
+            </ol>
+            <p><a title="" href="https://fpik.uho.ac.id/" target="_blank" rel="noopener">Fakultas Perikanan dan Ilmu Kelautan</a></p>
+            <ol start="9">
+            <li>Prof. Dr. Ir. Abdul Hamid, M.Si.</li>
+            <li>Prof. Agus Kurnia, S.Pi., M.Si., Ph.D.</li>
+            </ol>
+            <p><a title="" href="http://fkip.uho.ac.id/" target="_blank" rel="noopener">Fakultas Keguruan dan Ilmu Pendidikan</a></p>
+            <ol start="11">
+            <li>Prof. Dr. La Misu, S.Pd., M.Pd.</li>
+            <li>Prof. Dr. Edy Karno, S.Pd., M.Pd.</li>
+            <li>Prof. Albert, S.Pd., M.A., Ph.D.</li>
+            <li>Prof. Dr. Mohamad Salam, S.Pd., M.Si.</li>
+            </ol>
+            <p><a title="" href="https://kedokteran.uho.ac.id/" target="_blank" rel="noopener">Fakultas Kedokteran</a></p>
+            <ol start="15">
+            <li>Prof. Dr. dr. Juminten, Sp., OG (K)</li>
+            </ol>
+            <p><a title="" href="https://feb.uho.ac.id/" target="_blank" rel="noopener">Fakultas Ekonomi dan Bisnis</a></p>
+            <ol start="16">
+            <li>Prof. Dr. Nasrul, SE., M.Si.</li>
+            <li>Prof. La Ode Anto, SE., M.Si., Ak., QIA., CA</li>
+            <li>Prof. Dr. Heppi Millia, SE., M.Si.</li>
+            </ol>
+            <p><a title="" href="https://fp.uho.ac.id/" target="_blank" rel="noopener">Fakultas Pertanian</a></p>
+            <ol start="19">
+            <li>Prof. Dr. La Ode Afa, M.Si.</li>
+            <li>Prof. Iskandar, S.P., M.Si., Ph.D.</li>
+            <li>Prof. Dr. Ir. Sitti Aida Adha Taridala, M.Si.</li>
+            <li>Prof. Dr. Yani Taufik, M.Si.</li>
+            <li>Prof. Dr. Hasbullah Syaf, S.P., M.Si.</li>
+            </ol>
+            <p><a title="" href="https://fhil.uho.ac.id/" target="_blank" rel="noopener">Fakultas Kehutanan dan Ilmu Lingkungan&nbsp;</a></p>
+            <p>24. Prof. Dr. Ir. La Baco, M.Si.</p>',
+        ]);
+        Berita::create([
+            'kategori' => 'berita',
             'judul' => 'Kalender Akademik Universitas Halu Oleo Tahun Akademik 2023-2024',
             'slug' => Str::slug('Kalender Akademik Universitas Halu Oleo Tahun Akademik 2023-2024'),
             'tanggal' => '2023-07-20',
@@ -47,18 +103,64 @@ class BeritaSeeder extends Seeder
             'penulis' => 'PPID',
             'isi' => '<p>Nomor : 3531/UN29/PBJ/2023<br>Lampiran : &ndash;<br>Perihal : Pemberitahuan Sistim Informasi PBJ UHO</p><p>Kepada Yth,<br>Pelaku Pengadaan Barang dan Jasa UHO<br>di-<br>Kendari</p><p>Dalam rangka implementasi Peraturan Rektor Nomor 2 Tahun 2023 tentang Pedoman Pengadaan Barang/Jasa Badan Layanan Umum Universitas Halu Oleo, dengan ini disampaikan bahwa proses pengadaan barang/jasa yang semula diakses pada laman: <a href="https://lpse.kemdikbud.go.id">https://lpse.kemdikbud.go.id</a>, selanjutnya Universitas Halu Oleo secara resmi menggunakan Sistem Informasi Pengadaan Barang/Jasa secara mandiri melalui laman <a href="https://si.uho.ac.id/.Untuk">https://si.uho.ac.id/.Untuk</a> Daftar Penyedia Terpilih (DPT) dapat diakses melalui <a href="https://sidapet.uho.ac.id/">https://sidapet.uho.ac.id/</a> dan tender melalui <a href="https://tender.uho.ac.id/.Informasi">https://tender.uho.ac.id/.Informasi</a> Pengadaan Barang/Jasa Universitas Halu Oleo dapat juga diakses pada laman <a href="https://uho.ac.id/">https://uho.ac.id/</a> melalui tautan cepat ProMISe UHO.</p><p>Demikian pemberitahuan ini kami sampaikan, untuk dapat dipergunakan sebagaimana mestinya.</p><p>REKTOR<br>MUHAMMAD ZAMRUN F.<br>NIP. 19720422 199803 1 001</p>',
         ]);
-
-        // for ($i = 0; $i < 8; $i++) {
-        //     $randomDate = Carbon::now()->subDays(rand(1, 30));
-        //     $randomFormattedDate = $randomDate->format('Y-m-d');
-        //     Berita::create([
-        //         'kategori' => 'berita',
-        //         'judul' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi. ipsum dolor sit amet consectetur adipisicing elit',
-        //         'slug' => Str::slug('Lorem ipsum dolor sit amet consectetur adipisicing elit'),
-        //         'tanggal' => $randomFormattedDate,
-        //         'penulis' => 'PPID',
-        //         'isi' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente mollitia sint odio libero, cumque eaque beatae inventore earum aliquid dolor rerum vitae consequuntur eligendi eveniet repellendus corporis quas? Aspernatur.</p>',
-        //     ]);
-        // }
+        Berita::create([
+            'kategori' => 'berita',
+            'judul' => 'Srikandi BUMN Menggugah Gerakan Untuk Lingkungan',
+            'slug' => Str::slug('Srikandi BUMN Menggugah Gerakan Untuk Lingkungan'),
+            'tanggal' => '2023-09-14',
+            'penulis' => 'PPID',
+            'isi' => '<p>Universitas Halu Oleo (UHO) terpilih sebagai salah satu tempat kegiatan&nbsp;<em>Srikandi BUMN Goes To Campus&nbsp;</em>yang dikemas dalam sesi&nbsp;<em>Leader Talk Show</em>. Kegiatan yang berlangsung sejak pagi hingga siang ini bertempat di Auditorium Mokodompit, Kamis 14 September 2023. Tema &ldquo;<em>Integrated Sustainability Indonesia Movement</em>&rdquo; yang diangkat dalam kesempatan ini yang memberi titik tekan pada pentingnya gerakan bersama dalam menjaga lingkungan hidup.</p>
+            <p>Dalam kesempatan tersebut, salah satu pembicara adalah Direktur Sumber Daya Manusia PT Surveyor Indonesia Lussy Ariani Seba. Dia menyampaikan bahwa&nbsp;<em>Srikandi BUMN Goes To Campus</em>&nbsp;ini merupakan forum BUMN (Badan Usaha Milik Negara) yang menyasar 25 Perguruan Tinggi negeri maupun swasta di Indonesia. Oleh karena itu, dia mengajak mahasiswa agar aktif menjaga lingkungan sebab merekalah generasi emas yang akan memimpin Indonesia nanti. Di pundak mereka, misi lingkungan hijau, ditambatkan. Jika semuanya berjalan selaras, kelak diharapkan&nbsp;<em>Sustainable Development Goals</em>&nbsp;(SDGs) sudah bisa terimplementasi dengan baik di tahun 2030.</p>
+            <p>Dalam sambutannya, Rektor UHO Muhammad Zamrun menyampaikan mengapresiasi kepada Srikandi BUMN yang sudah memilih UHO menjadi salah satu tujuan sosialisasi. Kehadiran para mahasiswa dalam kegiatan ini juga diharapkan dapat menambah wawasan dan kesadaran tentang peluang-peluang yang terbuka lebar di sejumlah BUMN. Dia berharap semoga kegiatan ini memberikan manfaat secara khusus bagi mahasiswa dan berimplikasi luas kepada masyarakat Sulawesi Tenggara.</p>',
+        ]);
+        Berita::create([
+            'kategori' => 'berita',
+            'judul' => 'Rektor Menerima Mahasiswa Baru UHO Angkatan 2023',
+            'slug' => Str::slug('Rektor Menerima Mahasiswa Baru UHO Angkatan 2023'),
+            'tanggal' => '2023-09-04',
+            'penulis' => 'PPID',
+            'isi' => '<p>Ribuan mahasiswa mengikuti upacara penerimaan mahasiswa baru di Stadion Sepak Bola Universitas Halu Oleo (UHO) pada Senin, 4 September 2023. Dalam upacara penerimaan ini, Rektor UHO Muhammad Zamrun menyampaikan selamat datang kepada seluruh mahasiswa yang berhasil masuk ke UHO. Seluruh mahasiswa, khususnya di jenjang Sarjana, diterima melalui jalur Seleksi Nasional Berdasarkan Prestasi (SNBP), Seleksi Nasional Berdasarkan Tes (SNBT), atau Seleksi Mandiri Masuk (SMM) UHO.</p><p>Jumlah keseluruhan mahasiswa jenjang Strata Satu (S1) yang terjaring masuk UHO di tahun 2023 sebanyak 8.315 orang dengan rincian:</p><ul>
+            <li>Fakultas Keguruan dan Ilmu Pendidikan: 1.795 orang</li>
+            <li>Fakultas Ekonomi dan Bisnis: 673 orang</li>
+            <li>Fakultas Ilmu Sosial dan Ilmu Politik: 1.263 orang</li>
+            <li>Fakultas Pertanian: 401 orang</li>
+            <li>Fakultas Teknik: 999 orang</li>
+            <li>Fakultas Matematika dan Ilmu Pengetahuan Alam: 853 orang</li>
+            <li>Fakultas Hukum: 383 orang</li>
+            <li>Fakultas Perikanan dan Ilmu Kelautan: 220 orang</li>
+            <li>Fakultas Kesehatan Masyarakat: 411 orang</li>
+            <li>Fakultas Kedokteran: 168 orang</li>
+            <li>Fakultas Peternakan: 120 orang</li>
+            <li>Fakultas Kehutanan dan Ilmu Lingkungan: 259 orang</li>
+            <li>Fakultas Ilmu Budaya: 483 orang</li>
+            <li>Fakultas Farmasi: 287 orang</li>
+            </ul>
+            <p>Sementara mahasiswa baru Pascasarjana di tahun 2023 terdaftar 596 orang dengan rincian: jenjang Strata Dua (S2) 508 orang dan mahasiswa baru jenjang Strata Tiga (S3) sebanyak 88 orang.</p><p>Penerimaan mahasiswa ini secara simbolik ditandai dengan pemakaian jaket almamater UHO dan penyerahan dokumen mahasiswa ke masing-masing dekan fakultas dan direktur pascasarjana</p>',
+        ]);
+        Berita::create([
+            'kategori' => 'berita',
+            'judul' => 'UHO Wisuda 2.568 Periode April – Juli 2023',
+            'slug' => Str::slug('UHO Wisuda 2.568 Periode April – Juli 2023'),
+            'tanggal' => '2023-09-04',
+            'penulis' => 'PPID',
+            'isi' => '<p>Universitas Halu Oleo (UHO) melangsungkan wisuda untuk jenjang sarjana dan pascasarjana pada 8 dan 9 Agustus 2023 di Auditorium Mokodompit. Kegiatan ini merupakan wisuda Program Sarjana yang ke-98, Profesi Dokter yang ke-33, Magister yang ke-65, dan Program Doktor yang ke-36. Wisuda periode April hingga Juli 2023 ini, melibatkan 2.568 wisudawan ini tersebar dengan rincian:</p>
+            <ol>
+            <li>Program Pascasarjana (PPs) yang terdiri dari Program Doktor sebanyak 12 orang. Jenjang mahasiswa di jenjang doktor memiliki rata-rata Indeks Prestasi Kumulatif (IPK) 3,87 dengan rata-rata lama studi 4 tahun 4 bulan. Program Magister sebanyak 104 orang dengan lPK rata-rata 3,76 dan lama studi rata-rata 2 tahun 4 bulan.&nbsp;</li>
+            <li><a title="" href="http://fkip.uho.ac.id/" target="_blank" rel="noopener">Fakultas Keguruan dan Ilmu Pendidikan</a>&nbsp;(FKIP) sebanyak 458 orang sarjana, dengan IPK rata-rata 3,36 dan rata-rata lama studi 4 tahun 8 bulan. Program Magister (S2) sebanyak 33 orang dengan IPK rata-rata 3,64 dan lama rata-rata&nbsp; studi 1 tahun 11 bulan.&nbsp;</li>
+            <li><a title="" href="https://fp.uho.ac.id/" target="_blank" rel="noopener">Fakultas Pertanian</a>&nbsp;(FP) sebanyak 166 orang sarjana. IPK rata-rata 3,24 dan rata-rata lama studi 5 tahun 2 bulan. Program Magister (S2) sebanyak 8 orang, dengan IPK 3,77 dan rata-rata lama studi 2 tahun 7 bulan.&nbsp;</li>
+            <li>Fakultas Hukum (FH) sebanyak 134 orang sarjana, dengan IPK rata-rata 3,41 dan rata-rata lama studi 4 tahun 6 bulan. Program Magister (S2) sebanyak 17 orang, dengan IPK 3,91 dan rata-rata lama studi 2 tahun 1 bulan.&nbsp;</li>
+            <li><a title="" href="https://kedokteran.uho.ac.id/" target="_blank" rel="noopener">Fakultas Kedokteran</a>&nbsp;(FK) sebanyak 21 orang Sarjana, dengan rata-rata IPK 2,99 dan lama studi 4 tahun 6 bulan. Profesi Dokter sebanyak 55 orang, dengan IPK rata-rata 3,40 dan rata-rata lama studi 2 tahun 4 bulan.&nbsp;</li>
+            <li><a title="" href="https://farmasi.uho.ac.id/" target="_blank" rel="noopener">Fakultas Farmasi</a>&nbsp;(FF) sebanyak 67 orang sarjana, dengan IPK rata-rata 3,26 dan rata-rata lama studi 3 tahun 11 bulan.&nbsp;</li>
+            <li>Fakultas Peternakan (FPt) sebanyak 47 orang sarjana, dengan IPK rata-rata 3,36 dan rata-rata lama studi 4 tahun 5 bulan. Program Magister (S2) sebanyak 4 orang, dengan IPK 4,0 dan rata-rata lama studi 1 tahun 10 bulan.</li>
+            <li><a title="" href="https://fpik.uho.ac.id/" target="_blank" rel="noopener">Fakultas Perikanan dan Ilmu Kelautan</a>&nbsp;(FPIK) sebanyak 69 orang sarjana, dengan IPK rata-rata 3,23 dan rata-rata lama studi 4 tahun 10 bulan.&nbsp;</li>
+            <li><a title="" href="https://feb.uho.ac.id/" target="_blank" rel="noopener">Fakultas Ekonomi dan Bisnis</a>&nbsp;(FEB) sebanyak 238 orang sarjana, dengan IPK rata-rata 3,43 dan rata-rata lama studi 4 tahun 6 bulan. Program Magister (S2) sebanyak 23 orang, dengan IPK rata-rata 3,74 dan rata-rata lama studi 2 tahun 4 bulan.&nbsp;</li>
+            <li><a title="" href="https://fmipa.uho.ac.id/" target="_blank" rel="noopener">Fakultas Matematika dan Ilmu Pengetahuan Alam</a>&nbsp;(FMIPA) sebanyak 220 orang sarjana, dengan IPK rata-rata 3,25 dan rata-rata lama studi 5 tahun 2 bulan. Program Magister (S2) sebanyak 10 orang, dengan IPK rata-rata 3,77 dan rata-rata lama studi 2 tahun 6 bulan. Diploma Tiga (D3) sebanyak 5 orang, dengan IPK 3,18 dan rata-rata lama studi 3 tahun 11 bulan.&nbsp;</li>
+            <li><a title="" href="http://eng.uho.ac.id/" target="_blank" rel="noopener">Fakultas Teknik</a>&nbsp;(FT) sebanyak 133 orang sarjana, dengan IPK rata-rata 3,27 dan rata-rata lama studi 5 tahun 3 bulan. Diploma Tiga sebanyak 69 orang, dengan IPK rata-rata 3,26 dan rata-rata lama studi 4 tahun 1 bulan.&nbsp;</li>
+            <li><a title="" href="http://fkm.uho.ac.id/" target="_blank" rel="noopener">Fakultas Kesehatan Masyarakat</a>&nbsp;(FKM) sebanyak 125 orang sarjana, dengan IPK rata-rata 3,62 dan rata-rata lama studi 4 tahun 1 bulan. Program Magister (S2) sebanyak 19 orang, dengan IPK rata-rata 3,82 dan rata-rata lama studi 2 tahun 9 bulan.&nbsp;</li>
+            <li>Fakultas Ilmu Sosial dan Ilmu Politik (FISIP) sebanyak 357 orang sarjana, dengan IPK rata-rata 3,40 dan rata-rata lama studi 4 tahun 8 bulan.&nbsp;</li>
+            <li><a title="" href="https://fib.uho.ac.id/" target="_blank" rel="noopener">Fakultas Ilmu Budaya</a>&nbsp;(FIB) sebanyak 134 orang sarjana, dengan IPK rata-rata 3,43 dan rata-rata lama studi 4 tahun 8 bulan.&nbsp;</li>
+            <li><a title="" href="https://fhil.uho.ac.id/" target="_blank" rel="noopener">Fakultas Kehutanan dan Ilmu Lingkungan</a>&nbsp;(FHIL) sebanyak 40 orang sarjana, dengan IPK rata-rata 3,27 dan rata-rata lama studi 4 tahun 10 bulan.</li>
+            </ol>',
+        ]);
     }
 }

@@ -73,7 +73,8 @@
               </div>
             @endif
 
-            @if (request()->is('informasi-publik*'))
+            @if (request()->is('informasi-publik/informasi-berkala') ||
+                    request()->is('informasi-publik/informasi-tersedia-setiap-saat'))
               {{-- LIST INFORMASI PUBLIK --}}
               <section class="top-section">
                 <div class="accordions is-first-expanded ms-0">
@@ -135,6 +136,26 @@
         // Hapus class tertentu dari elemen
         $('.is-open').removeClass('is-open');
         $('.accordion-body').css('height', '0');
+        // $('.accordion-body').eq(index).css('height', '0');
+
+        // $('.accordion-head').each(function(index) {
+        //   var counter = 1;
+
+        //   $(this).click(function() {
+
+        //     if (counter != 1) {
+        //       if (counter % 2 == 0) {
+        //         console.log('genap: ' + counter)
+        //         $('.accordion-body').eq(index).css('height', '0');
+        //       } else {
+        //         console.log('ganjil: ' + counter)
+        //         console.log($('.accordion-body').eq(index).height());
+        //       }
+        //     }
+
+        //     console.log(counter++);
+        //   });
+        // });
       });
     </script>
   @endsection
