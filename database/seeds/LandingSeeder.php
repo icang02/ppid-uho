@@ -17,21 +17,21 @@ class LandingSeeder extends Seeder
             'judul' => 'Informasi Berkala',
             'isi' => 'Informasi Berkala merupakan informasi yang diperbarui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali.',
             'gambar' => 'img/informasi berkala.png',
-            'link' => 'informasi-publik',
+            'link' => 'informasi-publik/berkala',
         ]);
         Landing::create([
             'bagian' => 'jenis informasi',
             'judul' => 'Informasi Tersedia Setiap Saat',
             'isi' => 'Informasi Tersedia Setiap Saat adalah informasi yang siap tersedia untuk bisa langsung diberikan kepada Pemohon Informasi Publik ketika terdapat permohonan mengajukan permohonan atas Informasi Publik tersebut.',
             'gambar' => 'img/informasi sedia tiap saat.png',
-            'link' => 'informasi-publik',
+            'link' => 'informasi-publik/setiap-saat',
         ]);
         Landing::create([
             'bagian' => 'jenis informasi',
             'judul' => 'Informasi Serta Merta',
             'isi' => 'Informasi Serta Merta adalah informasi berkaitan dengan hajat hidup orang banyak dan ketertiban umum, serta wajib diumumkan secara serta merta tanpa penundaan.',
             'gambar' => 'img/informasi serta merta.png',
-            'link' => 'informasi-publik',
+            'link' => 'informasi-publik/serta-merta',
         ]);
 
         Landing::create([
