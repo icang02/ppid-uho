@@ -57,5 +57,8 @@ Route::get('/list/informasi-publik/setiap-saat', [InformasiPublikController::cla
 // HALAMAN BERITA
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
+// SEARCH BERITA
+Route::get('/berita/search/{keyword}', [BeritaController::class, 'search']);
+Route::get('/berita/search/info-serta-merta/{keyword}', [BeritaController::class, 'search']);
 // INFO SERTA MERTA
 Route::get('/informasi-publik/serta-merta', [BeritaController::class, 'index']);
