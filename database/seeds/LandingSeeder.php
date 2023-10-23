@@ -37,22 +37,22 @@ class LandingSeeder extends Seeder
         Landing::create([
             'bagian' => 'tata cara permohonan',
             'judul' => 'Tata Cara Permohonan Informasi Publik',
-            'gambar' => 'img/1.png',
+            'gambar' => 'storage/img/1.png',
         ]);
         Landing::create([
             'bagian' => 'tata cara permohonan',
             'judul' => 'Tata Cara Mengajukan Keberatan',
-            'gambar' => 'img/2.png',
+            'gambar' => 'storage/img/2.png',
         ]);
         Landing::create([
             'bagian' => 'tata cara permohonan',
             'judul' => 'Tata Cara Pengajuan Permohonan Sengketa',
-            'gambar' => 'img/3.png',
+            'gambar' => 'storage/img/3.png',
         ]);
         Landing::create([
             'bagian' => 'tata cara permohonan',
             'judul' => 'Prosedur Permohonan Penyelesaian Sengketa Informasi',
-            'gambar' => 'img/4.png',
+            'gambar' => 'storage/img/4.png',
         ]);
 
         Landing::create([
