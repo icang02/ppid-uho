@@ -32,6 +32,7 @@ class BeritaSeeder extends Seeder
             'tanggal' => '2023-09-22',
             'penulis' => 'PPID',
             'isi' => '<p>Senat Guru Besar Universitas Halu Oleo (UHO) kembali menyelenggarakan Rapat Senat Luar Biasa untuk pengukuhan empat Guru Besar pada Jumat, 22 September 2023 di gedung Auditorium Mokodompit UHO. Emp at dosen yang dikukuhkan ini berasal dari<a t itle="" href="https://feb.uho.ac.id/" target="_blank" rel="noopener">Fakultas Ekonomi dan Bisnis</a>(FEB ) dan<a t itle="" href="https://fp.uho.ac.id/" target="_blank" rel="noopener">Fakultas Pertanian</a>(FP) . Masing-masing dosen yang dikukuhkan menyampaikan orasi ilmiah dalam Rapat Senat Luar Biasa.</p> <p>Dr. Nasrul, S.E., M.Si. yang memperoleh gelar Guru Besar pada bidang Ilmu Manajemen Pemasaran (FEB) menyampaikan orasi dengan judul &ldquo;Pembangunan Loyalitas Nasabah Melalui Citra Perbankan, Kepuasan Nasabah, Komitmen, Customer Learning, dan Kualitas Layanan&rdquo;. Nasrul melakukan riset dengan menggunakan lima indikator pelayanan:<em> reliability, responsiveness, tangible, assurance,</em >dan<em>empa thy</em>. Hasil penelitiannya menunjukkan bahwa indikator terkuat untuk mengukur kualitas suatu layanan perbankan di Sulawesi Tenggara adalah aspek<em> tangible</em>.</p><p>Pidato ilmiah dengan tajuk &ldquo;Padi Adaptif Kekeringan untuk Lahan Sawah Tadah Hujan&rdquo; disampaikan oleh Dr. La Ode Afa, S.P., M.Si. yang mendapat gelar Guru Besar pada bidang Agronomi dan Hortikultura (FP). La Ode Afa menyampaikan gagasan penggunaan padi hibrida yang toleran pada kekeringan (BI599A/BP15). Padi jenis ini berpotensi dikembangkan di lahan sawah tadah hujan, karena pada kondisi kekeringan parah, produksinya dapat mencapai tiga kali lebih tinggi dibandingkan dengan varietas cek. Sementara dalam kondisi genangan, produksinya dapat menyamai varietas cek yakni di atas 6 ton per hektar.</p><p>Selanjutnya, Iskandar, S.P., M.Si., Ph.D. yang memperoleh gelar Guru Besar pada bidang Ilmu Pemberdayaan Masyarakat (FP) memberikan orasi ilmiah dengan judul &ldquo;Membangun Ketahanan dan Kesejahteraan Masyarakat Melalui Pendekatan Model Pemberdayaan Kolaborasi Multi<em> Stakeholder</em>dala m Praktik CSR di Sulawesi Tenggara&rdquo;. Riset yang dilakukan Iskandar menemukan tiga komponen penting yang menjadi kunci keberhasilan<em> Corporate Social Responsibility</em>(CSR ) yaitu: karakteristik program CSR, pelibatan para pihak, dan proses pemberdayaan kolaborasi.</p><p>Orasi ilmiah terakhir disampaikan Dr. La Ode Anto, S.E., M.Si., Ak., QIA., CA. CTT., CRP., CRPM., QGIA., CIISA., ADEAN CPA. yang mendapat gelar Guru Besar pada bidang Ilmu Akuntansi (FEB). Pidato ilmiahnya bertajuk &ldquo;Akuntansi Aset Pemerintah: Pemaknaan dalam Perspektif Pengelolaan Keuangan Daerah&rdquo;. La Ode Anto mengajukan preposisi bahwa aset pemerintah dimaknai berdasarkan sumber pendanaan, kewenangan pengelolaan, serta fungsi dan kegunaan aset. Dia menyimpulkan, pemaknaan terhadap akuntansi aset lebih dipengaruhi oleh karakteristik organisasi pemerintah dan nilai-nilai budaya yang melekat pada diri pengelola keuangan daerah.</p> <p>Setelah orasi ilmiah, keempat guru besar dikukuhkan oleh Rektor UHO Muhammad Zamrun. Sebagai bentuk komitmen dan tanggung jawab atas jabatan akademik yang disandang, pengukuhan kemudian dilanjutkan dengan penandatanganan Pakta Integritas Guru Besar.</p>',
+            'gambar' => 'storage/img/uho-kembali-kukuhkan.jpeg'
         ]);
         Berita::create([
             'kategori' => 'berita',
@@ -88,6 +89,7 @@ class BeritaSeeder extends Seeder
             </ol>
             <p><a title="" href="https://fhil.uho.ac.id/" target="_blank" rel="noopener">Fakultas Kehutanan dan Ilmu Lingkungan</a> </p>
             <p>24. Prof. Dr. Ir. La Baco, M.Si.</p>',
+            'gambar' => 'storage/img/rektor uho menyerahkan.jpeg'
         ]);
         Berita::create([
             'kategori' => 'berita',
@@ -114,6 +116,7 @@ class BeritaSeeder extends Seeder
             'isi' => '<p>Universitas Halu Oleo (UHO) terpilih sebagai salah satu tempat kegiatan <em>Srikandi BUMN Goes To Campus</em >yang dikemas dalam sesi<em> Leader Talk Show</em>. Kegiatan yang berlangsung sejak pagi hingga siang ini bertempat di Auditorium Mokodompit, Kamis 14 September 2023. Tema &ldquo;<em>Integrated Sustainability Indonesia Movement</em>&rdquo; yang diangkat dalam kesempatan ini yang memberi titik tekan pada pentingnya gerakan bersama dalam menjaga lingkungan hidup.</p>
             <p>Dalam kesempatan tersebut, salah satu pembicara adalah Direktur Sumber Daya Manusia PT Surveyor Indonesia Lussy Ariani Seba. Dia menyampaikan bahwa<em> Srikandi BUMN Goes To Campus</em>ini merupakan forum BUMN (Badan Usaha Milik Negara) yang menyasar 25 Perguruan Tinggi negeri maupun swasta di Indonesia. Oleh karena itu, dia mengajak mahasiswa agar aktif menjaga lingkungan sebab merekalah generasi emas yang akan memimpin Indonesia nanti. Di pundak mereka, misi lingkungan hijau, ditambatkan. Jika semuanya berjalan selaras, kelak diharapkan<em> Sustainable Development Goals</em>(SDG s) sudah bisa terimplementasi dengan baik di tahun 2030.</p>
             <p>Dalam sambutannya, Rektor UHO Muhammad Zamrun menyampaikan mengapresiasi kepada Srikandi BUMN yang sudah memilih UHO menjadi salah satu tujuan sosialisasi. Kehadiran para mahasiswa dalam kegiatan ini juga diharapkan dapat menambah wawasan dan kesadaran tentang peluang-peluang yang terbuka lebar di sejumlah BUMN. Dia berharap semoga kegiatan ini memberikan manfaat secara khusus bagi mahasiswa dan berimplikasi luas kepada masyarakat Sulawesi Tenggara.</p>',
+            'gambar' => 'storage/img/srikandi.jpeg'
         ]);
         Berita::create([
             'kategori' => 'berita',
@@ -138,6 +141,7 @@ class BeritaSeeder extends Seeder
             <li>Fakultas Farmasi: 287 orang</li>
             </ul>
             <p>Sementara mahasiswa baru Pascasarjana di tahun 2023 terdaftar 596 orang dengan rincian: jenjang Strata Dua (S2) 508 orang dan mahasiswa baru jenjang Strata Tiga (S3) sebanyak 88 orang.</p><p>Penerimaan mahasiswa ini secara simbolik ditandai dengan pemakaian jaket almamater UHO dan penyerahan dokumen mahasiswa ke masing-masing dekan fakultas dan direktur pascasarjana</p>',
+            'gambar' => 'storage/img/rektor uho menerima maba.jpeg'
         ]);
         Berita::create([
             'kategori' => 'berita',
@@ -163,6 +167,7 @@ class BeritaSeeder extends Seeder
             <li><a title="" href="https://fib.uho.ac.id/" target="_blank" rel="noopener">Fakultas Ilmu Budaya</a>(FIB ) sebanyak 134 orang sarjana, dengan IPK rata-rata 3,43 dan rata-rata lama studi 4 tahun 8 bulan.</li >
             <li><a title="" href="https://fhil.uho.ac.id/" target="_blank" rel="noopener">Fakultas Kehutanan dan Ilmu Lingkungan</a>(FHI L) sebanyak 40 orang sarjana, dengan IPK rata-rata 3,27 dan rata-rata lama studi 4 tahun 10 bulan.</li>
             </ol>',
+            'gambar' => 'storage/img/uho wisuda.jpeg'
         ]);
         Berita::create([
             'kategori' => 'berita',
@@ -174,6 +179,7 @@ class BeritaSeeder extends Seeder
             <p>Melengkapi amanat yang pertama tadi, Rektor meminta para Dekan dan Direktur untuk segera melakukan konversi akreditasi. Untuk unit yang masih terakreditasi B diminta untuk segera dikonversi ke akreditasi ‘Baik Sekali’. Begitu pula yang terakreditasi A, untuk dikonversi ke akreditasi ‘Unggul’. Proses tersebut diharapkan paling lambat dilaksanakan pada bulan Maret 2023. Jika terlaksana seperti waktu yang telah ditentukan tadi, diharapkan tidak ada lagi unit yang terakreditasi B atau A, melainkan sudah berganti menjadi ‘Baik Sekali’ atau ‘Unggul’.</p>
             <p>Rektor juga menyampaikan agar para pimpinan fakultas dan program studi memeriksa kembali status jabatan akademik sejumlah tenaga pendidik. Mereka yang masih Lektor, diupayakan agar dapat berada di posisi Lektor Kepala. Demikian pula yang sekarang menjabat sebagai Lektor Kepala, diharapkan agar segera dapat melakukan pengusulan untuk menjadi Guru Besar. “Pada dasarnya, ini bukan untuk kepentingan pribadi orang per orang saja, namun berimplikasi pula pada peningkatan kualitas universitas ke depan,” kata Rektor. Sebagai tambahan informasi, data saat terakhir menunjukkan, sebagian besar dosen PNS di UHO berada dalam jenjang akademik Lektor sebanyak 45,15%, Lektor Kepala 25,56%, dan Guru Besar 8,32%.</p>
             <p>Selain ketiga pesan tadi, Rektor juga meminta para dosen untuk aktif memberikan masukan, saran, dan ide untuk pengembangan UHO. Rektor menyampaikan, Dalam waktu dekat, akan ada Rapat Kerja. Usulan program-program di setiap unit sangat dibutuhkan untuk kegiatan di tahun 2023. “Universitas sudah memberi banyak hal,” kata Rektor, “karena itu sudah seharusnya kita memberi dedikasi yang lebih untuk kampus ini.” UHO memiliki 17 fakultas, termasuk Program Pendidikan Vokasi dan Pascasarjana. Selain itu terdapat 7 lembaga dan biro, serta 8 unit pelaksana teknis (UPT). Kinerja dan sinergi setiap elemen yang ada di dalamnya sangat menentukan performa UHO.***</p>',
+            'gambar' => 'storage/img/empat amanat.jpg'
         ]);
         Berita::create([
             'kategori' => 'berita',
@@ -194,6 +200,7 @@ class BeritaSeeder extends Seeder
            <p>“Kami ucapkan terima kasih, karena Ini juga merupakan suatu kebahagiaan dan kebanggaan untuk kami bisa bersinergi dengan Badan Pusat Statistik,” jelasnya.</p>
            <p>Dalam kesempatan itu, Prof Weka Widayanti menyampaikan pesan dari Rektor UHO Prof Muhammad Zamrun untuk semua civitas akademika bisa memanfaatkan ini dengan baik.</p>
             <p>  “Pesan pak rektor untuk kita semua civitas akademika bisa memanfaatkan ini dengan baik, bekerjasama dan belajar bersama mewujudkan mencerdaskan bangsa dan mendukung pembangunan baik di Sultra maupun secara nasional,” tutupnya. </p>',
+            'gambar' => 'storage/img/peresmian statistik.jpeg'
         ]);
         Berita::create([
             'kategori' => 'berita',
@@ -214,7 +221,8 @@ class BeritaSeeder extends Seeder
             </ol>
             <p>Pelepasan mahasiswa KKN ini secara simbolik dilakukan Rektor dengan memakaikan jas almamater dan menyematkan tanda peserta kepada perwakilan mahasiswa. Tidak semua mahasiswa hadir dalam kesempatan ini karena keterbatasan kapasitas ruangan. Sebagian besar mengikuti acara pelepasan tersebut secara daring. Mahasiswa yang mengikuti KKN di kesempatan ini didampingi oleh 275 Dosen Pendamping Lapangan (DPL) —yang menjalani pembekalan tiga hari sebelumnya.</p>
             <p>Pemberangkatan mahasiswa ke lokasi KKN dijadwalkan pada tanggal 13-14 Agustus 2023. KKN Reguler Batch 2 berada dalam koordinasi Lembaga Pengembangan dan Penjaminan Mutu Pendidikan (LPPMP). Sementara Lembaga Penelitian dan Pengabdian Masyarakat (LPPM) mengkoordinasi kegiatan KKN Tematik Infrastruktur Kerjasama Kementerian PUPR dengan UHO.</p>
-            <p>Dalam sambutannya, Rektor UHO meminta mahasiswa untuk menjadi duta kampus yang mengimplementasikan ilmu dan teknologi, serta kecakapan yang mereka punya untuk kesejahteraan masyarakat tepat mereka berada. Bukan hanya memberi, di tempat KKN mahasiswa juga dapat menambah pengetahuan baru, melalui kerja tim, kepemimpinan, adaptasi terhadap lingkungan baru, serta nilai-nilai kemandirian. Di kesempatan ini Rektor Muhammad Zamrun juga menyampaikan apresiasi atas dukungan dan kerjasama para pihak, institusi pemerintah, komunitas lokal, juga berbagai lembaga non-pemerintah yang ikut terlibat.***</p>'
+            <p>Dalam sambutannya, Rektor UHO meminta mahasiswa untuk menjadi duta kampus yang mengimplementasikan ilmu dan teknologi, serta kecakapan yang mereka punya untuk kesejahteraan masyarakat tepat mereka berada. Bukan hanya memberi, di tempat KKN mahasiswa juga dapat menambah pengetahuan baru, melalui kerja tim, kepemimpinan, adaptasi terhadap lingkungan baru, serta nilai-nilai kemandirian. Di kesempatan ini Rektor Muhammad Zamrun juga menyampaikan apresiasi atas dukungan dan kerjasama para pihak, institusi pemerintah, komunitas lokal, juga berbagai lembaga non-pemerintah yang ikut terlibat.***</p>',
+            'gambar' => 'storage/img/rektor pelepasan kkn.jpg'
         ]);
     }
 }

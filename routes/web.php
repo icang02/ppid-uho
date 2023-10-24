@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 // route symlink
 Route::get('/link', function () {
 
-    $target = $_SERVER['DOCUMENT_ROOT'] . "/zppid/storage/app/public";
-    $link = $_SERVER['DOCUMENT_ROOT'] . "/storage";
+    $target = $_SERVER['DOCUMENT_ROOT'] . "/auth/1-ppid/storage/app/public";
+    $link = $_SERVER['DOCUMENT_ROOT'] . "/auth/storage";
 
     if (symlink($target, $link)) {
         echo "OK symlink done..";
@@ -36,32 +36,32 @@ Route::get('/seed', function () {
 });
 
 
-Route::get('/', [LandingController::class, 'index']);
+// Route::get('/', [LandingController::class, 'index']);
 
 
-Route::get('/berita', [BeritaController::class, 'index'])->name('index_berita');
-Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
-Route::get('/search-berita', [BeritaController::class, 'searchBerita']);
-Route::post('/update-view/{id}', [BeritaController::class, 'updateView']);
+// Route::get('/berita', [BeritaController::class, 'index'])->name('index_berita');
+// Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
+// Route::get('/search-berita', [BeritaController::class, 'searchBerita']);
+// Route::post('/update-view/{id}', [BeritaController::class, 'updateView']);
 
 
-Route::get('/informasi-publik/informasi-berkala', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('info_berkala');
-Route::get('/informasi-publik/informasi-tersedia-setiap-saat', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('info_setiap_saat');
-Route::get('/informasi-publik/informasi-serta-merta', [BeritaController::class, 'index'])->name('info_serta_merta');
-Route::get('/informasi-publik/informasi-dikecualikan', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('infO_dikecualikan');
+// Route::get('/informasi-publik/informasi-berkala', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('info_berkala');
+// Route::get('/informasi-publik/informasi-tersedia-setiap-saat', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('info_setiap_saat');
+// Route::get('/informasi-publik/informasi-serta-merta', [BeritaController::class, 'index'])->name('info_serta_merta');
+// Route::get('/informasi-publik/informasi-dikecualikan', [InformasiPublikController::class, 'indexInformasiBerkala'])->name('infO_dikecualikan');
 
-Route::get('/formulir/permohonan-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_permohonan');
-Route::get('/formulir/keberatan-layanan-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_keberatan');
-Route::get('/formulir/penyelesaian-sengketa-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_sengketa');
+// Route::get('/formulir/permohonan-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_permohonan');
+// Route::get('/formulir/keberatan-layanan-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_keberatan');
+// Route::get('/formulir/penyelesaian-sengketa-informasi-publik', [FormulirController::class, 'indexFormulir'])->name('form_sengketa');
 
-Route::get('/tentang/profil', [TentangController::class, 'index'])->name('tentang_profil');
-Route::get('/tentang/visi-misi', [TentangController::class, 'index'])->name('tentang_visi_misi');
-Route::get('/tentang/tugas-fungsi', [TentangController::class, 'index'])->name('tentang_tugas_fungsi');
-Route::get('/tentang/struktur-ppid', [TentangController::class, 'index'])->name('tentang_struktur_ppid');
-Route::get('/regulasi', [TentangController::class, 'index'])->name('regulasi');
+// Route::get('/tentang/profil', [TentangController::class, 'index'])->name('tentang_profil');
+// Route::get('/tentang/visi-misi', [TentangController::class, 'index'])->name('tentang_visi_misi');
+// Route::get('/tentang/tugas-fungsi', [TentangController::class, 'index'])->name('tentang_tugas_fungsi');
+// Route::get('/tentang/struktur-ppid', [TentangController::class, 'index'])->name('tentang_struktur_ppid');
+// Route::get('/regulasi', [TentangController::class, 'index'])->name('regulasi');
 
-Route::get('/laporan/akses-informasi-publik', [LaporanController::class, 'index'])->name('laporan_akses');
-Route::get('/laporan/layanan-informasi-publik', [LaporanController::class, 'index'])->name('laporan_layanan');
+// Route::get('/laporan/akses-informasi-publik', [LaporanController::class, 'index'])->name('laporan_akses');
+// Route::get('/laporan/layanan-informasi-publik', [LaporanController::class, 'index'])->name('laporan_layanan');
 // Route::get('/laporan/survei-layanan-informasi', [LaporanController::class, 'index'])->name('laporan_survei');
 
 
@@ -138,6 +138,6 @@ Route::post('/dashboard/laporan/add', [LaporanController::class, 'addAdmin'])->n
 
 
 // ROUTE LOGIN
-Route::get('/admin', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin', [AuthController::class, 'authenticate'])->name('authenticate')->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
