@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\FormulirController;
 use App\Http\Controllers\Api\InformasiPublikController;
 use App\Http\Controllers\Api\LandingController;
+use App\Http\Controllers\Api\LaporanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +33,6 @@ Route::get('/landing/slogan', [LandingController::class, 'slogan']);
 Route::get('/landing/footer', [LandingController::class, 'footer']);
 Route::get('/landing/berita', [LandingController::class, 'berita']);
 Route::get('/card-news', [LandingController::class, 'berita']);
-Route::get('/card-news', [LandingController::class, 'cardNews']);
 
 // API HALAMAN TENTANG
 Route::get('/profil', [LandingController::class, 'profil']);
@@ -57,8 +57,14 @@ Route::get('/list/informasi-publik/setiap-saat', [InformasiPublikController::cla
 // HALAMAN BERITA
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{slug}', [BeritaController::class, 'detail']);
+Route::get('/card-news/not/{slug}', [LandingController::class, 'cardNews']);
 // SEARCH BERITA
 Route::get('/berita/search/{keyword}', [BeritaController::class, 'search']);
 Route::get('/berita/search/info-serta-merta/{keyword}', [BeritaController::class, 'search']);
 // INFO SERTA MERTA
 Route::get('/informasi-publik/serta-merta', [BeritaController::class, 'index']);
+
+// LAPORAN LAYANAN INFO PUBLIK
+Route::get('/laporan/layanan-informasi-publik', [LaporanController::class, 'laporanLayanan']);
+// LAPORAN AKSES INFO PUBLIK
+Route::get('/laporan/akses-informasi-publik/{tahun}', [LaporanController::class, 'laporanAkses']);

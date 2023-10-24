@@ -111,6 +111,7 @@ Route::delete('/dashboard/berita/delete/{id}', [BeritaController::class, 'delete
 // ROUTE DASHBOARD INFORMASI PUBLIK
 Route::get('/dashboard/informasi/informasi-berkala', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_berkala')->middleware('auth');
 Route::get('/dashboard/informasi/informasi-setiap-saat', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_setiap_saat')->middleware('auth');
+Route::get('/dashboard/informasi/informasi-dikecualikan', [InformasiPublikController::class, 'indexAdmin'])->name('admin_informasi_dikecualikan')->middleware('auth');
 Route::get('/dashboard/informasi/informasi-serta-merta', [BeritaController::class, 'indexAdmin'])->name('admin_informasi_serta_merta')->middleware('auth');
 Route::put('/dashboard/informasi-publik/update/{id}', [InformasiPublikController::class, 'update'])->name('admin_update_informasi_publik')->middleware('auth');
 

@@ -46,6 +46,14 @@ class InformasiPublikController extends Controller
                 '<li class="breadcrumb-item"><a href="' . route('admin_informasi_setiap_saat') . '">Informasi Tersedia Setiap Saat</a></li>'
             ];
             $title = 'Informasi Tersedia Setiap Saat';
+        } else if (request()->is('dashboard/informasi/informasi-dikecualikan')) {
+            $data = InformasiPublik::find(4);
+            $breadcumb = [
+                '<li class="breadcrumb-item">Menu Utama</li>',
+                '<li class="breadcrumb-item">Informasi Publik</li>',
+                '<li class="breadcrumb-item"><a href="' . route('admin_informasi_dikecualikan') . '">Informasi Dikecualikan</a></li>'
+            ];
+            $title = 'Informasi Dikecualikan';
         }
 
         return view('admin.tentang.profil', [

@@ -50,9 +50,15 @@ class LandingController extends Controller
         return Berita::where('kategori', 'berita')->take(6)->orderBy('tanggal', 'desc')->get();
     }
 
-    public function cardNews()
+    public function cardNews($slug)
     {
-        return Berita::where('kategori', 'berita')->take(4)->orderBy('tanggal', 'desc')->get();
+        $data = Berita::where('kategori', 'berita')
+            ->where('slug', '!=', $slug)
+            ->orderBy('tanggal', 'desc')
+            ->take(4)
+            ->get();
+
+        return $data;
     }
 
     // METHOD HALAMAN TENTANG

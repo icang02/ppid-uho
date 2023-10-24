@@ -13,7 +13,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
 
     <!-- vendor css -->
-    <link rel="stylesheet" href="/admin-assets/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('admin-assets/assets/css/style.css') }}">
 
     {{-- tiny editor cdn --}}
     {{-- <script src="https://cdn.tiny.cloud/1/gpbwgwsn7c6j08npcqbznlniosdnau8smuipab8mhzhy2x9u/tinymce/6/tinymce.min.js"
@@ -23,6 +23,9 @@
 
     {{-- jquery cdn --}}
     <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+    {{-- ckeditor 5 --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
     <style>
         .fixed-button {
@@ -79,34 +82,364 @@
     @yield('content')
 
     <!-- Required Js -->
-    <script src="/admin-assets/assets/js/vendor-all.min.js"></script>
-    <script src="/admin-assets/assets/js/plugins/bootstrap.min.js"></script>
-    <script src="/admin-assets/assets/js/pcoded.min.js"></script>
+    <script src="{{ asset('admin-assets/assets/js/vendor-all.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/assets/js/plugins/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/assets/js/pcoded.min.js') }}"></script>
 
     <!-- Apex Chart -->
-    <script src="/admin-assets/assets/js/plugins/apexcharts.min.js"></script>
+    <script src="{{ asset('admin-assets/assets/js/plugins/apexcharts.min.js') }}"></script>
 
-    {{-- tiny editor script --}}
+    {{-- CKEDITOR --}}
     <script>
-        tinymce.init({
-            selector: 'textarea#tiny',
-            plugins: 'tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-            // toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align | tinycomments | numlist bullist outdent indent | emoticons charmap | removeformat',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            mergetags_list: [{
-                    value: 'First.Name',
-                    title: 'First Name'
+        ClassicEditor.create(document.querySelector('#editor'), {
+                toolbar: ['heading', '|', 'undo', 'redo', '|', 'bold',
+                    'italic', 'link', '|', 'outdent', 'indent', '|',
+                    'bulletedList',
+                    'numberedList'
+                ],
+
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        {
+                            model: 'heading6',
+                            view: 'h6',
+                            title: 'Heading 6',
+                            class: 'ck-heading_heading6'
+                        }
+                    ]
                 },
-                {
-                    value: 'Email',
-                    title: 'Email'
+
+                link: {
+                    decorators: {
+                        openInNewTab: {
+                            mode: 'manual',
+                            label: 'Open in a new tab',
+                            defaultValue: true, // This option will be selected by default.
+                            attributes: {
+                                target: '_blank',
+                                rel: 'noopener noreferrer'
+                            }
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+        ClassicEditor.create(document.querySelector('#editor1'), {
+                toolbar: ['heading', '|', 'undo', 'redo', '|', 'bold',
+                    'italic', 'link', '|', 'outdent', 'indent', '|',
+                    'bulletedList',
+                    'numberedList'
+                ],
+
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        {
+                            model: 'heading6',
+                            view: 'h6',
+                            title: 'Heading 6',
+                            class: 'ck-heading_heading6'
+                        }
+                    ]
                 },
-            ],
-            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject(
-                "See docs to implement AI Assistant"))
-        });
+
+                link: {
+                    decorators: {
+                        openInNewTab: {
+                            mode: 'manual',
+                            label: 'Open in a new tab',
+                            defaultValue: true, // This option will be selected by default.
+                            attributes: {
+                                target: '_blank',
+                                rel: 'noopener noreferrer'
+                            }
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+        ClassicEditor.create(document.querySelector('#editor2'), {
+                toolbar: ['heading', '|', 'undo', 'redo', '|', 'bold',
+                    'italic', 'link', '|', 'outdent', 'indent', '|',
+                    'bulletedList',
+                    'numberedList'
+                ],
+
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        {
+                            model: 'heading6',
+                            view: 'h6',
+                            title: 'Heading 6',
+                            class: 'ck-heading_heading6'
+                        }
+                    ]
+                },
+
+                link: {
+                    decorators: {
+                        openInNewTab: {
+                            mode: 'manual',
+                            label: 'Open in a new tab',
+                            defaultValue: true, // This option will be selected by default.
+                            attributes: {
+                                target: '_blank',
+                                rel: 'noopener noreferrer'
+                            }
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+        ClassicEditor.create(document.querySelector('#editor4'), {
+                toolbar: ['heading', '|', 'undo', 'redo', '|', 'bold',
+                    'italic', 'link', '|', 'outdent', 'indent', '|',
+                    'bulletedList',
+                    'numberedList'
+                ],
+
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        {
+                            model: 'heading6',
+                            view: 'h6',
+                            title: 'Heading 6',
+                            class: 'ck-heading_heading6'
+                        }
+                    ]
+                },
+
+                link: {
+                    decorators: {
+                        openInNewTab: {
+                            mode: 'manual',
+                            label: 'Open in a new tab',
+                            defaultValue: true, // This option will be selected by default.
+                            attributes: {
+                                target: '_blank',
+                                rel: 'noopener noreferrer'
+                            }
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+        ClassicEditor.create(document.querySelector('#editor5'), {
+                toolbar: ['heading', '|', 'undo', 'redo', '|', 'bold',
+                    'italic', 'link', '|', 'outdent', 'indent', '|',
+                    'bulletedList',
+                    'numberedList'
+                ],
+
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        {
+                            model: 'heading6',
+                            view: 'h6',
+                            title: 'Heading 6',
+                            class: 'ck-heading_heading6'
+                        }
+                    ]
+                },
+
+                link: {
+                    decorators: {
+                        openInNewTab: {
+                            mode: 'manual',
+                            label: 'Open in a new tab',
+                            defaultValue: true, // This option will be selected by default.
+                            attributes: {
+                                target: '_blank',
+                                rel: 'noopener noreferrer'
+                            }
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
 
         // jquery
         $(document).ready(function() {
