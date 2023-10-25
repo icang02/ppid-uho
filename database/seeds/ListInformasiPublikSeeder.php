@@ -35,8 +35,13 @@ class ListInformasiPublikSeeder extends Seeder
 
         ListInformasiPublik::create([
             'informasi_publik_id' => 2,
-            'judul' => 'Informasi Tentang Peraturan, Keputusan dan/atau Kebijakan Universitas Halu Oleo',
-            'isi' => '<p>Tersedia di unit kerja terkait, jika ingin memperoleh informasi terkait peraturan dan keputusan dapat mengisi formulirr informasi publik.</p>'
+            'judul' => 'Peraturan Akademik di Lingkungan Universitas Halu Oleo',
+            'isi' => '<p>Berikut ini adalah link untuk mendowload Peraturan Rektor Universitas Halu Oleo Nomor 1 Tahun 2019 Tentang Peraturan Akademik Di Lingkungan Universitas Halu Oleo.</p><a target="_blank" href="https://uho.ac.id/wp-content/uploads/2023/10/Peraturan-Rektor-Nomor-1-Tahun-2019-Tentang-Peraturan-Akademik-UHO.pdf">Download File</a>'
+        ]);
+        ListInformasiPublik::create([
+            'informasi_publik_id' => 2,
+            'judul' => 'Statuta Universitas Halu Oleo dalam Pengelolaan Perguruan Tinggi',
+            'isi' => '<p>Statuta UHO adalah peraturan dasar pengelolaan UHO yang digunakan sebagai landasan penyusunan peraturan dan prosedur operasional di UHO.</p><p>Berikut ini adalah link untuk mendowload <b>PERATURAN MENTERI PENDIDIKAN DAN KEBUDAYAAN REPUBLIK INDONESIA NOMOR 43 TAHUN 2012 TENTANG STATUTA UNIVERSITAS HALUOLEO<b/>.</p><a target="_blank" href="https://luk.staff.ugm.ac.id/atur/statuta/Permendiknas43-2012Unhalu.pdf">Download File</a>'
         ]);
     }
 }

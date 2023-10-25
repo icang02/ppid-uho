@@ -12,28 +12,33 @@ class LandingSeeder extends Seeder
      */
     public function run()
     {
+        // JENIS INFORMASI SEED
         Landing::create([
             'bagian' => 'jenis informasi',
             'judul' => 'Informasi Berkala',
             'isi' => 'Informasi Berkala merupakan informasi yang diperbarui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali.',
-            'gambar' => 'img/informasi berkala.png',
             'link' => 'informasi-publik/berkala',
-        ]);
-        Landing::create([
-            'bagian' => 'jenis informasi',
-            'judul' => 'Informasi Tersedia Setiap Saat',
-            'isi' => 'Informasi Tersedia Setiap Saat adalah informasi yang siap tersedia untuk bisa langsung diberikan kepada Pemohon Informasi Publik ketika terdapat permohonan mengajukan permohonan atas Informasi Publik tersebut.',
-            'gambar' => 'img/informasi sedia tiap saat.png',
-            'link' => 'informasi-publik/setiap-saat',
         ]);
         Landing::create([
             'bagian' => 'jenis informasi',
             'judul' => 'Informasi Serta Merta',
             'isi' => 'Informasi Serta Merta adalah informasi berkaitan dengan hajat hidup orang banyak dan ketertiban umum, serta wajib diumumkan secara serta merta tanpa penundaan.',
-            'gambar' => 'img/informasi serta merta.png',
             'link' => 'informasi-publik/serta-merta',
         ]);
+        Landing::create([
+            'bagian' => 'jenis informasi',
+            'judul' => 'Informasi Tersedia Setiap Saat',
+            'isi' => 'Informasi Tersedia Setiap Saat adalah informasi yang siap tersedia untuk bisa langsung diberikan kepada Pemohon Informasi Publik ketika terdapat permohonan mengajukan permohonan atas Informasi Publik tersebut.',
+            'link' => 'informasi-publik/setiap-saat',
+        ]);
+        Landing::create([
+            'bagian' => 'jenis informasi',
+            'judul' => 'Informasi Dikecualikan',
+            'isi' => 'Informasi yang Dikecualikan adalah informasi yang tidak dapat diakses oleh Pemohon Informasi Publik sebagaimana dimaksud dalam Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik.',
+            'link' => 'informasi-publik/dikecualikan',
+        ]);
 
+        // TATA CARA PERMOHONAN SEED
         Landing::create([
             'bagian' => 'tata cara permohonan',
             'judul' => 'Tata Cara Permohonan Informasi Publik',
@@ -109,7 +114,7 @@ class LandingSeeder extends Seeder
         Landing::create([
             'judul' => 'Regulasi PPID',
             'bagian' => 'regulasi',
-            'isi' => '<h6 style="text-align: center;">Regulasi Mengenai Keterbukaan Informasi Publik</h6>
+            'isi' => '<h4 style="text-align: center;">Regulasi Mengenai Keterbukaan Informasi Publik</h4>
             <ul>
             <li><a href="https://drive.google.com/file/d/1JuE3iA-XTkse99MolMovn5UGlX3lgafj/view?usp=sharing" target="_blank" rel="noopener">Undang-Undang Nomor 14 Tahun 2008 Tentang Keterbukaan Informasi Publik</a></li>
             <li><a href="https://drive.google.com/file/d/1UesmKcx2GA71Ld4-lwvF37LhtffVbLdg/view?usp=sharing" target="_blank" rel="noopener">Undang-Undang Nomor 25 Tahun 2009 Tentang Pelayanan Publik</a></li>
@@ -125,7 +130,30 @@ class LandingSeeder extends Seeder
         Landing::create([
             'judul' => 'Struktur Organisasi PPID UHO',
             'bagian' => 'struktur',
-            'isi' => '<p>Struktur PPID Universitas Halu Oleo dapat dilihat pada gambar berikut.</p>',
+            'isi' => '<h3>PPID Pelaksana</h3>
+            <p>PPID Pelaksana Fakultas/Pascasarjana :</p>
+            <ol>
+                <li><a target="_blank" href="https://fp.uho.ac.id/">Fakultas Pertanian</a></li>
+                <li><a target="_blank" href="http://fkm.uho.ac.id/">Fakultas Kesehatan Masyarakat</a></li>
+                <li><a target="_blank" href="https://feb.uho.ac.id/">Fakultas Ekonomi dan Bisnis</a></li>
+                <li><a target="_blank" href="https://hukum.uho.ac.id/">Fakultas Hukum</a></li>
+                <li><a target="_blank" href="https://kedokteran.uho.ac.id/">Fakultas Kedokteran</a></li>
+                <li><a target="_blank" href="https://fisip.uho.ac.id/">Fakultas Ilmu Sosial dan Politik</a></li>
+                <li><a target="_blank" href="https://fpt.uho.ac.id/program-studi/">Fakultas Peternakan</a></li>
+                <li><a target="_blank" href="https://fmipa.uho.ac.id/">Fakultas Ilmu Matematika dan Alam</a></li>
+                <li><a target="_blank" href="https://fib.uho.ac.id/">Fakultas Ilmu Budaya</a></li>
+                <li><a target="_blank" href="https://fpik.uho.ac.id/">Fakultas Perikanan dan Ilmu Kelautan</a></li>
+                <li><a target="_blank" href="https://fhil.uho.ac.id/">Fakultas Kehutanan dan Ilmu Lingkungan</a></li>
+                <li><a target="_blank" href="https://farmasi.uho.ac.id/">Fakultas Farmasi</a></li>
+                <li><a target="_blank" href="http://fkip.uho.ac.id/">Fakultas Keguruan dan Ilmu Pendidikan</a></li>
+                <li><a target="_blank" href="http://eng.uho.ac.id/">Fakultas Teknik</a></li>
+                <li><a target="_blank" href="https://uho.ac.id/program-pasca-sarjana/">Program Pascasarjana</a></li>
+            </ol>
+            <p>PPID Pelaksana Lembaga :</p>
+            <ol>
+                <li><a target="_blank" href="https://lppmp.uho.ac.id/">Lembaga Pengembangan dan Penjaminanan Mutu Pendidikan</a></li>
+                <li><a target="_blank" href="https://lppm.uho.ac.id/">Lembaga Penelitian dan Pengabdian Masyarakat</a></li>
+            </ol>',
         ]);
 
         Landing::create([

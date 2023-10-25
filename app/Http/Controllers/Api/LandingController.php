@@ -22,27 +22,27 @@ class LandingController extends Controller
 
     public function jenisInformasi()
     {
-        return Landing::select('judul', 'isi', 'gambar', 'link')->where('bagian', 'jenis informasi')->get();
+        return Landing::select('id', 'judul', 'isi', 'gambar', 'link')->where('bagian', 'jenis informasi')->get();
     }
 
     public function tataCara()
     {
-        return Landing::select('judul', 'gambar')->where('bagian', 'tata cara permohonan')->get();
+        return Landing::select('id', 'judul', 'gambar')->where('bagian', 'tata cara permohonan')->get();
     }
 
     public function formulir()
     {
-        return Landing::select('judul', 'isi', 'gambar')->where('bagian', 'formulir')->first();
+        return Landing::select('id', 'judul', 'isi', 'gambar')->where('bagian', 'formulir')->first();
     }
 
     public function slogan()
     {
-        return Landing::select('judul', 'isi')->where('bagian', 'qoutes')->first();
+        return Landing::select('id', 'judul', 'isi')->where('bagian', 'qoutes')->first();
     }
 
     public function footer()
     {
-        return Landing::select('judul', 'isi')->where('bagian', 'footer')->get();
+        return Landing::select('id', 'judul', 'isi')->where('bagian', 'footer')->get();
     }
 
     public function berita()
@@ -64,23 +64,23 @@ class LandingController extends Controller
     // METHOD HALAMAN TENTANG
     public function profil()
     {
-        return Landing::select('judul', 'isi')->where('bagian', 'profil')->first();
+        return Landing::select('id', 'judul', 'isi')->where('bagian', 'profil')->first();
     }
 
     public function visiMisi()
     {
-        return Landing::select('judul', 'isi')->where('bagian', 'visi')->first();
+        return Landing::select('id', 'judul', 'isi')->where('bagian', 'visi')->first();
     }
     public function tugasFungsi()
     {
-        return Landing::select('judul', 'isi')->where('bagian', 'tugas')->first();
+        return Landing::select('id', 'judul', 'isi')->where('bagian', 'tugas')->first();
     }
     public function strukturPPID()
     {
-        return Landing::select('judul', 'isi', 'gambar')->where('bagian', 'struktur')->first();
+        return Landing::select('id', 'judul', 'isi', 'gambar')->where('bagian', 'struktur')->first();
     }
     public function regulasi()
     {
-        return Landing::select('judul', 'isi')->where('bagian', 'regulasi')->first();
+        return Landing::select('id', 'judul', 'isi')->where('bagian', 'regulasi')->first();
     }
 }

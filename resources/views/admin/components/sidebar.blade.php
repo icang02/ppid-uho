@@ -18,7 +18,7 @@
                     <label>Halaman Dashboard</label>
                 </li>
                 <li class="nav-item">
-                    <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i
+                    <a href="{{ url('/dashboard') }}" class="nav-link "><span class="pcoded-micon"><i
                                 class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                 </li>
 
@@ -28,7 +28,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/dashboard/landing/ppid" class="nav-link "><span class="pcoded-micon"><i
+                    <a href="{{ url('dashboard/landing/ppid') }}" class="nav-link "><span class="pcoded-micon"><i
                                 class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Deskripsi
                             PPID</span></a>
                 </li>
@@ -36,18 +36,18 @@
 
 
                 <li class="nav-item">
-                    <a href="/dashboard/landing/infografis" class="nav-link "><span class="pcoded-micon"><i
+                    <a href="{{ url('dashboard/landing/infografis') }}" class="nav-link "><span class="pcoded-micon"><i
                                 class="feather icon-map"></i></span><span class="pcoded-mtext">Tata Cara /
                             Infografis</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/dashboard/landing/permohonan" class="nav-link "><span class="pcoded-micon"><i
+                    <a href="{{ url('dashboard/landing/permohonan') }}" class="nav-link "><span class="pcoded-micon"><i
                                 class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Formulir
                             Permohonan</span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/dashboard/landing/slogan" class="nav-link "><span class="pcoded-micon"><i
+                    <a href="{{ url('dashboard/landing/slogan') }}" class="nav-link "><span class="pcoded-micon"><i
                                 class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Slogan</span></a>
                 </li>
 
@@ -124,5 +124,38 @@
 
         </div>
     </div>
+
 </nav>
 <!-- [ navigation menu ] end -->
+
+
+{{-- <h4>Prosedur dan Tatacara Penyelesaian Sengketa</h4>
+<p><b>Pemohon atau kuasanya mengajukan ke petugas komisi informasi</b> datang secara langsung kepada atau mengirimkan
+    berkas permohonan melalui pos, email, faksimili, atau metode pengiriman berkas lainnya dalam format yang telah
+    ditetapkan yang memuat :</p>
+<ol>
+    <li><b>Identitas pemohon</b>: nama pribadi dan/atau nama institusi, alamat lengkap, nomor telepon yang bisa
+        dihubungi, dan nomor faksimili/alamat email (apabila ada);</li>
+    <li>Uraian mengenai <b>alasan pengajuan permohonan</b> penyelesaian Sengketa Informasi Publik;</li>
+    <li>Salah satu atau beberapa hal yang dimohonkan untuk <b>diputus oleh Komisi Informasi.</b></li>
+</ol>
+<p>Pemohon <b>wajib menyertakan dokumen-dokumen</b> sebagai berikut :</p>
+<ol>
+    <li><b>Bukti identitas pemohon yang sah</b>, yaitu :</li>
+    <ul>
+        <li>Fotokopi Kartu Tanda Penduduk, Surat Ijin Mengemudi, Paspor atau Kartu Pelajar dalam hal Pemohon adalah
+            perorangan;</li>
+        <li><b>Akta pendirian dan pengesahan badan hukum</b> baik publik maupun privat dalam hal Pemohon adalah badan
+            hukum, surat keputusan pengangkatan kepengurusan, atau akta lain yang dianggap sah;</li>
+        <li><b>Fotokopi surat kuasa</b> (apabila Pemohon didampingi kuasa).</li>
+    </ul>
+    <li><b>Bukti telah mengajukan permohonan informasi kepada Badan Publik</b> berupa: surat permohonan atau formulir
+        permohonan atau tanda bukti permohonan informasi; dan/atau surat pemberitahuan tertulis permohonan informasi.
+    </li>
+    <li><b>Bukti telah mengajukan keberatan kepada Badan Pbulik</b>, yakni surat tanggapan tertulis atas keberatan,
+        dalam hal keberatan tidak direspon oleh atasan PPID dalam waktu 30 (tiga puluh) hari sejak permohonan diajukan.
+    </li>
+    <li><b>Bukti-bukti lain</b> (apabila dipandang perlu).</li>
+</ol>
+<p><b>Sumber:</b> <em>Peraturan Komisi Informasi Nomor 1 Tahun 2013 tentang Prosedur Penyelesaian Sengketa Informasi
+        Publik.</em></p> --}}

@@ -12,8 +12,6 @@ class InformasiPublikSeeder extends Seeder
      */
     public function run()
     {
-
-
         InformasiPublik::create([
             'judul' => 'Informasi Publik Yang Wajib Disediakan dan Diumumkan Secara Berkala',
             'isi' => '<p>Setiap Badan Publik wajib mengumumkan informasi publik secara berkala. Informasi berkala merupakan informasi yang diperbaharui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali. Informasi berkala mengenai kegiatan dan kinerja Badan Publik terkait; informasi mengenai laporan keuangan; dan atau informasi lain yang diatur dalam peraturan perundang-undangan. Adapun informasi berkala yang ada di Universitas Halu Oleo sebagai berikut :</p>',
@@ -28,22 +26,7 @@ class InformasiPublikSeeder extends Seeder
         ]);
         InformasiPublik::create([
             'judul' => 'Informasi Yang Dikecualikan',
-            'isi' => '<p><strong>Informasi publik yang dikecualikan tidak dapat diberikan kepada pemohon informasi publik.</strong><p>Adapun Daftar Informasi yang Dikecualikan Universitas Halu Oleo sebagai berikut :</p><ol>
-            <li>Soal dan Jawaban Tes Ujian Masuk Mahasiswa.</li>
-            <li>Kriteria Pengolahan Nilai, Penyajian Data, Dan Pertimbangan Seleksi Ujian Mandiri.</li>
-            <li>Data Pribadi :
-            <ul>
-            <li>Pegawai (Dosen dan Tenaga Kependidikan);</li>
-            <li>Mahasiswa</li>
-            <li>Alumni</li>
-            </ul>
-            </li>
-            <li>Dokumen Audit Internal, Laporan HasilAudit Internal, dan Laporan Keuangan yang Belum Diaudit (Unaudited).</li>
-            <li>Rancangan peraturan dan keputusan.</li>
-            <li>Identitas Informan, Pelapor, Saksi, atau Korban.</li>
-            <li>Dokumen penilaian hasil pengujian skripsi, tesis, dan disertasi dari penilai (Hasil review proposal dan rekomendasi penilai).</li>
-            <li>Konfigurasi Data Centre, Database dan Aplikasi, serta User Name dan Password.</li>
-            </ol></p>'
+            'isi' => '<p><strong>Informasi publik yang dikecualikan tidak dapat diberikan kepada pemohon informasi publik.</strong></p><p>Adapun Daftar Informasi yang Dikecualikan Universitas Halu Oleo sebagai berikut :</p><ol><li>Soal dan Jawaban Tes Ujian Masuk Mahasiswa. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Kriteria Pengolahan Nilai, Penyajian Data, Dan Pertimbangan Seleksi Ujian Mandiri. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Data Pribadi : <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a><ul><li>Pegawai (Dosen dan Tenaga Kependidikan);</li><li>Mahasiswa;</li><li>Alumni;</li><li>Mitra Kerja Sama.</li></ul></li><li>Dokumen penilaian hasil pengujian skripsi, tesis, dan disertasi dari penilai (Hasil review proposal dan rekomendasi penilai). <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Rancangan peraturan dan keputusan. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Penelitian yang Masih Dalam Proses. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Dokumen Perjanjian Kerja Sama. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Dokumen Pengadaan Barang/Jasa. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Dokumen Kerangka Acuan Kerja Perencanaan Pengadaan. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Data Evaluasi Diri Program Studi. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Dokumen Audit Internal, Laporan Hasil Audit Internal, dan Laporan Keuangan yang Belum Diaudit (Unaudited). <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Identitas Informan, Pelapor, Saksi, atau Korban. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Dokumen penilaian hasil pengujian skripsi, tesis, dan disertasi dari penilai (Hasil review proposal dan rekomendasi penilai). <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Konfigurasi Data Centre, Database dan Aplikasi, serta User Name dan Password. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li><li>Borang Akreditasi. <a href="#" target="_blank" rel="noopener noreferrer">(SK Penetapan)</a></li></ol>'
         ]);
     }
 }

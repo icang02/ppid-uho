@@ -65,6 +65,7 @@ class InformasiPublikController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request->isi);
         $request->validate([
             'judul' => 'required',
             'isi' => 'required',
