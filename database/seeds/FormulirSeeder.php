@@ -48,7 +48,7 @@ class FormulirSeeder extends Seeder
                 <li>Atasan PPID memberikan respons atas keberatan yang diajukan. Jika pemohon informasi puas terhadap respons atasan PPID maka pengajuan keberatan selesai.</li>
             </ol>
             <h4>Alasan Pengajuan Keberatan Atas Informasi</h4>
-            <p>Menurut Pasal 35 UU Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik Pemohon Informasi dapat mengajukan keberatan atas informasi dengan alasan sebagai berikut ::</p>
+            <p>Menurut Pasal 35 UU Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik Pemohon Informasi dapat mengajukan keberatan atas informasi dengan alasan sebagai berikut :</p>
             <ol>
                 <li>Penolakan atas permintaan informasi berdasarkan alasan pengecualian sebagaimana dimaksud dalam Pasal 17 UU Nomor 14 tahun 2008;</li>
                 <li>Tidak disediakannya informasi berkala sebagaimana dimaksud dalam Pasal 9 UU Nomor 14 Tahun 2008;</li>

@@ -89,7 +89,7 @@ class LandingSeeder extends Seeder
         Landing::create([
             'judul' => 'Visi dan Misi',
             'bagian' => 'visi',
-            'isi' => '<h5>Visi PPID</h5>
+            'isi' => '<h4>Visi PPID</h4>
             <p>Menjadi penyedia layanan informasi publik yang profesional, transparan dan akuntabel sesuai dengan ketentuan peraturan perundang-undangan.</p>
             <h5>Misi PPID</h5>
             <ol>
@@ -101,7 +101,7 @@ class LandingSeeder extends Seeder
         Landing::create([
             'judul' => 'Tokok dan Fungsi',
             'bagian' => 'tugas',
-            'isi' => '<h5>Tugas Pokok PPID</h5>
+            'isi' => '<h4>Tugas Pokok PPID</h4>
             <p>PPID bertugas mengkoordinasikan pengumpulan seluruh Informasi Publik dari setiap unit kerja di lingkungan Universitas Halu Oleo yang meliputi; informasi yang wajib disediakan dan diumumkan secara berkala; informasi yang wajib tersedia setiap saat; informasi terbuka lainnya yang diminta Pemohon Informasi Publik.</p>
             <h5>Fungsi PPID</h5>
             <ol>
@@ -130,7 +130,7 @@ class LandingSeeder extends Seeder
         Landing::create([
             'judul' => 'Struktur Organisasi PPID UHO',
             'bagian' => 'struktur',
-            'isi' => '<h3>PPID Pelaksana</h3>
+            'isi' => '<h2>PPID Pelaksana</h2>
             <p>PPID Pelaksana Fakultas/Pascasarjana :</p>
             <ol>
                 <li><a target="_blank" href="https://fp.uho.ac.id/">Fakultas Pertanian</a></li>
