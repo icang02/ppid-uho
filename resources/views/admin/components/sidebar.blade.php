@@ -74,7 +74,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/dashboard/berita" class="nav-link "><span class="pcoded-micon"><i
+                    <a href="{{ url('dashboard/berita') }}" class="nav-link "><span class="pcoded-micon"><i
                                 class="feather icon-layout"></i></span><span class="pcoded-mtext">Berita &
                             Informasi</span></a>
                 </li>
